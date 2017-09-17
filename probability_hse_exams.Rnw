@@ -1,0 +1,199 @@
+\documentclass[12pt, a4paper]{article}
+
+%\usepackage[pdf]{pstricks} % to use QR barcodes
+%\usepackage{pst-barcode}
+% sudo yum install texlive-auto-pst-pdf
+% sudo yum install texlive-pst-barcode texlive-pdfcrop
+
+% RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW RNW
+
+<<"init", echo=FALSE, include=FALSE>>=
+library(tidyverse)
+library(knitr)
+library(reshape2)
+library(xtable)
+library(gridExtra)
+
+library(tikzDevice)
+
+opts_chunk$set(cache = FALSE,
+               warning = FALSE,
+               tidy = FALSE,
+               echo = FALSE)
+options(scipen = 10)
+@
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" OTF-fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+
+\usepackage{etoolbox} % to use ifdef, must be after babel
+\input{title_bor_utf8} % use local copy
+
+\usepackage{epigraph}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+
+\unitlength=0.6mm
+
+\title{Подборка экзаменов по теории вероятностей. \\Факультет экономики, НИУ-ВШЭ}
+\date{\today}
+\author{Коллектив кафедры \\
+математической экономики и эконометрики,\\
+ фольклор}
+
+
+%%%%%%%%%%%%%%%%%% вставки
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Списки без уродских отступов
+\newenvironment{enumerate*}{
+\begin{enumerate}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\newenvironment{itemize*}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\abovedisplayskip=0mm
+\abovedisplayshortskip=0mm
+\belowdisplayskip=0mm
+\belowdisplayshortskip=0mm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\MIN}{\textbf{(MIN)}{}}
+\newcommand{\ofbr}[1]{\bigl( \{ #1 \} \bigr)}     % Например, вероятность события. Большие круглые, нормальные фигурные скобки вокруг аргумента
+%%%%%%%%%%%%%%%%%
+\newenvironment{centered}{%
+  \begin{list}{}{%
+    \topsep0pt
+  }
+  \centering
+  \item[]
+}
+{\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\DeclareMathOperator*\plim{plim}
+\newcommand{\cN}{\mathcal{N}}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents{}
+
+
+\parindent=0 pt % no indent
+
+\section{Описание}
+
+Свежую версию можно скачать с блога \url{http://pokrovka11.wordpress.com/} или с github репозитория \url{http://bdemeshev.github.io/pr201/}.
+
+
+Уникальное предложение для студентов факультета экономики ГУ-ВШЭ:
+
+
+Найдите ошибки в этом документе или пришлите отсутствующие решения в техе и получите дополнительные бонусы к итоговой оценке! Найденные смысловые ошибки поощряются сильнее, чем просто опечатки. Письма с замеченными ошибками и решениями пишите на адрес \href{mailto:boris.demeshev@gmail.com}{boris.demeshev@gmail.com}. Перед отправкой письма, пожалуйста, свертесь со свежей версией этой подборки.
+
+Неполный список благодарностей:
+
+\begin{enumerate}
+\item Андрей Зубанов, решения (экзамен 26.03.2012, \ldots)
+\item Кирилл Пономарёв, решения (контрольная 1, 2014)
+\item Александр Левкун, решения (контрольная 1, 2014)
+\item Оля Гнилова, решения (кр 3 2011, 2014, 2015, 2016) 
+\end{enumerate}
+
+
+\section{2004-2005}
+
+<<child='chapters/year_2004_2005.Rnw'>>=
+@
+
+\section{2005-2006}
+
+
+<<child='chapters/year_2005_2006.Rnw'>>=
+@
+
+
+\section{2006-2007}
+
+<<child='chapters/year_2006_2007.Rnw'>>=
+@
+
+
+\section{2007-2008}
+
+<<child='chapters/year_2007_2008.Rnw'>>=
+@
+
+\section{2008-2009}
+<<child='chapters/year_2008_2009.Rnw'>>=
+@
+
+
+\section{2009-2010}
+
+<<child='chapters/year_2009_2010.Rnw'>>=
+@
+
+\section{2010-2011}
+<<child='chapters/year_2010_2011.Rnw'>>=
+@
+
+
+\section{2011-2012}
+<<child='chapters/year_2011_2012.Rnw'>>=
+@
+
+\section{2012-2013}
+<<child='chapters/year_2012_2013.Rnw'>>=
+@
+
+\section{2013-2014}
+<<child='chapters/year_2013_2014.Rnw'>>=
+@
+
+\section{2014-2015}
+
+<<child='chapters/year_2014_2015.Rnw'>>=
+@
+
+\section{2015-2016}
+
+<<child='chapters/year_2015_2016.Rnw'>>=
+@
+
+\section{2016-2017}
+
+<<child='chapters/year_2016_2017.Rnw'>>=
+@
+
+\section{2017-2018}
+
+<<child='chapters/year_2017_2018.Rnw'>>=
+@
+
+\end{document}
