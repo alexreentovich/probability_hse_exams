@@ -87,6 +87,265 @@
 \item  (Бонусная задача) На первом этаже десятиэтажного дома в лифт заходят 9 человек. Найдите математическое ожидание числа остановок лифта, если люди выходят из лифта независимо друг от друга.
 \end{enumerate}
 
+
+						\subsection{Кр 1 базовый поток, решения}
+
+						\begin{enumerate}
+							\item $\Omega$ = \{(М, М), (М, Д), (Д, М ), (Д, Д)\}, $\mathcal{F}$ – система всех подмножеств в  $\Omega$.
+
+							\[
+							\P((\text{М, М})) = \frac{1}{2} \cdot \frac{1}{2}, \quad  \P((\text{М, Д})) = \frac{1}{2} \cdot \frac{1}{2}
+							\]
+							\[
+							\P((\text{Д, М})) = \frac{1}{2} \cdot \frac{1}{2}, \quad \P((\text{Д, Д})) = \frac{1}{2} \cdot \frac{1}{2}
+							\]
+							$A$ = \{«в семье есть девочка»\} = \{(М, Д), (Д, М ), (Д, Д)\},
+
+							$B$ = \{«в семье есть мальчик»\} = \{(М, М), (М, Д), (Д, М)\}
+							\begin{enumerate}
+								\item $\P(B \mid A) = \frac{\P(B \cap A)}{\P(A)} = \frac{\P(\text{(М, Д), (Д, М) })}{\P(A)} = \frac{2/4}{3/4} = \frac{2}{3}$
+								\item События $A$ и $B$ называются независимыми, если $\P(A \cap B) = \P(A) \cdot \P(B)$
+
+								В нашем случае: $\P(A \cap B) = \P (\text{(М, Д), (Д, М)}) = \frac{2}{4}$, $\P(A) \cdot \P (B) = \frac{3}{4} \cdot \frac{3}{4}$. Следовательно, $\P(A \cap B) \neq \P(A) \cdot \P (B)$, значит, события $A$ и $B$ не являются независимыми.
+							\end{enumerate}
+							\item $A_i :=$ \{« $i$- ый узел системы дал сбой»\}, $i=1, ..., N$
+
+							$B_N :=$ \{«система дала сбой»\} $= \cup_{i=1}^N A_i$;
+
+							$\P (A_i) = \frac{1}{10^6}, i = 1, ..., N$;
+
+							Требуется найти такое максимальное $N \in \mathbb{N}$, при котором
+							\[
+							\P(B_N) \leq \frac{1}{10^2}
+							\]
+							\begin{multline*}
+							\P(B_N) = \P\left(\cup_{i=1}^n A_i\right) = 1 - \P (\left(\cup_{i=1}^n A_i\right)^c)  \stackrel{\text{ф-ла де Моргана}}{=} 1 - \P \left(\cup_{i=1}^N A_i^c\right) \stackrel{A_1, ..., A_N \text{– независ.}}{=} \\
+							= 1 - \P(A_1^c) \cdot ... \cdot \P(A_N^c) = 1 - \left(1-\frac{1}{10^6}\right)^N
+							\end{multline*}
+							Итак, требуется найти такое максимальное $N \in \mathbb{N}$, при котором
+							\[
+							1 - \left(1-\frac{1}{10^6}\right)^N \leq \frac{1}{10^2}
+							\]
+							Имеем
+							\begin{multline*}
+							1 - \left(1-\frac{1}{10^6}\right)^N \leq \frac{1}{10^2} \Leftrightarrow 1 - \frac{1}{10^2} \leq \left(1-\frac{1}{10^6}\right)^N \Leftrightarrow \\
+							\Leftrightarrow \ln\left(1 - \frac{1}{10^2}\right) \leq N \ln \left(1 - \frac{1}{10^6}\right) \Leftrightarrow N \leq \frac{\ln\left(1 - \frac{1}{10^2}\right)}{ \ln \left(1 - \frac{1}{10^6}\right)} \approx 10050.33
+							\end{multline*}
+							Ответ: $N=10050$
+							\item $A=$ \{«заболевание лёгких»\}
+
+							$B=$ \{«работал в шахте»\}
+
+							$\P (B \mid A) = 0.22$, $\P (B \mid A^c) = 0.14$, $\P (A) = 0.04$
+							\begin{enumerate}
+								\item $\P(A\mid B) = ?$
+
+								$\P (B) = \P (B \mid A) \P(A) + \P (B \mid A^c) \P (A^c) = 0.22 \cdot 0.04 + 0.14 \cdot 0.96 = 0.1432$
+
+								$\P(A \mid B) = \frac{\P(A\cap B)}{\P (B)} = \frac{\P (B \cap A)}{\P(A)} \cdot \frac{\P(A)}{\P (B)} = \P (B \mid A) \cdot \frac{\P(A)}{\P (B)} = 0.22 \cdot \frac{0.04}{0.1432} \approx 0.0615$
+
+								\item $\P (A \mid B^c) = ? $
+
+								$\P  (A \mid B^c) =  \frac{\P(A\cap B^c)}{\P (B^c)} =  \frac{\P (B^c \cap A)}{\P(A)} \cdot \frac{\P(A)}{\P (B^c)} = \P (B^c \mid A) \cdot \frac{\P(A)}{\P (B^c)} = (1-\P (B \mid A)) \cdot \frac{\P(A)}{1-\P (B} = (1-0.22) \cdot \frac{0.04}{1-0.1432} \approx 0.0364 $
+							\end{enumerate}
+							\item $X_i :=
+							\begin{cases}
+							1, & \text{если на i-ый вопрос теста Петя дал верный ответ} \\
+							0, & \text{иначе}
+							\end{cases}, 
+							i = 1, ..., 17
+							$
+
+							$X_i \sim Be\left(p=\frac{1}{5}\right)$, $X_1, ..., X_{17}$ – независимы, $X:= X_1 + ... + X_{17}$ – общее число верных ответов, $X \sim Bi\left(n=17, p=\frac{1}{5}\right)$.
+							\begin{enumerate}
+								\item Наибольшее вероятное число правильных ответов $m_0$ может быть нвйдено по формуле:
+								\begin{enumerate}
+									\item[1)] если число $(n\cdot p - q)$ – не целое, где $q:=1-p$, то
+									\[
+									m_0 = [np-q] +1,
+									\]
+									\item[2)] если число  $(n\cdot p - q)$ – целое, то наиболее вероятных значений $m_0$ два:
+									\[
+									m_0' = np-q \text{ и } m_0'' = np-q+1
+									\]
+								\end{enumerate}
+								Итак, поскольку $np-q = 17\cdot\frac{1}{5} - \frac{4}{5} = 2.6$ – не целое, наиболее вероятное число верных ответов $m_0$ может быть найдено по формуле из пункта (1):
+								\[
+								m_0 = [np-q] +1 = [2.6] + 1 = 3
+								\]
+								\item $\E(X) = np = 17 \cdot \frac{1}{5}=3.4$
+
+								$\Var(X) = npq = 17 \cdot \frac{1}{5} \cdot \frac{4}{5} = 2.72$
+
+								\item
+								\begin{multline*}
+								\P (\text{Петя получит «отлично»}) = \P (X\geq 15) = \P (X = 15) + \P (X= 16) + \\
+								+ \P (X = 17) = C^{15}_{17} \cdot \left(\frac{1}{5}\right)^{15} \cdot \left(\frac{4}{5}\right)^2 + C^{16}_{17} \cdot \left(\frac{1}{5}\right)^{16} \cdot \left(\frac{4}{5}\right)^1 + C^{17}_{17} \cdot \left(\frac{1}{5}\right)^{17} \cdot \left(\frac{4}{5}\right)^0 = \\
+								= 136 \cdot \frac{16}{5^{17}} + 17 \cdot \frac{4}{5^{17}} + \frac{1}{5^{17}} \approx 2.94 \cdot 10^{-9}
+								\end{multline*}
+								\item Обозначим:
+
+								$Y_i$ – номер ответа на $i$-ый вопрос, который дал Петя ($Y_i$ может равняться 1, 2, 3, 4 или 5),
+
+								$Z_i$ – номер ответа на  $i$-ый вопрос, который дал Вася ($Z_i$ может равняться 1, 2, 3, 4 или 5).
+
+								Найдём вероятность $\P (Y_i = Z_i)$. Воспользуемся формулой полной вероятности:
+								\[
+								\P (Y_i = Z_i) = \P ((Y_i = Z_i) \mid (Z_i = 1)) \cdot \P (Z_i = 1) + \P (Y_i = Z_i \mid Z_i = 5) \cdot \P (Z_i = 5)
+								\]
+								Найдём вероятность
+								\begin{multline*}
+								\P (Y_i = Z_i \mid Z_i = 1)  = \frac{\P (Y_i = Z_i \cap Z_i = 1)}{\P (Z_i = 1)} = \frac{\P (Y_i = 1 \cap Z_i = 1)}{\P (Z_i = 1)} = \\
+								\stackrel{Y_i, Z_i \text{- нез.}}{=} \frac{\P(Y_i = 1) \cdot \P(Z_i=1)}{\P(Z_i=1)} = \P (Y_i = 1)
+								\end{multline*}
+								Действуя аналогично, получаем, что
+
+								$\P (Y_i = Z_i \mid Z_i = 2) = \P (Y_i = 2) $,
+
+								. . . . . ,
+
+								$\P (Y_i = Z_i \mid Z_i = 5) = \P (Y_i = 5) $.
+
+								Подставив полученные выражения в формулу полной вероятности, приходим к выражению:
+
+								$\P(Y_i=Z_i) =\P (Y_i = 1) \cdot \P (Z_i = 1) + ... + \P (Y_i = 5) \cdot \P (Z_i = 5)   = 5 \cdot \frac{1}{5} \cdot \frac{1}{5} = \frac{1}{5}$
+
+								\begin{multline*}
+								\P (\text{«ответы Пети и Васи на все вопросы совпадают»}) = \P (Y_1 = Z_1 \cup ... \cup Y_{17} = Z_{17}) = \\
+								\stackrel{\text{нез-ть}}{=} \P (Y_1 = Z_1) \cdot ... \cdot \P (Y_{17} = Z_{17}) = \left(\frac{1}{5}\right)^{17}
+								\end{multline*}
+							\end{enumerate}
+							\item Введём случайную велчину $\eta$, которая означает число потенциальных покупателей, с которыми контактировал продавец оборудования. По условию задачи, $\eta$ имеет таблицу распеределения:
+							\begin{tabular}{c|cc}
+								$\eta$ & $ 1 $ & $2$ \\
+								\hline
+								$\P_{\eta}$ & $1/3$ & $2/3$ \\
+							\end{tabular}
+
+							Случайная величина $\xi$ может принимать значения $0, 50000$ и $100000$
+							\begin{enumerate}
+								\item Найдём $\P (\xi = 0 )$. По формуле полной вероятности, имеем:
+								\begin{multline*}
+								\P (\xi = 0) = \P (\xi = 0 \mid \eta = 1 ) \cdot \P ( \eta = 1 ) + \P (\xi = 0 \mid \eta = 2 )  \cdot \P ( \eta = 2 )  = \\
+								= 0.9 \cdot \frac{1}{3} + 0.9\cdot0.9 \cdot \frac{2}{3} = 0.84
+								\end{multline*}
+								\item Найдём $\P (\xi = 50000 )$ и $\P (\xi = 100000 )$ :
+								\begin{multline*}
+								\P (\xi = 50000 ) =  \P (\xi = 50000 \mid \eta = 1 ) \cdot \P ( \eta = 1  ) +  \P (\xi = 50000 \mid \eta = 2 ) \cdot  \P ( \eta = 2 )  = \\
+								= 0.1 \cdot \frac{1}{3} + 2 \cdot 0.1 \cdot 0.9 \cdot \frac{2}{3} = 0.15(3)
+								\end{multline*}
+								\begin{multline*}
+								\P (\xi = 100000 ) =  \P (\xi = 100000 \mid \eta = 1 ) \cdot \P ( \eta = 1 ) ) +  \P (\xi = 100000 \mid \eta = 2 ) \cdot  \P ( \eta = 2  )  =  \\
+								= 0 \cdot \frac{1}{3} + 0.1\cdot 0.1 \cdot 0.9 \cdot \frac{2}{3} = 0.00(6)
+								\end{multline*}
+								Таблица распределения случайной величина $\xi$ имеет вид:
+								\begin{tabular}{c|ccc}
+									$\xi$ & $ 0 $ & $5000$ & $100000$ \\
+									\hline
+									$\P_{\xi}$ & $0.84$ & $0.15(3)$ & $0.00(6)$ \\
+								\end{tabular}
+
+								Стало быть функция распределения случайной величины $\xi$ имеет вид:
+								\[
+								F_{\xi} (X) =
+								\begin{cases}
+								0 & \text{при } x<0 \\
+								0.84 & \text{при } 0 \leq x < 50000 \\
+								0.84 + 0.15(3) & \text{при } 50000
+								\leq x < 100000 \\
+								1 & \text{при } x > 100000
+								\end{cases}
+								\]
+								Опр.: $F_{\xi} = \P (\xi \leq x ), x \in \mathbb{R}$
+								\item $\E (X) = 0 \cdot 0.84 + 50000 \cdot 0.15(3) + 100000 \cdot 0.00(6) = 8333.(3)	$
+
+								$\Var(X) = (0 - 8333.(3))^2 \cdot 0.84 + (50000-8333.(3))^2 \cdot 0.15(3) + (100000 - 8333.(3))^2 \cdot 0.00(6) = 380555555.(5)$
+							\end{enumerate}
+							\item
+							\begin{enumerate}
+								\item $ f_{\xi} (x)=
+								\begin{cases}
+								\frac{1}{b} & \text{при } x \in [0, b] \\
+								0 & \text{при } x \notin [0, b]
+								\end{cases}
+								$
+								\item  Известно, что если $\xi \sim U[a, b]$, то $\E (\xi) = \frac{a+b}{2}$. Стало быть, из уравнения $\E (\xi) = 1$ получаем $\frac{b}{2} = 1$,  то есть $b=2$.
+								\item Известно, что если $\xi \sim U[a, b]$, то $\Var (\xi) = \frac{(b-a)^2}{12}$. Значит, $\Var (\xi) = \frac{2^2}{12} = \frac{1}{3}$
+								\item Воспользуемся формулой $\P (\xi \in B ) = \int_B f_{\xi} (x) dx$. Имеем:
+								\[
+								\P (\xi > 1 ) = \P (\xi \in (1, + \infty) ) = \int_{1}^{+ \infty} f_{\xi} (x) dx = \int_{1}^{2} \frac{1}{2} dx = \frac{1}{2}
+								\]
+								\item Требуется найти такое минимальное число $q_{0.025}$, что $\int_{-\infty}^{q_{0.25}} f_{\xi} (x) dx = 0.25$. Итак:
+								\[
+								\int_{-\infty}^{q_{0.25}} f_{\xi} (x) dx = 0.25 \Leftrightarrow \int_{-\infty}^{q_{0.25}} \frac{1}{2} dx = 0.25 \Leftrightarrow \frac{1/2}{q_{0.25}} = 0.25 \Leftrightarrow
+								\]
+								\[
+								q_{0.25} = 2 \cdot 0.25 = 0.5
+								\]
+								\item
+								\begin{multline*}
+								\E [ (\xi - \E(\xi))^{2017} ] = \int_{-\infty}^{+\infty} (x- \E(\xi) )^{2017} \cdot f_{\xi} (x) dx = \int_{-\infty}^{+\infty} (x-1)^{2017} f_{\xi} (x) dx = \\
+								= \int_{0}^{2} (x-1)^{2017} \cdot \frac{1}{2} dx = \frac{(x-1)^{2018}}{2018} \cdot \frac{1}{2} \mid_{x=0}^{x=2} =0
+								\end{multline*}
+								\item $F_{\xi} (x) =
+								\begin{cases}
+								0 & \text{при } x < 0 \\
+								\frac{x}{2} & \text{при } 0 \leq x \leq 2 \\
+								1 & \text{при } x > 2
+								\end{cases}
+								$
+								\item Согласно условиям задачи, время до прихода 1-го поезда есть $\xi$; время до прихода 2-го поезда равно $\xi + b$; время до прихода 3-го (заветного) поезда есть $\xi + 2b$. Таким образом, Марья Ивановна в среднем ожидает «своего» поезда $\E (\xi + 2b) = 1 + 2b = 1 + 2 \cdot 2 = 5 $ минут. При этом $\Var (\xi + 2b) = \Var (\xi) = 1/3$
+								\item Пусть $\tau$ – наименьший номер поезда без «подозрительных лиц». По условию задачи, таблица распределения случайной величины $\tau$ имеет вид:
+
+								\begin{tabular}{c|ccccc}
+									$\tau$ & $ 1 $ & $2$ & $3$ & $4$ & ... \\
+									\hline
+									$\P_{\tau}$ & $1/4$ & $3/4\cdot1/4$ & $(3/4)^2 \cdot 1/4$ & $(3/4)^3 \cdot 1/4$ & ...\\
+								\end{tabular}
+
+								То есть случайная величина $\tau$ имеет геометрическое распределение с параметром $p=1/4$ $(\tau \sim G(p=1/4))$.
+
+								Несложно сообразить, что время ожидания Глафирой Петровной «своего» поезда составляет: $\eta := \xi + b(\tau- 1)$. Стало быть, $\E (\eta) = \E (\xi) + b \cdot (\E(\tau)-1)  = 1 + 2 \cdot (4-1) = 7$ минут.
+
+								Здесь мы воспользовались тем фактом, что если $\eta \sim G(p)$, то $\E (\eta) = 1/p$
+								\item Найдём теперь вероятность $\P (\eta \geq 5 )$. Для нахождения искомой вероятности воспользуемся формулой полной вероятности:
+								\[
+								\P (\eta \geq 5 ) = \sum_{k=1}^{\infty} \P ( \eta \geq 5   \mid \tau = k ) \cdot \P(\tau = k )
+								\]
+
+								Имеем:
+								\begin{multline*}
+								\P ( \eta \geq 5  \mid \tau = k )  = \P (\xi + b \cdot (\tau-1) \geq 5 \mid \tau = k) = \\
+								= \P (\xi + 2 \cdot (k-1) \geq 5  \mid \tau = k ) \stackrel{\xi, \tau \text{– нез.}}{=} \P (\xi + 2 \cdot (k-1) \geq 5 ) = \\
+								= \begin{cases}
+								1 & \text{при } k \geq 4 \\
+								\P (\xi + 4 \geq 5 ) & \text{при } k=3 \\
+								\P (\xi + 2 \geq 5 ) & \text{при } k=2 \\
+								\P (\xi  \geq 5 ) & \text{при } k=1 \\
+								\end{cases} =
+								\begin{cases}
+								1 & \text{при } k \geq 4  \\
+								1/2 & \text{при } k = 3 \\
+								0 & \text{при } k = 2 \\
+								0 & \text{при } k = 1
+								\end{cases}
+								\end{multline*}
+
+								Таким образом,
+
+								\begin{multline*}
+								\P (\eta \geq 5 ) = 0 + 0 + \frac{1}{2} \P (\tau = 3) + \sum_{k=4}^{\infty} \P (\tau=k ) = \frac{1}{2} \P (\tau = 3)  + \sum_{k=1}^{\infty} \P (\tau=k ) -\\
+								- \P (\tau = 1 ) - \P (\tau = 2 ) - \P (\tau = 3 ) = 1 - \P (\tau = 1 ) - \P (\tau = 2 ) - \frac{1}{2} \P (\tau = 3 ) = \\
+								= 1 - \frac{1}{4} - \frac{3}{4} \cdot \frac{1}{4} - \frac{1}{2} \cdot \left(\frac{3}{4}\right)^2 \cdot \frac{1}{4} \approx0.49
+								\end{multline*}
+							\end{enumerate}
+
+
+						\end{enumerate}
+
+
+
+
 \subsection{Кр 1 ИП, 27.10.2016}
 
 
@@ -273,6 +532,309 @@ f_{\xi, \,\eta}(x,\,y) =
 
 
 \end{enumerate}
+
+
+
+						\subsection{Кр 2 базовый поток, 09-12-2016, решения}
+
+						\begin{enumerate}
+							\item \begin{enumerate}
+								\item $\E (2\xi - \eta +1) = 2 \E (\xi) - \E (\eta) + 1 = 2\cdot 1 - (-2) + 1 = 5 $
+
+								$\Cov (\xi, \eta) = \E (\xi \eta) - \E(\xi) \E(\eta) = -1 - \cdot 1 \cdot (-2) = 1$
+
+								$\Corr (\xi, \eta) = \frac{\Cov(\xi, \eta)}{\sqrt[]{\Var(X) \cdot \Var(Y)}} = \frac{1}{\sqrt{1 \cdot (8-(-2)^2)}} = \frac{1}{2}$
+
+								$\Var (2\xi - \eta + 1) = 4\Var(\xi) + \Var(\eta) - 2 \Cov (2\xi, \eta) = 4 \cdot 1 + 4 - 4 \cdot 1 = 4$
+
+								\item $\Cov(\xi + \eta, \xi + 1) = \Cov(\xi) + \Cov(\xi, 1) + \Cov(\eta, \xi) + \Cov(\eta, 1) = 1 +1 = 2$
+
+								$\Corr(\xi + \eta , \xi + 1) = \frac{\Cov(\xi + \eta , \xi + 1)}{\sqrt{\Var(\xi + \eta)\cdot \Var (\xi + 1)}} = \frac{2}{\sqrt{(1+4+2\cdot 1) \cdot 1}} = \frac{2}{\sqrt{7}}$
+
+								$\Corr(\xi + \eta - 24, 365 - \xi - \eta) = -1$
+								
+								$\Cov(2016\cdot \xi, 2017) = 0$
+
+							\end{enumerate}
+							\item \begin{enumerate}
+								\item \begin{tabular}{c|ccc|}
+									$\xi$ & -1 & 0 & 2 \\ \hline
+									$\P_{\xi}$ & 0.3 & 0.4 & 0.3
+								\end{tabular}
+								\begin{tabular}{|c|cc}
+									$\eta$ & -1 & 1 \\ \hline
+									$\P_{\eta}$ & 0.5 & 0.5
+								\end{tabular}
+
+								$\E(\xi) = -1 \cdot 0.3 + 0 \cdot 0.4 + 2 \cdot 0.3 = 0.3$
+
+								$\E (\xi^2) = (-1)^2 \cdot 0.3 + 0^2 \cdot 0.4 + 2^2 \cdot 0.3 = 1.5$
+
+								$\Var(\xi) = \E(\xi^2) - (\E(\xi))^2 = 1.5 - 0.3^2 = 1.41$
+
+								$\E(\eta) = -1 \cdot 0.5 + 1 \cdot 0.5 = 0$
+
+								$\E(\eta^2) = (-1)^2 \cdot 0.5 + 1^2 \cdot 0.5 = 1$
+
+								$\Var(\eta) = \E(\eta^2)-(\E(\eta))^2 = 1 - 0^2 = 1$
+
+								\item \begin{tabular}{c|ccccc}
+									$\xi \cdot \eta$ & -2 & -1 & 0 & 1 & 2 \\ \hline
+									$\P_{\xi \cdot \eta}$ & 0.2 & 0.2 & 0.4 & 0.1 & 0.1
+								\end{tabular}
+
+								$\E(\xi\cdot\eta) = (-2) \cdot 0.2 + (-1) \cdot 0.2 + 0 \cdot 0.4 + 1\cdot 0.1 + 2 \cdot 0.1 = -0.3$
+
+								$\Cov(\xi, \eta) = \E(\xi\cdot\eta) - \E(\xi)\cdot\E(\eta) = -0.3 - 0.3 \cdot 0 = -0.3$
+								\item Пусть случайная величина $X$ принимает значения $a_1, ..., a_m$, случайная веилчина $Y$ принимает значения $b_1, ..., b_n$. Тогда случйаня величина $X$ и $Y$ называются независимыми, если $\forall i=1, ..., \quad m \forall j=1, ..., n: \P((X = a_i) \cap (Y = b_j)) = P(X = a_i) \cdot P(Y = b_j)$
+								\item Заметим, что $\P ((\xi = -1) \cap (\eta=-1))=0.1$, $\P(\xi=-1)=0.3$ и $\P(\eta=-1)=0.5$.
+
+								Тогда поскольку $\P ((\xi = -1) \cap (\eta=-1)) \neq \P(\xi=-1) \cdot \P(\eta=-1)$, случайные величины $\xi$ и $\eta$ не являются независимыми.
+								\item $\P ((\xi = -1) \cap (\eta=1)) = \frac{\P ((\xi = -1) \cap (\eta=1))}{\P(\eta=1)} = \frac{0.2}{0.5} = \frac{2}{5}$
+
+								$\P ((\xi = 0) \cap (\eta=1)) = \frac{\P ((\xi = 0) \cap (\eta=1))}{\P(\eta=1)} = \frac{0.2}{0.5} = \frac{2}{5}$
+
+								$\P ((\xi = 2) \cap (\eta=1)) = \frac{\P ((\xi = 2) \cap (\eta=1))}{\P(\eta=1)} = \frac{0.1}{0.5} = \frac{1}{5}$
+
+								Следовательно, условное распределение случайной величины $\xi$ при условии $\{\eta=1\}$ может быть описано следующей таблицей:
+
+								\begin{tabular}{c|ccc}
+									$\xi$ & -1 & 0 & 2 \\ \hline
+									$\P_{\xi \mid \eta=1}$ & 2/5 & 2/5 & 1/5
+								\end{tabular}
+								\item $\E(\xi \mid \eta = 1) = -1 \cdot \frac{2}{5} + 0 \cdot \frac{2}{5} + 2 \cdot \frac{1}{5} = 0$
+								\item $\E(\pi) = \E(0.5 \xi + 0.5 \eta) = 0.5 \E(\xi) + 0.5 \E(\eta) = 0.15$
+
+								$\Var(\pi) = \Var(0.5 \xi + 0.5 \eta) = \Var(0.5 \xi) + \Var(0.5\eta) + 2 \Cov (0.5\xi, 0.5\eta) = 0.25\Var(\xi) + 0.25\Var(\eta) + 2 \cdot 0.5 \cdot 0.5 \Cov(\xi, \eta) = 0.25 \cdot 1.41 + 0.25 \cdot 1 + 2 \cdot 0.5 \cdot 0.5 \cdot (-0.3) = 0.4525$
+								\item
+								\begin{multline*}
+								\Var(\pi(\alpha)) = \Var(\alpha \xi + (1-\alpha)\eta) = \alpha^2\Var(\xi) + (1-\alpha)^2 \Var(\eta) + 2\alpha(1-\alpha) \Cov(\xi, \eta) = \\
+								= 1.41 \cdot \alpha^2 + 1\cdot (1-\alpha)^2 + 2\alpha(1-\alpha) \cdot (-0.3) = 1.41 \cdot \alpha^2 + (1-\alpha)^2 - 0.6 \cdot (\alpha - \alpha^2) \to min_\alpha
+								\end{multline*}
+								\begin{multline*}
+								\frac{\partial}{\partial \alpha} \Var(\pi(\alpha)) = 2 \cdot 1.41 \cdot \alpha -2(1-\alpha) -0.6\cdot(1-2\alpha) = 2.82 \cdot \alpha - 2 + 2\alpha - 0.6 + 1.2 \cdot \alpha = \\
+								= 6.02 \cdot \alpha - 2.6 = 0
+								\end{multline*}
+								\[
+								\alpha = \frac{2.6}{6.02} = 0.4319
+								\]
+							\end{enumerate}
+							\item \begin{enumerate}
+								\item Для любой неотрицательной случайной величины $X$ и любого числа $\lambda > 0$ справедлива оценка: $\P(X>\lambda) \leq \frac{\E(X)}{\lambda}$
+
+								Пусть случайная величина $\xi_i$ означает число посетителей сайта за $i$-ый день. По условию, $\xi_i \sim Pois(\lambda=250)$. Известно, что если $\xi \sim Pois(\lambda)$, то $\E(\xi) = \Var(\xi) = \lambda$.
+
+								Имеем:
+								\[
+								\P(\xi_i >500) \leq \P(\xi_i \geq 500) \leq \frac{\E(\xi_i)}{500} = \frac{250}{500} = \frac{1}{2}
+								\]
+								\item Для любой случайной величины $X$ с конечным $\E(X)$ и любого положительного числа $\epsilon > 0$ имеет место неравенство: $\P(X-\E(X)\geq\epsilon)\leq\frac{\Var(X)}{\epsilon^2}$
+
+								Обозначим $\bar{\xi_n} := \frac{1}{n} \left(\xi_1 + ... + \xi_n\right)$ – среднее число посетителей сайта за $n$ дней. Тогда
+								\[
+								\E(\bar{\xi_n}) = \E\left(\frac{1}{n} \sum_{i=1}^{n} \xi_i\right) = \frac{1}{n} \sum_{i=1}^{n} \E(\xi_i) = \frac{1}{n} \cdot n \cdot \lambda = \lambda = 250
+								\]
+								\[
+								\Var(\bar{\xi_n}) = \Var\left(\frac{1}{n} \sum_{i=1}^{n} \xi_i\right) = \frac{1}{n^2} \sum_{i=1}^{n} \Var (\xi_i) = \frac{n \cdot \lambda}{n^2} = \frac{\lambda}{n} = \frac{250}{n}
+								\]
+								Оценим вероятность 
+								\[
+								\P(\vert\bar{\xi_n}-250\vert > 10) \leq \frac{\Var(\bar{\xi_n})}{100} = \frac{250}{100\cdot n} 
+								\]
+								Следовательно, $1 - \frac{250}{100\cdot n} \leq \P(\vert\bar{\xi_n}-250\vert > 10)$.
+								
+								Найдём наименьшее целое $n$, при котором $0.99 \leq 1 - \frac{250}{100\cdot n}$.
+								
+								Имеем:
+								\[
+								0.99 \leq 1 - \frac{250}{100\cdot n} \Leftrightarrow \frac{250}{100\cdot n} \Leftrightarrow n \geq \frac{250}{100 \cdot 0.01} \Leftrightarrow n  \geq 250
+								\]
+								Стало быть, $n=250$ – наименьшее число дней, при котором с вероятностью не менее $99\%$ среднее число поситителей будет отличаться от $250$ не более чем на $10$.
+								\item  Требуется найти наименьшее целое $n$, при котором $\P(\vert\bar{\xi_n}-250\vert \leq 10)=0.99$
+								
+								Имеем:
+								\[
+								\P(\vert\bar{\xi_n}-250\vert \leq 10)=0.99 \Leftrightarrow \P(-10\leq \bar{\xi_n} -250 \leq 10) =0.99 \Leftrightarrow \P(-10n \leq S_n-250 \leq 10n) =0.99 
+								\]
+								\[
+								\E(S_n) = \E(\xi_1 + ... + \xi_n) = \E(\xi_1) + ... + \E(\xi_n) = 250\cdot n
+								\]
+								\[
+								\Var(S_n) = \Var(\xi_1 + ... + \xi_n) = \Var(\xi_1) + ... + \Var(\xi_n) = 250 \cdot n 
+								\]
+								\begin{multline*}
+								\P\left(\frac{-10n}{\sqrt{250n}} \leq \frac{S_n - \E (S_n)}{\sqrt{\Var(S_n)}} \leq \frac{10n}{\sqrt{250n}}\right) =0.99 \Leftrightarrow 2 \Phi \left(\frac{10n}{\sqrt{250n}}\right) -1 = 0.99 \\
+								\Phi \left(\frac{10n}{\sqrt{250n}}\right) = \frac{1 + 0.99}{2} \Leftrightarrow \frac{10n}{\sqrt{250n}} = 2.58 \Leftrightarrow \sqrt{n} = 2.58 \cdot \frac{\sqrt{250}}{10} \Leftrightarrow n = 16.641
+								\end{multline*}
+								Следовательно, наименьшее целое $n$, есть $n=17$.
+								\item Пусть $X_1, X_2, ..., X_n, ...$ – последовательность независимых случайных величин с одинаковыми конечными математическими ожиданимяи и фиксированными конечными дисперсиями. Тогда $\frac{X_1 + ... + X_n}{n} \to^{\P} \E(X_i)$ при $n \to \infty$.
+								
+								В нашем случае случаные величины $\xi_1^2, \xi_2^2, ..., \xi_n^2, ...$ – независимы,
+								
+								 $\E(\xi_1^2) = ... = \E(\xi_n^2) = ... < + \infty$ и $\Var(\xi_1^2) = ... = \Var(\xi_n^2) = ... < + \infty$ . Поэтому в соответствии с ЗБЧ имеем:
+								\[
+								\frac{\xi_1^2 +...+ \xi_n^2}{n} \to^{\P} \E(\xi_i^2) = \Var(\xi_i) +\E(\xi_i)^2 = \lambda + \lambda^2 = \lambda(\lambda+1) = 250\cdot251 = 62700
+								\] 								
+							\end{enumerate}
+				
+\item \begin{enumerate}
+	\item Пусть $X_1, X_2, ..., X_n, ...$ – последовательность независимых, одинаково распределённых случайных величин с $0<\Var(X_i)<\infty$, $i \in \mathbb{N}$.  Тогда для любого (борелевского) множества $B \subseteq R$ имеет место $\lim_{n \to \infty} \P\left(\frac{S_n - \E(S_n)}{\sqrt{\Var(S_n)}} \in B\right) = \int_B \frac{1}{\sqrt{2\pi}}e^{-t^2/2} dt$, где $S_n := X_1, ..., X_n$, $n \in \mathbb{N}$.
+	\item Введём случайную величину 
+	\[
+	X_i = \begin{cases}
+	1, & \text{если на i-ом шаге Винни-Пух пошёл направо} \\
+	0, & \text{если пошёл налево}
+	\end{cases}
+	, i=1,..., n;
+	\]
+	Тогда $S_n := X_1 +...+X_n$ означает местоположение Винни-Пуха в $n$-ую минуту его блужданий по прямой.
+	
+	$\E(X_i) = -1 \cdot 1/2 + 1 \cdot 1/2 = 0$,
+	
+	$\E(X_i^2) = (-1)^2 \cdot 1/2 + (1)^2 \cdot 1/2 = 1$,
+	
+	$\Var(X_i) = \E(X_i^2) - \E(X_i)^2 = 1$, 
+	
+	$\E(S_n) = \E(X_1 + ... + X_n ) = \E(X_1) + ... + \E(X_n) = 0$, 
+	
+	$\Var(S_n) = \Var(X_1 + ... + X_n ) = \Var(X_1) + ... + \Var(X_n) = n$
+	
+	\begin{multline}
+	\P(S_n \in (-\infty, -5]) = \P(S_n \leq -5) = \P\left( \frac{S_n-\E(S_n)}{\sqrt{\Var(S_n)}} \leq \frac{-5-0}{\sqrt{n}} \right) \stackrel{n=60}{=} \\
+	 =\P\left( \frac{S_n-\E(S_n)}{\sqrt{\Var(S_n)}} \leq -0.6454\right) \approx \int_{-\infty}^{-0.6454} \frac{1}{\sqrt{2\pi}} e^{-t^2/2} dt = \Phi(-0.6454) = 1-\Phi(0.6454) \approx0.2593
+	\end{multline}
+	\item Для любых $n \in \mathbb{N}$ и всех $x \in \mathbb{R}$ имеет место оценка:
+	\[
+	\bigl|F_{S_n^{*}}(x) - \Phi(x)\bigr| \leq 0.48 \cdot \frac{\E(|\xi_i - \E\xi_i|^3)}{\Var^{3/2}(\xi_i)\cdot\sqrt{n}} \text{,}
+	\]
+	где $\Phi(x) = \int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\,dt$, \; $S_n^* = \frac{S_n - \E(S_n)}{\sqrt{\Var(S_n)}}$, \; $S_n = \xi_1 + \ldots + \xi_n$
+	
+	В нашем случае:
+	\[
+	\P\left( \frac{S_{60} - \E(S_{60})}{\sqrt{\Var(S_{60})}} \leq -0.6454 \right) = \P(S^*_{60} \leq -0.6454) = 
+	F_{S^*_{60}} (-0.6454)
+	\]
+	Согласно неравенству Берри-Эссеена, погрешность $\vert F_{S^*_{60}} (-0.6454) - \Phi(-0.6454) \vert$ оценивается сверху величиной
+	\[
+	0.48 \cdot \frac{\E(\vert X_i - \E(X_i) \vert^3 )}{\Var(X_i)^{3/2} \cdot \sqrt{n}} = 0.48 \cdot \frac{\E(\vert X_i \vert^3)}{1\cdot\sqrt{60}} = \frac{0.48}{\sqrt{60}} \approx0.062
+	\]
+\end{enumerate}
+\item \begin{enumerate}
+	\item Сначала найдём плотность распределения случайной величины $X$. Пусть $x \leq 0 $, тогда $f_X (X) = \int_{-\infty}^{+\infty} f_{X, Y} (x, y) dy  = 0$;
+	
+	Пусть $x >0 $, тогда 
+	\begin{multline*}
+	f_X (X) = \int_{-\infty}^{+\infty} f_{X, Y} (x, y) dy = \int_{0}^{+\infty} 0.005 e^{-0.05x-0.1y} dy = \\
+	= 0.005e^{-0.05x} \int_{0}^{+\infty} e^{-0.1y} dy = 0.005e^{-0.05x} \cdot \left(-10e^{-0.1y} \right) \mid_{y=0}^{y=+\infty} = 0.05 e^{-0.05x}
+	\end{multline*}
+	Таким образом, имеем:
+	\[
+	f_X (x) = \begin{cases}
+	0.05 e^{-0.05x} & \text{при } x>0 \\
+	0 & \text{при } x \leq 0
+	\end{cases}
+	\]
+	То есть $X \sim Exp(\lambda=0.05)$ – случайная величина $X$ имеет показательное распределение с параметром $\lambda = 0.05$.
+	
+	Теперь найдём плотность распределения случайной величины $Y$.
+	
+	Пусть $y \leq 0 $, тогда $f_Y (y) = \int_{-\infty}^{+\infty} f_{X, Y} (x, y) dx  = 0$.
+	
+	Пусть $y > 0 $, тогда
+	\begin{multline*}
+	f_Y (y) = \int_{-\infty}^{+\infty} f_{X, Y} (x, y) dx  = \int_{0}^{+\infty} 0.005 e^{-0.05x-0.1y} dx = \\
+	 = 0.005e^{-0.1y} \int_{0}^{+\infty} e^{-0.05x} dx = 0.005e^{-0.1y} \cdot \left(-20e^{-0.05x} \right) \mid_{x=0}^{x=+\infty} = 0.1 e^{-0.1y}
+	\end{multline*}
+	Таким образом, имеем:
+	\[
+	f_Y (y) = \begin{cases}
+	0.1 e^{-0.1y} & \text{при } y>0 \\
+	0 & \text{при } y \leq 0
+	\end{cases}
+	\]
+	То есть $Y \sim Exp(\lambda=0.1)$ – случайная величина $Y$ имеет показательное распределение с параметром $\lambda = 0.1$.
+	\item Поскольку для любых точек $x, y \in \mathbb{R}$ справедливо равенство $f_{X, Y} (x, y) = f_X (x) \cdot f_Y (y)$, случайные величины $X$ и $Y$ являются независимыми.
+	\item Найдём вероятность $\P(Y>5)$:
+	\[
+	\P(Y>5) = \int_{5}^{+\infty} f_Y (y) dy = \int_{5}^{+\infty}  0.1 e^{-0.1y} dy = 0.1 \cdot (-10 e^{-0.1x}) \mid_{y=5}^{y=+\infty} = e^{-0.5} \approx0.6065  
+	\]
+	\item Требуется найти условную вероятность $\P(Y>8 \mid Y \geq 3)$. Для этого предварительно найдём вероятности $\P(Y>8)$ и $\P(y \geq 3)$:
+	\[
+	\P(Y>8) = \int_{8}^{+\infty} f_Y (y) dy  = \int_{8}^{+\infty}  0.1 e^{-0.1y} dy = 0.1 \cdot (-10 e^{-0.1x}) \mid_{y=8}^{y=+\infty} = e^{-0.8}
+	\]
+	\[
+	\P(Y \geq 3) =  \int_{3}^{+\infty} f_Y (y) dy   = \int_{3}^{+\infty}  0.1 e^{-0.1y} dy = 0.1 \cdot (-10 e^{-0.1x}) \mid_{y=3}^{y=+\infty} = e^{-0.3}
+	\]
+	Теперь находим требуемую условную веростность:
+	\[
+	\P(Y>8 \mid Y \geq 3) = \frac{\P((Y > 8) \cap
+		(Y \geq 3))}{\P(Y \geq 3)} = \frac{\P(Y>8)}{\P(Y \geq 3) } = \frac{e^{-0.8}}{e^{-0.3}} = e^{-0.5} \approx0.6065 
+	\]
+	\item Сначала найдём условную плотность распределения случайной величины $X$ при условии $Y=y$:
+	\begin{multline*}
+	f_{X \mid Y} (x \mid y) = \begin{cases}
+	\frac{f_{X \mid Y} (x, y)}{f_Y (y)} & \text{при } f_Y (y) 0 \\
+	0 & \text{иначе}
+	\end{cases} = 
+	\begin{cases}
+	\frac{0.005e^{-0.05x-0.1y}}{0.1e^{-0.1y}} & \text{при } x>0, \quad y>0 \\
+	0 & \text{иначе}
+	\end{cases} = \\
+	= \begin{cases}
+	0.05 e^{-0.05x} & \text{при } x>0, \quad y>0 \\
+	0 & \text{иначе}
+	\end{cases} = 
+	\begin{cases}
+	f_X (x) & \text{при } y > 0 \\
+	0 & \text{при } y \leq 0
+	\end{cases}
+	\end{multline*}
+	Теперь находим условное математическое ожидание
+	\[
+	\E(X \mid Y=5) = \int_{-\infty}^{+\infty} xf_{X\mid Y} (x \mid 5) dx =  \int_{-\infty}^{+\infty} xf_{X} (x) dx = \E(X) = \frac{1}{0.05} =20
+	\]
+	Здесь мы воспользовались известным фактом, что если $X\sim Exp(\lambda)$, то $\E(X) = \frac{1}{\lambda}$
+	\item Требуется найти вероятность $\P(X-Y > 2)$. Для этого введём множества 
+	
+	$B:=\{(x, y) \in \mathbb{R} : y < x-2 \}$ и $C := \{ (x,y) \in \mathbb{R} : y < x-2, x>0, y> 0  \}$.
+	
+	Заметим, что искомая вероятность  $\P(X-Y > 2)$ может быть записана в виде
+	\[
+	\P(X-Y > 2) = \P((X, Y) \in B ) = \int \int_B f_{X, Y} (x, y) dx dy = \int \int_C f_{X, Y} (x, y) dx dy
+	\]
+	Стало быть, искомая вероятность
+	\begin{multline*}
+	\P(X-Y > 2) = \int \int_C f_{X, Y} (x, y) dx dy = \int_{2}^{+\infty} \left[ \int_{0}^{x-2} f_{X, Y} (x, y) dy \right] dx =\\
+	= \int_{2}^{+\infty} \left[ \int_{0}^{x-2} 0.005e^{-0.05x-0.1y}dy \right] dx 
+	= \int_{2}^{+\infty} \left[ 0.005e^{-0.05x} \cdot (-10e^{-0.1y}) \mid_{y=0}^{y=x-2} \right] dx = \\
+	=  \int_{2}^{+\infty} \left[ 0.005e^{-0.05x} \cdot\left(1-e^{-0.1(x-2)}  \right) \right] dx  = \int_{2}^{+\infty} 0.005e^{-0.05x} dx - \\
+	- \int_{2}^{+\infty} 0.005e^{-0.05x-0.1x+0.2} dx 
+	= 0.05 \cdot \left( -\frac{1}{0.05}e^{-0.05x}  \right) \mid_{x=2}^{x=+\infty} - \\
+	- e^{0.02} \cdot 0.05 \cdot \left( \frac{1}{0.15} e^{-0.15x} \right)\mid_{x=2}^{x=+\infty}
+	= e^{-0.1} -\frac{1}{3} e^{-0.1} = \frac{2}{3}e^{-0.1}  \approx 0.6032
+	\end{multline*}
+\end{enumerate}
+\item Для решения задачи воспользуемся хорошо известными соотношениями:
+\[
+\int_{-\infty}^{+\infty} \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx = 1
+\]
+\[
+\int_{-\infty}^{+\infty} x\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx = \mu
+\]
+\[
+\int_{-\infty}^{+\infty} x^2 \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx = \mu^2 + \sigma^2
+\]
+\begin{enumerate}
+	\item Указанная в задании функция $f_X$ является плотностью распределения, так как она удовлетворяет двум условиям:  $f_X$ является неотрицательной и интеграл от функции $f_X$ в пределах от  $-\infty$ до $+\infty$ равен единице:
+	\[
+	\int_{-\infty}^{+\infty} f_X (x) dx = \frac{1}{2} \cdot \int_{-\infty}^{+\infty}  \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2\sigma^2}} dx  + \frac{1}{2} \int_{-\infty}^{+\infty} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1
+	\]
+	\item $\E(X) =\int_{-\infty}^{+\infty} xf_X (x) dx =  \frac{1}{2} \cdot \int_{-\infty}^{+\infty} x \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2\sigma^2}} dx  + \frac{1}{2}\int_{-\infty}^{+\infty} \cdot x \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1- 1=  0$
+	\item $\E(X^2) = \int_{-\infty}^{+\infty} x^2 f_X (x) dx  =  \frac{1}{2} \cdot \int_{-\infty}^{+\infty} x^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2\sigma^2}} dx  + \frac{1}{2} \int_{-\infty}^{+\infty}\cdot x^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1^2 + 1^2 + (-1)^2 + 1^2 =  2$
+	\item $\Var(X) = \E(X^2) - (\E(X))^2 = 2 - 0^2 = 2$
+\end{enumerate}
+\end{enumerate}
+
 
 
 \subsection{CosmoWar: blue part}
