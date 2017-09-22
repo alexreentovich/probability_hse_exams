@@ -99,7 +99,7 @@ $\P(A|B)=\frac{0.4\cdot 0.3 }{0.4\cdot 0.3+0.6\cdot 0.7}$
 
 Известно, что функция плотности случайной величины  $X$  имеет вид:
 
-$$p\left(x\right)=\left\{\begin{array}{l} {cx^{2} ,\quad x\in [-2;2]} \\ {0,\quad x\notin [-2;2]} \end{array}\right. $$
+\[p\left(x\right)=\left\{\begin{array}{l} {cx^{2} ,\quad x\in [-2;2]} \\ {0,\quad x\notin [-2;2]} \end{array}\right. \]
 
 Найдите значение константы  $c$ ,  $\P\left(X>1\right)$ ,  $\E\left(X\right)$ ,  $\E\left(\frac{1}{X^{3} +10} \right)$  и постройте график функции распределения величины  $X$ .
 
@@ -196,7 +196,7 @@ $F(x)=\begin{cases}
 
 Совместный закон распределения случайных величин  $X$  и  $Y$  задан таблицей:
 
-$$\begin{array}{|c|ccc|}  \hline {} & {Y=-1} & {Y=0} & {Y=2} \\  \hline {X=0} & {0,2} & {c} & {0,2} \\ {X=1} & {0,1} & {0,1} & {0,1} \\  \hline  \end{array}$$
+\[\begin{array}{|c|ccc|}  \hline {} & {Y=-1} & {Y=0} & {Y=2} \\  \hline {X=0} & {0,2} & {c} & {0,2} \\ {X=1} & {0,1} & {0,1} & {0,1} \\  \hline  \end{array}\]
 
 Найдите  $c$ ,  $\P\left(Y>-X\right)$ ,  $\E\left(X\cdot Y^{2} \right)$ ,  $\E\left(Y|X>0\right)$
 
@@ -208,7 +208,7 @@ $$\begin{array}{|c|ccc|}  \hline {} & {Y=-1} & {Y=0} & {Y=2} \\  \hline {X=0} & 
 
 Совместная функция плотности имеет вид
 
-$$p_{X,Y} \left(x,y\right)=\left\{\begin{array}{l} {x+y,\quad if\, x\in \left[0;1\right],\, y\in \left[0;1\right]} \\ {0,\quad otherwise} \end{array}\right. $$
+\[p_{X,Y} \left(x,y\right)=\left\{\begin{array}{l} {x+y,\quad if\, x\in \left[0;1\right],\, y\in \left[0;1\right]} \\ {0,\quad otherwise} \end{array}\right. \]
 
 Найдите  $\P\left(Y>X\right)$ ,  $\E\left(X\right)$ ,  $\E\left(X|Y>X\right)$
 

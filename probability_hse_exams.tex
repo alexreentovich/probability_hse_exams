@@ -327,7 +327,7 @@ $\P(A|B)=\frac{0.4\cdot 0.3 }{0.4\cdot 0.3+0.6\cdot 0.7}$
 
 Известно, что функция плотности случайной величины  $X$  имеет вид:
 
-$$p\left(x\right)=\left\{\begin{array}{l} {cx^{2} ,\quad x\in [-2;2]} \\ {0,\quad x\notin [-2;2]} \end{array}\right. $$
+\[p\left(x\right)=\left\{\begin{array}{l} {cx^{2} ,\quad x\in [-2;2]} \\ {0,\quad x\notin [-2;2]} \end{array}\right. \]
 
 Найдите значение константы  $c$ ,  $\P\left(X>1\right)$ ,  $\E\left(X\right)$ ,  $\E\left(\frac{1}{X^{3} +10} \right)$  и постройте график функции распределения величины  $X$ .
 
@@ -424,7 +424,7 @@ $F(x)=\begin{cases}
 
 Совместный закон распределения случайных величин  $X$  и  $Y$  задан таблицей:
 
-$$\begin{array}{|c|ccc|}  \hline {} & {Y=-1} & {Y=0} & {Y=2} \\  \hline {X=0} & {0,2} & {c} & {0,2} \\ {X=1} & {0,1} & {0,1} & {0,1} \\  \hline  \end{array}$$
+\[\begin{array}{|c|ccc|}  \hline {} & {Y=-1} & {Y=0} & {Y=2} \\  \hline {X=0} & {0,2} & {c} & {0,2} \\ {X=1} & {0,1} & {0,1} & {0,1} \\  \hline  \end{array}\]
 
 Найдите  $c$ ,  $\P\left(Y>-X\right)$ ,  $\E\left(X\cdot Y^{2} \right)$ ,  $\E\left(Y|X>0\right)$
 
@@ -436,7 +436,7 @@ $$\begin{array}{|c|ccc|}  \hline {} & {Y=-1} & {Y=0} & {Y=2} \\  \hline {X=0} & 
 
 Совместная функция плотности имеет вид
 
-$$p_{X,Y} \left(x,y\right)=\left\{\begin{array}{l} {x+y,\quad if\, x\in \left[0;1\right],\, y\in \left[0;1\right]} \\ {0,\quad otherwise} \end{array}\right. $$
+\[p_{X,Y} \left(x,y\right)=\left\{\begin{array}{l} {x+y,\quad if\, x\in \left[0;1\right],\, y\in \left[0;1\right]} \\ {0,\quad otherwise} \end{array}\right. \]
 
 Найдите  $\P\left(Y>X\right)$ ,  $\E\left(X\right)$ ,  $\E\left(X|Y>X\right)$
 
@@ -4544,8 +4544,8 @@ $H_{A}$: $\mu =30$  по выборке из 20 наблюдений. Крите
 
 \item
 Если $Y=y(X)$, то $\E(Y)=\int_{-\infty}^{+\infty}y(x)f_X(x)dx$, поэтому:
-$$\E(X_1)=\int_0^{2\pi}\cos z\frac{1}{2\pi} \, dz=0$$
-$$\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}_0=0$$
+\[\E(X_1)=\int_0^{2\pi}\cos z\frac{1}{2\pi} \, dz=0\]
+\[\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}_0=0\]
 \begin{multline*}
 \Cov(X_1;X_2)=\E(X_1X_2)-\E(X_1)\E(X_2)=\E(X_1X_2)=\\
 =\frac{1}{2\pi}\int_0^{2\pi}\sin z \cos zdz=
@@ -4556,22 +4556,22 @@ $$\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}
 \item Пусть $X_i$ — случайная величина, которая равна $1$, если посетитель $i$ выбрал первый вход и $0$, — если второй. $X_i\sim \mathrm{Bi}(1;p)$. Тогда $\bar X=\sum_{i=1}^{100} X_i/1000$ — доля посетителей, вошедших через первый вход. По условию, $\\E(X_i)=\frac{1}{2}$. $\sigma=\sqrt\frac{\frac12\cdot\frac12}{1000}=\frac{1}{20\sqrt{10}}$.
 
 Найдем такое $k$, что $\P(\bar X<k)>0{,}99$:
-$$\P\left(\frac{\bar X-1/2}{\frac{1}{20\sqrt{10}}}<\frac{k-1/2}{\frac{1}{20\sqrt{10}}}\right)>0{,}99$$
-$$\P(Z<10\sqrt{10}(2k-1))>0{,}99$$
-$$10\sqrt{10}(2k-1)>2{,}33$$
-$$k>0{,}536841$$
+\[\P\left(\frac{\bar X-1/2}{\frac{1}{20\sqrt{10}}}<\frac{k-1/2}{\frac{1}{20\sqrt{10}}}\right)>0{,}99\]
+\[\P(Z<10\sqrt{10}(2k-1))>0{,}99\]
+\[10\sqrt{10}(2k-1)>2{,}33\]
+\[k>0{,}536841\]
 Аналогичную долю получаем и для второго гардероба.
 
 Наименьшее необходимое число мест в гардеробе будет равно $\lceil1000k\rceil=\lceil536{,}841\rceil=537$
 
 \item
 (a)
-$$L=\prod_{i=1}^nf_i(x)=\lambda^n e^{-\lambda\sum_{i=1}^nX_i}=\lambda^n e^{-\lambda n\bar X}$$
-$$\ln L=n\ln\lambda-\lambda n\bar X$$
-$$(\ln L)'=n/\lambda-n\bar X$$
-$$(\ln L)''=-n/\lambda^2<0$$
-%$$(\ln L)'=0\Leftrightarrow \lambda=\frac{1}{\bar X}$$
-$$\hat\lambda=\frac{1}{\bar X}$$
+\[L=\prod_{i=1}^nf_i(x)=\lambda^n e^{-\lambda\sum_{i=1}^nX_i}=\lambda^n e^{-\lambda n\bar X}\]
+\[\ln L=n\ln\lambda-\lambda n\bar X\]
+\[(\ln L)'=n/\lambda-n\bar X\]
+\[(\ln L)''=-n/\lambda^2<0\]
+%\[(\ln L)'=0\Leftrightarrow \lambda=\frac{1}{\bar X}\]
+\[\hat\lambda=\frac{1}{\bar X}\]
 (b) Ожидаемая информация Фишера:
 $ I(x;\lambda)=-\E\left(\frac{\partial^2\ln L}{\partial\lambda^2}\right)=\frac{n}{\lambda^2}$
 
@@ -4581,7 +4581,7 @@ $ I(x;\lambda)=-\E\left(\frac{\partial^2\ln L}{\partial\lambda^2}\right)=\frac{n
 
 (c) В нашем случае $\E(\hat\lambda)=\lambda$ и $\Var\left(\hat\lambda\right)=\frac{\lambda^2}{n}$.
 Условие для нахождения доверительного интервала:
-$$z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<z_{0{,}975}$$
+\[z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<z_{0{,}975}\]
 Доверительный интервал:
 
 
@@ -4590,17 +4590,17 @@ $$z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<
 
 
 \item Пользуясь некореллированностью, получаем:
-$$f(x,y)=\frac{1}{2\pi\sigma_x\sigma_y}e^{-0{,}5\left(\frac{(x-\mu_x)^2}{\sigma_x^2}+\frac{(y-\mu_y)^2}{\sigma_y^2}\right)}=
+\[f(x,y)=\frac{1}{2\pi\sigma_x\sigma_y}e^{-0{,}5\left(\frac{(x-\mu_x)^2}{\sigma_x^2}+\frac{(y-\mu_y)^2}{\sigma_y^2}\right)}=
 \frac{1}{\sqrt{2\pi}\sigma_x}e^{-0{,}5\frac{(x-\mu_x)^2}{\sigma_x^2}}\cdot
-\frac{1}{\sqrt{2\pi}\sigma_y}e^{-0{,}5\frac{(y-\mu_y)^2}{\sigma_y^2}}=f(x)\cdot f(y),$$
+\frac{1}{\sqrt{2\pi}\sigma_y}e^{-0{,}5\frac{(y-\mu_y)^2}{\sigma_y^2}}=f(x)\cdot f(y),\]
 Значит величины $X$ и $Y$ независимы, так как $f(x,y)=f(x)\cdot f(y)$.
 
 \item
-$$
+\[
 I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\right)=\\E\left(\left(\frac{\sum^n_{i=1}d\ln f(X_i;\lambda)}{d\lambda}\right)^2 \right)
-$$
+\]
 Все $X_i$ одинаково распределены, поэтому:
-$$\E\left(\left(\frac{d\ln f(X_1;\lambda)}{d\lambda}\right)^2\right)=\E\left(\left(\frac{d\ln f(X_i;\lambda)}{d\lambda}\right)^2\right)$$
+\[\E\left(\left(\frac{d\ln f(X_1;\lambda)}{d\lambda}\right)^2\right)=\E\left(\left(\frac{d\ln f(X_i;\lambda)}{d\lambda}\right)^2\right)\]
 Стало быть,
 \begin{multline}
 I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\right)=E\left(\left(\frac{d\sum^n_{i=1}\ln f(X_i;\lambda)}{d\lambda}\right)^2 \right)=\\
@@ -4973,11 +4973,11 @@ f(x,y)=\frac{1}{x}e^{-x},\: \text{при}\: 0<y<x
 Продолжительность 1 час 10 минут, разрешено пользоваться конспектами, книжками, заготовками программ, нельзя общаться, использовать Интернет. Текст работы в группах с R:
 
 \begin{enumerate}
-\item Величины $X$ и $Y$ независимы. Величина $X$ распределена нормально, $X\sim N(4.1,6.6)$, величина $Y$ распределена экспоненциально, $Y\sim exp(\lambda=2.1)$. Используя симуляционный подход примерно посчитайте
+\item Величины $X$ и $Y$ независимы. Величина $X$ распределена нормально, $X\sim N(4.4,6.6)$, величина $Y$ распределена экспоненциально, $Y\sim exp(\lambda=2.1)$. Используя симуляционный подход примерно посчитайте
 
 \begin{enumerate}
 \item $\P(X+Y>5.2)$
-\item $\E(X/(X+5Y))$
+\item $\E(X/(X+7Y))$
 \item $\Var(XY)$
 \item $\Cov(XY,X/Y)$
 \end{enumerate}
@@ -5252,7 +5252,7 @@ $\P()$ & $0.4$ & $0.2$ & $?$ \\
 \item В таблице представлены данные по количеству пассажиров «Титаника», поделенные на группы по классу каюты:
 
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Sep 22 21:46:40 2017
+% Fri Sep 22 21:54:05 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrr}
@@ -5609,10 +5609,10 @@ $Z=(X,Y)$ с математическим ожиданием $\E(Z)=(175,74)$ и
 \subsection{Контрольная работа №2, 25.12.2013}
 
 \noindent Самая важная формула:
-$$ \frac{1}{(\sqrt{2\pi})^n \sqrt{det(C)}} \cdot e^{-\frac{1}{2}\left(x-\mu\right)^T C^{-1}\left(x-\mu\right)} $$
+\[ \frac{1}{(\sqrt{2\pi})^n \sqrt{det(C)}} \cdot e^{-\frac{1}{2}\left(x-\mu\right)^T C^{-1}\left(x-\mu\right)} \]
 
 \noindent Неравенство Берри-Эссеена:
-$$ | \hat{F}_n (x) - \text{Ф}(x)| \leqslant \frac{C_0 \E|X_n - \mu|^3}{\sigma^3\sqrt{n}}, \;\;\; 0.4 <C_0<0.48$$
+\[ | \hat{F}_n (x) - \text{Ф}(x)| \leqslant \frac{C_0 \E|X_n - \mu|^3}{\sigma^3\sqrt{n}}, \;\;\; 0.4 <C_0<0.48\]
 
 \centering{\subsubsection*{Тест}}
 \begin{enumerate}
@@ -5732,9 +5732,9 @@ $C = \begin{pmatrix}
 \item 	По выборке независимых одинаково распределенных случайных величин\\ $X_1,\dots,X_n$ с функцией плотности $f(x)=\frac{1}{\theta} x^{-1+\frac{1}{\theta}}$, $x\in(0, 1)$, найдите оценки максимального правдоподобия параметра $\theta$. Сформулируйте определения свойств несмещенности, состоятельности и эффективности и проверьте, выполняются ли эти свойства для найденной оценки.
 \end{enumerate}
 \underline{Примечание.} В помощь несчастным, забывшим формулу интегрирования по частям и таблицу неопределенных интегралов, или просто ленивым студентам:
-$$
+\[
 \int\limits_{0}^1 t^\alpha \ln (t) dt = -\frac{1}{(\alpha+1)^2}
-$$
+\]
 
 
 

@@ -991,8 +991,8 @@ $H_{A}$: $\mu =30$  по выборке из 20 наблюдений. Крите
 
 \item
 Если $Y=y(X)$, то $\E(Y)=\int_{-\infty}^{+\infty}y(x)f_X(x)dx$, поэтому:
-$$\E(X_1)=\int_0^{2\pi}\cos z\frac{1}{2\pi} \, dz=0$$
-$$\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}_0=0$$
+\[\E(X_1)=\int_0^{2\pi}\cos z\frac{1}{2\pi} \, dz=0\]
+\[\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}_0=0\]
 \begin{multline*}
 \Cov(X_1;X_2)=\E(X_1X_2)-\E(X_1)\E(X_2)=\E(X_1X_2)=\\
 =\frac{1}{2\pi}\int_0^{2\pi}\sin z \cos zdz=
@@ -1003,22 +1003,22 @@ $$\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}
 \item Пусть $X_i$ — случайная величина, которая равна $1$, если посетитель $i$ выбрал первый вход и $0$, — если второй. $X_i\sim \mathrm{Bi}(1;p)$. Тогда $\bar X=\sum_{i=1}^{100} X_i/1000$ — доля посетителей, вошедших через первый вход. По условию, $\\E(X_i)=\frac{1}{2}$. $\sigma=\sqrt\frac{\frac12\cdot\frac12}{1000}=\frac{1}{20\sqrt{10}}$.
 
 Найдем такое $k$, что $\P(\bar X<k)>0{,}99$:
-$$\P\left(\frac{\bar X-1/2}{\frac{1}{20\sqrt{10}}}<\frac{k-1/2}{\frac{1}{20\sqrt{10}}}\right)>0{,}99$$
-$$\P(Z<10\sqrt{10}(2k-1))>0{,}99$$
-$$10\sqrt{10}(2k-1)>2{,}33$$
-$$k>0{,}536841$$
+\[\P\left(\frac{\bar X-1/2}{\frac{1}{20\sqrt{10}}}<\frac{k-1/2}{\frac{1}{20\sqrt{10}}}\right)>0{,}99\]
+\[\P(Z<10\sqrt{10}(2k-1))>0{,}99\]
+\[10\sqrt{10}(2k-1)>2{,}33\]
+\[k>0{,}536841\]
 Аналогичную долю получаем и для второго гардероба.
 
 Наименьшее необходимое число мест в гардеробе будет равно $\lceil1000k\rceil=\lceil536{,}841\rceil=537$
 
 \item
 (a)
-$$L=\prod_{i=1}^nf_i(x)=\lambda^n e^{-\lambda\sum_{i=1}^nX_i}=\lambda^n e^{-\lambda n\bar X}$$
-$$\ln L=n\ln\lambda-\lambda n\bar X$$
-$$(\ln L)'=n/\lambda-n\bar X$$
-$$(\ln L)''=-n/\lambda^2<0$$
-%$$(\ln L)'=0\Leftrightarrow \lambda=\frac{1}{\bar X}$$
-$$\hat\lambda=\frac{1}{\bar X}$$
+\[L=\prod_{i=1}^nf_i(x)=\lambda^n e^{-\lambda\sum_{i=1}^nX_i}=\lambda^n e^{-\lambda n\bar X}\]
+\[\ln L=n\ln\lambda-\lambda n\bar X\]
+\[(\ln L)'=n/\lambda-n\bar X\]
+\[(\ln L)''=-n/\lambda^2<0\]
+%\[(\ln L)'=0\Leftrightarrow \lambda=\frac{1}{\bar X}\]
+\[\hat\lambda=\frac{1}{\bar X}\]
 (b) Ожидаемая информация Фишера:
 $ I(x;\lambda)=-\E\left(\frac{\partial^2\ln L}{\partial\lambda^2}\right)=\frac{n}{\lambda^2}$
 
@@ -1028,7 +1028,7 @@ $ I(x;\lambda)=-\E\left(\frac{\partial^2\ln L}{\partial\lambda^2}\right)=\frac{n
 
 (c) В нашем случае $\E(\hat\lambda)=\lambda$ и $\Var\left(\hat\lambda\right)=\frac{\lambda^2}{n}$.
 Условие для нахождения доверительного интервала:
-$$z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<z_{0{,}975}$$
+\[z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<z_{0{,}975}\]
 Доверительный интервал:
 
 
@@ -1037,17 +1037,17 @@ $$z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<
 
 
 \item Пользуясь некореллированностью, получаем:
-$$f(x,y)=\frac{1}{2\pi\sigma_x\sigma_y}e^{-0{,}5\left(\frac{(x-\mu_x)^2}{\sigma_x^2}+\frac{(y-\mu_y)^2}{\sigma_y^2}\right)}=
+\[f(x,y)=\frac{1}{2\pi\sigma_x\sigma_y}e^{-0{,}5\left(\frac{(x-\mu_x)^2}{\sigma_x^2}+\frac{(y-\mu_y)^2}{\sigma_y^2}\right)}=
 \frac{1}{\sqrt{2\pi}\sigma_x}e^{-0{,}5\frac{(x-\mu_x)^2}{\sigma_x^2}}\cdot
-\frac{1}{\sqrt{2\pi}\sigma_y}e^{-0{,}5\frac{(y-\mu_y)^2}{\sigma_y^2}}=f(x)\cdot f(y),$$
+\frac{1}{\sqrt{2\pi}\sigma_y}e^{-0{,}5\frac{(y-\mu_y)^2}{\sigma_y^2}}=f(x)\cdot f(y),\]
 Значит величины $X$ и $Y$ независимы, так как $f(x,y)=f(x)\cdot f(y)$.
 
 \item
-$$
+\[
 I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\right)=\\E\left(\left(\frac{\sum^n_{i=1}d\ln f(X_i;\lambda)}{d\lambda}\right)^2 \right)
-$$
+\]
 Все $X_i$ одинаково распределены, поэтому:
-$$\E\left(\left(\frac{d\ln f(X_1;\lambda)}{d\lambda}\right)^2\right)=\E\left(\left(\frac{d\ln f(X_i;\lambda)}{d\lambda}\right)^2\right)$$
+\[\E\left(\left(\frac{d\ln f(X_1;\lambda)}{d\lambda}\right)^2\right)=\E\left(\left(\frac{d\ln f(X_i;\lambda)}{d\lambda}\right)^2\right)\]
 Стало быть,
 \begin{multline}
 I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\right)=E\left(\left(\frac{d\sum^n_{i=1}\ln f(X_i;\lambda)}{d\lambda}\right)^2 \right)=\\
