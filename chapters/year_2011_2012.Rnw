@@ -1,7 +1,7 @@
 \subsection{Контрольная работа №1, 24.10.2011}
 
 \textbf{Quote}\\
-...all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind...\\
+\ldots all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind\ldots\\
 George Edward Pelham Box\\
 
 \textbf{УДАЧИ!} \\
@@ -334,7 +334,7 @@ f(x,y)=\begin{cases}
 
 Ответы:
 \begin{enumerate}
-\item $\P(X+Y>1)=4/5$. Здесь нужно брать интеграл...
+\item $\P(X+Y>1)=4/5$. Здесь нужно брать интеграл\ldots
 \item $\E(X)=13/20=0{,}65$, $\E(XY)=2/5=0{,}4$, $\Cov(X,Y)=-9/400=-0{,}0225$
 \item Нет, так как функция плотности не раскладывается в произведение $h(x)\cdot g(y)$.
 \item Да, так как функция плотности симметрична по $x$ и $y$
@@ -604,56 +604,56 @@ bc=-1
 \subsection{Контрольная работа №3, 13.03.2012, решения}
 
 \begin{enumerate}
-	\item 
+	\item
 		\begin{enumerate}
-			
+
 			\item $L (x, \lambda) = \prod_{i=1}^{n}\lambda e^{-\lambda x_i} = \lambda^n e^{-\lambda \sum_{i=1}^{n}x_i}$
-			
+
 			$\ln L (x, \lambda) = n\ln\lambda - \lambda\sum_{i=1}^n x_i \to \max_\lambda$
-			
+
 			$\frac{\partial \ln L}{\partial \lambda} = \frac{n}{\lambda} - \sum_{i=1}^{n}x_i \mid_{\lambda = \hat{\lambda}} = 0 \Rightarrow \hat{\lambda}_{ML} = \frac{1}{\overline{X}}$
-			
+
 			$\frac{\partial^2 \ln L}{\partial \lambda^2} = -\frac{n}{\lambda^2} \mid_{\lambda=\hat{\lambda}} < 0$
-			
+
 			\item $\hat{a} = \overline{X}$
-			
+
 			\item $\mathbb{E}(\hat{a}) = \mathbb{E}(\overline{X}) = \frac{1}{\lambda} \Rightarrow$  несмещённая
-			
+
 			\item $\Var(\hat{a}) = \Var(\overline{X}) = \frac{1}{n}n\Var(X_i) = \frac{1}{n\lambda^2} \to_{n-\to\infty} 0 \Rightarrow$ состоятельная
-			
-			\item   
-			
+
+			\item
+
 			\item $\mathbb{E}(X) = \frac{1}{\lambda} \mid_{\lambda = \hat{\lambda}_{MM}} = \overline{X} \Rightarrow \lambda_{MM} = \frac{1}{\overline{X}}$
 		\end{enumerate}
-		
+
 	\item
 		\begin{enumerate}
 			\item Истинное стандартное отклонение неизвестно, поэтому используем распределение Стьюдента:
-			
+
 			$\overline{X} - t_{0.025, 99}\frac{\hat{\sigma}}{\sqrt{n}} < \mu < \overline{X} + t_{0.025, 99}\frac{\hat{\sigma}}{\sqrt{n}}$
-			
+
 			$9.5 - 1.98 \frac{0.5}{\sqrt{100}} < \mu < 9.5 - 1.98 \frac{0.5}{\sqrt{100}} $
-			
+
 			$9.4 < \mu < 9.6$
-			
+
 			\item  Значение 10 не лежит в доверительном интервале, значит, гипотеза отвергается
-			
+
 			$t_{obs} = \frac{9.5-10}{0.5/\sqrt{100}} = 10 \Rightarrow \text{p-value} \approx 0$
-			
+
 		\end{enumerate}
-	
-	\item 
+
+	\item
 		\begin{enumerate}
 			\item $\frac{\hat{\sigma}_\alpha^2}{\hat{\sigma}_\beta^2} \sim F_{n_{\alpha-1}, n_{\beta-1}}$
-			
+
 			$F_{obs} = \frac{0.5}{0.6} \approx 0.83$, $\text{p-value}/ 2\approx 0.35 \Rightarrow$ на любом разумном уровне значимости оснований отвергать $H_0$ нет
-			
+
 			\item $\hat{\sigma}_0^2 = \frac{\hat{\sigma}_\alpha^2(n_\alpha -1) + \hat{\sigma}_\beta^2(n_\beta-1)}{n_\alpha+n_\beta-2} = \frac{0.25\cdot19 + 0.36\cdot24}{20+25-2}=0.31$
-			
+
 			$\frac{\overline{X} - \overline{Y}}{\hat{\sigma}_0 \sqrt{\frac{1}{n_\alpha}+\frac{1}{n_\beta}}} \sim t_{n_\alpha+n_\beta-2}$
-			
+
 			$t_{obs} = \frac{9.5-9.8}{0.56\sqrt{\frac{1}{20}+ \frac{1}{25}}} = -1.79$, $\text{p-value}/2=0.04$
-			
+
 			* В этой задаче p-value посчитаны в R
 		\end{enumerate}
 \end{enumerate}
@@ -687,7 +687,7 @@ bc=-1
 \item Ровно один из ответов — верный
 \item В графу «Ответ» требуется вписать номер правильного ответа
 \item Неправильные ответы не штрафуются.
-\item Если Вы считаете, что на вопрос нет правильного ответа или есть несколько правильных ответов, то... возрадуйтесь! Ибо такой вопрос будет засчитан всем как верный.
+\item Если Вы считаете, что на вопрос нет правильного ответа или есть несколько правильных ответов, то\ldots возрадуйтесь! Ибо такой вопрос будет засчитан всем как верный.
 \item Было дано 45 минут. Возможно это было много.
 \item Удачи!
 \end{enumerate}
@@ -965,7 +965,7 @@ $H_{A}$: $\mu =30$  по выборке из 20 наблюдений. Крите
 
 
 
-И Последняя задача...
+И Последняя задача\ldots
 
 \item Пирсон придумал хи-квадрат тест на независимость признаков около 1900 года. При этом он не был уверен в правильном количестве степеней свободы. Он разошелся во мнениях с Фишером. Фишер считал, что для таблицы два на два хи-квадрат статистика будет иметь три степени свободы, а Пирсон — что одну. Чтобы выяснить истину, Фишер взял большое количество таблиц два на два с заведомо независимыми признаками и посчитал среднее значение хи-квадрат статистики.
 \begin{enumerate}
@@ -991,8 +991,8 @@ $H_{A}$: $\mu =30$  по выборке из 20 наблюдений. Крите
 
 \item
 Если $Y=y(X)$, то $\E(Y)=\int_{-\infty}^{+\infty}y(x)f_X(x)dx$, поэтому:
-$$\E(X_1)=\int_0^{2\pi}\cos z\frac{1}{2\pi} \, dz=0$$
-$$\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}_0=0$$
+\[\E(X_1)=\int_0^{2\pi}\cos z\frac{1}{2\pi} \, dz=0\]
+\[\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}_0=0\]
 \begin{multline*}
 \Cov(X_1;X_2)=\E(X_1X_2)-\E(X_1)\E(X_2)=\E(X_1X_2)=\\
 =\frac{1}{2\pi}\int_0^{2\pi}\sin z \cos zdz=
@@ -1003,22 +1003,22 @@ $$\E(X_2)=\int_0^{2\pi}\sin z\frac{1}{2\pi} dz=-\frac{\cos z}{2\pi}\Bigg|^{2\pi}
 \item Пусть $X_i$ — случайная величина, которая равна $1$, если посетитель $i$ выбрал первый вход и $0$, — если второй. $X_i\sim \mathrm{Bi}(1;p)$. Тогда $\bar X=\sum_{i=1}^{100} X_i/1000$ — доля посетителей, вошедших через первый вход. По условию, $\\E(X_i)=\frac{1}{2}$. $\sigma=\sqrt\frac{\frac12\cdot\frac12}{1000}=\frac{1}{20\sqrt{10}}$.
 
 Найдем такое $k$, что $\P(\bar X<k)>0{,}99$:
-$$\P\left(\frac{\bar X-1/2}{\frac{1}{20\sqrt{10}}}<\frac{k-1/2}{\frac{1}{20\sqrt{10}}}\right)>0{,}99$$
-$$\P(Z<10\sqrt{10}(2k-1))>0{,}99$$
-$$10\sqrt{10}(2k-1)>2{,}33$$
-$$k>0{,}536841$$
+\[\P\left(\frac{\bar X-1/2}{\frac{1}{20\sqrt{10}}}<\frac{k-1/2}{\frac{1}{20\sqrt{10}}}\right)>0{,}99\]
+\[\P(Z<10\sqrt{10}(2k-1))>0{,}99\]
+\[10\sqrt{10}(2k-1)>2{,}33\]
+\[k>0{,}536841\]
 Аналогичную долю получаем и для второго гардероба.
 
 Наименьшее необходимое число мест в гардеробе будет равно $\lceil1000k\rceil=\lceil536{,}841\rceil=537$
 
 \item
 (a)
-$$L=\prod_{i=1}^nf_i(x)=\lambda^n e^{-\lambda\sum_{i=1}^nX_i}=\lambda^n e^{-\lambda n\bar X}$$
-$$\ln L=n\ln\lambda-\lambda n\bar X$$
-$$(\ln L)'=n/\lambda-n\bar X$$
-$$(\ln L)''=-n/\lambda^2<0$$
-%$$(\ln L)'=0\Leftrightarrow \lambda=\frac{1}{\bar X}$$
-$$\hat\lambda=\frac{1}{\bar X}$$
+\[L=\prod_{i=1}^nf_i(x)=\lambda^n e^{-\lambda\sum_{i=1}^nX_i}=\lambda^n e^{-\lambda n\bar X}\]
+\[\ln L=n\ln\lambda-\lambda n\bar X\]
+\[(\ln L)'=n/\lambda-n\bar X\]
+\[(\ln L)''=-n/\lambda^2<0\]
+%\[(\ln L)'=0\Leftrightarrow \lambda=\frac{1}{\bar X}\]
+\[\hat\lambda=\frac{1}{\bar X}\]
 (b) Ожидаемая информация Фишера:
 $ I(x;\lambda)=-\E\left(\frac{\partial^2\ln L}{\partial\lambda^2}\right)=\frac{n}{\lambda^2}$
 
@@ -1028,7 +1028,7 @@ $ I(x;\lambda)=-\E\left(\frac{\partial^2\ln L}{\partial\lambda^2}\right)=\frac{n
 
 (c) В нашем случае $\E(\hat\lambda)=\lambda$ и $\Var\left(\hat\lambda\right)=\frac{\lambda^2}{n}$.
 Условие для нахождения доверительного интервала:
-$$z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<z_{0{,}975}$$
+\[z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<z_{0{,}975}\]
 Доверительный интервал:
 
 
@@ -1037,17 +1037,17 @@ $$z_{0{,}025}<\frac{\hat\lambda-\lambda}{\sqrt{\Var\left(\hat{\lambda}\right)}}<
 
 
 \item Пользуясь некореллированностью, получаем:
-$$f(x,y)=\frac{1}{2\pi\sigma_x\sigma_y}e^{-0{,}5\left(\frac{(x-\mu_x)^2}{\sigma_x^2}+\frac{(y-\mu_y)^2}{\sigma_y^2}\right)}=
+\[f(x,y)=\frac{1}{2\pi\sigma_x\sigma_y}e^{-0{,}5\left(\frac{(x-\mu_x)^2}{\sigma_x^2}+\frac{(y-\mu_y)^2}{\sigma_y^2}\right)}=
 \frac{1}{\sqrt{2\pi}\sigma_x}e^{-0{,}5\frac{(x-\mu_x)^2}{\sigma_x^2}}\cdot
-\frac{1}{\sqrt{2\pi}\sigma_y}e^{-0{,}5\frac{(y-\mu_y)^2}{\sigma_y^2}}=f(x)\cdot f(y),$$
+\frac{1}{\sqrt{2\pi}\sigma_y}e^{-0{,}5\frac{(y-\mu_y)^2}{\sigma_y^2}}=f(x)\cdot f(y),\]
 Значит величины $X$ и $Y$ независимы, так как $f(x,y)=f(x)\cdot f(y)$.
 
 \item
-$$
+\[
 I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\right)=\\E\left(\left(\frac{\sum^n_{i=1}d\ln f(X_i;\lambda)}{d\lambda}\right)^2 \right)
-$$
+\]
 Все $X_i$ одинаково распределены, поэтому:
-$$\E\left(\left(\frac{d\ln f(X_1;\lambda)}{d\lambda}\right)^2\right)=\E\left(\left(\frac{d\ln f(X_i;\lambda)}{d\lambda}\right)^2\right)$$
+\[\E\left(\left(\frac{d\ln f(X_1;\lambda)}{d\lambda}\right)^2\right)=\E\left(\left(\frac{d\ln f(X_i;\lambda)}{d\lambda}\right)^2\right)\]
 Стало быть,
 \begin{multline}
 I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\right)=E\left(\left(\frac{d\sum^n_{i=1}\ln f(X_i;\lambda)}{d\lambda}\right)^2 \right)=\\
@@ -1055,5 +1055,3 @@ I_n=\E\left(\left(\frac{d\ln L(X_1;X_2;\ldots;X_n;\lambda)}{d\lambda}\right)^2\r
 \end{multline}
 
 \end{enumerate}
-
-

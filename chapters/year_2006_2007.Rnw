@@ -72,7 +72,7 @@ $\P(X=0)=e^{-4}$ \\
 5.1. \\
 \begin{tabular}{|c|c|c|c|c|}
   \hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} \ldots
   $x_{i}$ & 1 & 2 & 3 & 4 \\
   \hline
   $\P(X=x_{i})$ & $0,6$& $(1-0,6)\cdot 0,5$ & $(1-0,6)\cdot(1-0,5)\cdot 0,4$ & $1-p_{1}-p_{2}-p_{3}$ \\
@@ -80,7 +80,7 @@ $\P(X=0)=e^{-4}$ \\
 \end{tabular} \\
 \begin{tabular}{|c|c|c|c|c|}
   \hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} \ldots
   $x_{i}$ & 1 & 2 & 3 & 4 \\
   \hline
   $\P(X=x_{i})$ & $0,6$& $0,2$ & $0,08$ & $0,12$ \\
@@ -108,8 +108,8 @@ $\E(X^{2})=\int_{0}^{2}t^{2}\cdot p(t)dt=\int_{0}^{2}t^{2}\cdot
 
 $\E(X)=10=\frac{1}{\lambda}$, $\lambda=\frac{1}{10}$, $p(t)=\lambda
 e^{\lambda t}$ при $t>0$ \\
-$\P(X>15)=\int_{15}^{\infty}p(t)dt=...=e^{-\frac{3}{2}}$ \\
-$\P(X>25|X>10)=\frac{\P(X>25)}{\P(X>10)}=...=e^{-\frac{3}{2}}$ \\
+$\P(X>15)=\int_{15}^{\infty}p(t)dt=\ldots=e^{-\frac{3}{2}}$ \\
+$\P(X>25|X>10)=\frac{\P(X>25)}{\P(X>10)}=\ldots=e^{-\frac{3}{2}}$ \\
 
 Дополнительная задача: \\
 Пусть случайные величины $X_{1}$ и $X_{2}$ независимы и равномерно
@@ -223,7 +223,7 @@ $\E(X)=\int_{0}^{1}\int_{0}^{1}x(x+y)dxdy=\frac{7}{12}$ $[5]$\\
 В супермаркете «Покупан» продаются различные вина: \\
 \begin{tabular}{|c|c|c|c|}
   \hline
-  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} \ldots
   Вина & Доля & Средняя цена за бутылку (у.е.) & Стандартное отклонение (у.е.) \\
   \hline
   Элитные & 0,1 & 150 & 24 \\
@@ -241,7 +241,7 @@ $\E(X)=\int_{0}^{1}\int_{0}^{1}x(x+y)dxdy=\frac{7}{12}$ $[5]$\\
 Используя метод множителей Лагранжа: \\
 $L=\frac{(0.1\cdot 24)^{2}}{a}+\frac{(0.3\cdot
 12)^{2}}{b}+\frac{(0.6\cdot 10)^{2}}{c}+\lambda(10-a-b-c)$\\
-... \\
+\ldots \\
 $a=2$, $b=3$, $c=5$, можно было использовать готовую формулу
 $n_{i}=\frac{w_{i}\sigma_{i}}{\sum w_{j}\sigma_{j}}$ \\
 $\Var(\bar{X}^{s})=14,4$ \\
@@ -357,9 +357,9 @@ $e_{97}=\frac{1}{100}e_{98}+\frac{1}{100}e_{99}+\frac{98}{100}e_{100}+1=(1+\frac
 \\
 $e_{96}=\frac{1}{100}e_{97}+\frac{1}{100}e_{98}+\frac{1}{100}e_{99}+\frac{97}{100}e_{100}+1=(1+\frac{1}{100})^{3}$
 \\
-... \\
+\ldots \\
 По индукции легко доказать, что $e_{n}=(1+\frac{1}{100})^{99-n}$ \\
-Таким образом, $e_{0}=(1+\frac{1}{100})^{99}=2.718...$ \\
+Таким образом, $e_{0}=(1+\frac{1}{100})^{99}=2.718\ldots$ \\
 
 Требуется решить \textbf{\underbar{одну}} из двух 11-х задач по
 выбору! \\
