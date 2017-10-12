@@ -10,7 +10,7 @@ $(file_name).pdf: $(file_name).tex
 
 	# create pdf
 	# will automatically run pdflatex/biber if necessary
-	latexmk -xelatex -pdf $(file_name).tex
+	latexmk -xelatex $(file_name).tex
 
 	# clean auxillary files
 	latexmk -c $(file_name).tex
@@ -21,4 +21,5 @@ $(file_name).tex : $(file_name).Rnw chapters/*.Rnw
 
 clean:
 	latexmk -c $(file_name).tex
-	-rm $(file_name).tex $(file_name).amc $(file_name).bbl $(file_name).log $(file_name).fdb_latexmk $(file_name).fls
+	-rm $(file_name).amc $(file_name).bbl $(file_name).log
+	-rm $(file_name).fdb_latexmk $(file_name).fls $(file_name).xdv
