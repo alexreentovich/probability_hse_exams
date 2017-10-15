@@ -59,13 +59,87 @@ $Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
 
 \end{enumerate}
 
-Некоторые ответы:
+
+
+\subsection{Контрольная работа №1, 5.11.2013, решения}
+
 \begin{enumerate}
-\item xx
+\item Введём обозначения:
+\begin{itemize}
+\item $\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) = 0.18$ — Вася пришёл, а девушки — нет
+\item $\P(\text{В} | \text{A} \cap \text{М}) = 0.9$ — пришли и Вася, и девушки
+\item $\P(\text{В} | \text{A}^{c} \cap \text{М}) = 0.54$ — Вася пришёл, если пришла только Маша
+\item $\P(\text{В} | \text{A} \cap \text{М}^{c}) = 0.36$ — Вася пришёл, если пришла только Алёна
+\item $\P(\text{М}) = 0.4$ — Маша пришла на лекцию
+\item $\P(\text{А}) = 0.6$ — Алёна пришла на лекцию
+\end{itemize}
+\begin{enumerate}
+\item Используя формулы Байеса и полной вероятности, получим:
+\begin{multline*}
+\P(\text{A} | \text{В} ) = \frac{\P(\text{A} \cap \text{В})}{\P(\text{В})} =  \\
+=\frac{\P(\text{В} | \text{A}) \cdot \P(\text{А})}{\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) \cdot \P(\text{A}^{c} \cap \text{М}^{c})+
+\P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{A} \cap \text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{A}^{c} \cap \text{М})+
+\P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{A} \cap \text{М}^{c})} = \\
+= \frac{P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{А}) \cdot \P(\text{М}) + \P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{А})
+ \cdot \P(\text{М}^{c})}{\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) \cdot \P(\text{A}^{c} \cap \text{М}^{c})+
+ \P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{A} \cap \text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{A}^{c} \cap \text{М})+
+ \P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{A} \cap \text{М}^{c})} = \\
+ = \frac{0.9 \cdot 0.4 \cdot 0.6 + 0.36 \cdot 0.6 \cdot 0.6}{0.18 \cdot 0.6 \cdot 0.4 + 0.9 \cdot 0.4 \cdot 0.6 + 0.54 \cdot 0.4 \cdot 0.4 + 0.36 \cdot 0.6 \cdot 0.6} = 0.(72)
+\end{multline*}
+\item \begin{multline*}
+\P(\text{М} | \text{В}) = \frac{\P(\text{М} \cap \text{В})}{\P(\text{В})} = \\
+\frac{P(\text{В} | \text{М} \cap \text{А}) \cdot \P(\text{А}) \cdot \P(\text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{А}^{c})
+ \cdot \P(\text{М})}{\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) \cdot \P(\text{A}^{c} \cap \text{М}^{c})+
+ \P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{A} \cap \text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{A}^{c} \cap \text{М})+
+ \P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{A} \cap \text{М}^{c})} = \\
+ = \frac{0.9 \cdot 0.4 \cdot 0.6 + 0.54 \cdot 0.4 \cdot 0.4}{0.18 \cdot 0.6 \cdot 0.4 + 0.9 \cdot 0.4 \cdot 0.6 + 0.54 \cdot 0.4 \cdot 0.4 + 0.36 \cdot 0.6 \cdot 0.6} = 0.(63)
+\end{multline*}
+Если Вася на лекции, вероятность застать на ней Алёну выше.
+\end{enumerate}
+
+
 \item $\P(X=5)=C_{100}^5 0.002^5 0.998^{95}$, $\E(X)=0.2$, $\Var(X)=0.2\cdot 0.998$, наиболее вероятно событие $X=0$
 \item $c=1/2$, $P=5/8$, $\E(X)=0$, $\Var(X)=2$, $\E(X^{2k+1})=0$, $\E(X^{2k})=(2k)!$
-\item xx
-\item xx
+\item
+\begin{enumerate}
+\item $\E(Y - 2X - 3) = \E(Y) - 2 \E(X) - 3 = 0$
+
+$\Var(Y - 2X - 3) = \Var(Y) + 4\Var(X) - 2\Cov(Y, 2X) = 16$
+
+$\Cov(X, Y) = \Corr(X,Y) \cdot \sqrt{\Var(X) \cdot \Var(Y)} = 6$
+\item $\Corr(Y - 2X - 3, X) = \frac{\Cov(Y, X) - 2 \Var(X)}{\sqrt{\Var(Y - 2X - 3) \cdot \Var(X)}} = -1$
+\item Корреляция равна 1, значит, есть линейная взаимосвязь между переменными. Пусть $Y+\beta X=const$, тогда $\Var(Y+\beta X)=0$. Решая уравнение находим, что $\beta=-2/3$.
+\end{enumerate}
+\item \begin{enumerate}
+\item
+$
+\begin{tabular}{c|ccc}
+      & $X = -1$    & $X = 0$ & $X = 1$       \\ \cline{1-4}
+$\P_X$  & $0.3$       & $0.3$   & $0.4$      \\
+\end{tabular}
+$
+и
+$
+\begin{tabular}{c|cc}
+        & $Y = -1$    & $Y = 1$        \\ \cline{1-3}
+$\P_Y$  & $0.5$       & $0.5$        \\
+\end{tabular}
+$
+\item
+\begin{multline*}
+\Cov(X, Y) = \E(XY) - \E(X) \E(Y)  = (-1)\cdot (-1) \cdot 0.1 + (-1) \cdot 0 \cdot 0.2 + \\
++ (-1) \cdot 1 \cdot 0.2 + 1 \cdot (-1) \cdot 0.2 + 1 \cdot 0 \cdot 0.1 + 1 \cdot 1 \cdot 0.1 -
+0.1 \cdot 0 = -0.1
+\end{multline*}
+\item Да, поскольку если случайные величины независимы, то их ковариция равна нулю.
+\item $
+\begin{tabular}{c|ccc}
+                   & $X = -1 | Y = -1$    & $X = 0 | Y = -1$ & $X = 1 | Y = -1$       \\ \cline{1-4}
+$\P_{X | Y = -1}$  & $0.2$       & $0.4$   & $0.4$      \\
+\end{tabular}
+$
+\item $\E(X | Y = -1) = -1 \cdot 0.2 + 0 \cdot 0.4 + 1 \cdot 0.4 = 0.2$
+\end{enumerate}
 \end{enumerate}
 
 
@@ -104,8 +178,6 @@ $Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
 \item  $\Corr(Y-2X-3,X)$
 \item Можно ли выразить $Y$ через $X$? Если да, то запишите уравнение связи.
 \end{enumerate}
-
-Решение: корреляция равна 1, значит есть линейная взаимосвязь между переменными. Пусть $Y+\beta X=const$, тогда $\Var(Y+\beta X)=0$. Решая уравнение находим, что $\beta=-2/3$.
 
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
