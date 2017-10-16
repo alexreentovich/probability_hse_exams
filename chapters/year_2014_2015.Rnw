@@ -93,15 +93,13 @@ f(x) =
 
 \item Совместное распределение случайных величин $X$ и $Y$ задано в виде таблицы:
 
-\begin{table}
-\begin{tabular}{|c|c|c|}
-\hline
- & $X=1$ & $X=2$ \\ \hline
-$Y=-1$ & $0.1$ & $0.2$ \\ \hline
-$Y=0$ & $0.2$ & $0.3$ \\ \hline
-$Y=1$ & $0$ & $0.2$ \\ \hline
+\begin{tabular}{c|cc}
+\toprule
+ & $X=1$ & $X=2$ \\ \midrule
+$Y=-1$ & $0.1$ & $0.2$ \\
+$Y=0$ & $0.2$ & $0.3$ \\
+$Y=1$ & $0$ & $0.2$ \\ \bottomrule
 \end{tabular}
-\end{table}
 
 \begin{enumerate}
 \item Найти частные распределения $Y$ и $Y^2$
@@ -174,12 +172,11 @@ p(k) = \P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}
 \]
 Тогда $X = \sum\limits_{i=1}^{400}X_i$. Рассмотрим отдельно $X_i$: \hspace{0.5cm}
 \begin{minipage}{0.3\linewidth}
-
-\begin{tabular}{c|c|c}
-$X_i$ & 1 & 0 \\
-\hline
-$\P(X_i = \cdot)$ & $\frac{1}{500} $ & $\frac{499}{500}$
-\end{tabular}
+  \begin{tabular}{@{}ccc@{}}
+  \toprule
+  $X$         & $1$             & $0$               \\ \midrule
+  $\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
+  \end{tabular}
 \end{minipage}
 
 
@@ -318,12 +315,11 @@ $F(x) = \begin{cases}
 
 Тогда $X_A = \sum\limits_{i=1}^{30}X_i$. Рассмотрим отдельно $X_i$: \hspace{0.5cm}
 \begin{minipage}{0.3\linewidth}
-
-\begin{tabular}{c|c|c}
-$X_i$ & 1 & 0 \\
-\hline
-$\P(X_i = \cdot)$ & $0.9$ & $0.1$
-\end{tabular}
+  \begin{tabular}{@{}ccc@{}}
+  \toprule
+  $X$         & $1$             & $0$               \\ \midrule
+  $\P(\cdot)$ & $0.9$ & $0.1$ \\ \bottomrule
+  \end{tabular}
 \end{minipage}
 
 Вероятность 0.9 дана. Тогда:
@@ -385,61 +381,43 @@ $\P(X_i = \cdot)$ & $0.9$ & $0.1$
  \item $\Cov(X-Y-1, X+Y+1)=0 \Rightarrow \Corr(X-Y-1, X+Y+1) = 0 $
 \end{itemize}
 
-\item
+\item Найдем частные распределения $Y$ и $Y^2$:
 \begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-& $X=1$ & $X=2$\\
-\hline
-$Y=-1$ & 0.1 & 0.2\\
-\hline
-$Y = 0$ & 0.2 & 0.3\\
-\hline
-$Y=1$ & 0 & 0.2 \\
-\hline
-\end{tabular}
-\end{center}
-Найдем частные распределения $Y$ и $Y^2$:
-
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-& $X=1$ & $X=2$ & $\sum$\\
-\hline
-$Y=-1$ & 0.1 & 0.2 & 0.3\\
-\hline
-$Y = 0$ & 0.2 & 0.3 & 0.5\\
-\hline
-$Y=1$ & 0 & 0.2 & 0.2\\
-\hline
-$\sum$ & 0.3 & 0.7 &\\
-\hline
+\begin{tabular}{c|cc|c}
+\toprule
+ & $X=1$ & $X=2$ & $\sum$ \\ \midrule
+$Y=-1$ & $0.1$ & $0.2$ & $0.3$ \\
+$Y=0$ & $0.2$ & $0.3$ & $0.5$ \\
+$Y=1$ & $0$ & $0.2$ & $0.2$ \\
+$\sum$ & $0.3$ & $0.7$ & \\ \bottomrule
 \end{tabular}
 \end{center}
 
 \begin{center}
-\begin{tabular}{c|c|c|c}
-$Y$ &  -1 & 0 & 1 \\
-\hline
-$Pr(Y=\cdot)$ & 0.3 & 0.5 & 0.2
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y$         & $-1$             & $0$      & $1$         \\ \midrule
+$\P(\cdot)$ & $0.3$ & $0.5$  & $0.2$\\ \bottomrule
 \end{tabular}
 \end{center}
- Так как $Y^2$ может принимать только значения 0 или 1:
- \begin{center}
- \begin{tabular}{c|c|c}
- $Y^2$  & 0 & 1 \\
- \hline
- $Pr(Y^2=\cdot)$ & 0.5 & 0.5
- \end{tabular}
- \end{center}
- А ковариация:
- \begin{multline}
+
+Так как $Y^2$ может принимать только значения 0 или 1:
+
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$Y^2$         & $0$             & $1$               \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
+\end{tabular}
+\end{center}
+А ковариация:
+ \begin{multline*}
  \Cov(X, Y) = \E[XY] - \E[X]\E[Y] =
  ((-1)\cdot 1\cdot0.1 + (-1)\cdot2 \cdot 0.2 + 1\cdot2\cdot 0.2) -\\
  - (0.3\cdot1 + 0.7 \cdot 2)\cdot(0.3\cdot(-1) + 0.1\cdot 0.2) = 0.07
-\end{multline}
- Так как $\Cov(X, Y) \ne 0$ — величины зависимы
+\end{multline*}
+
+Так как $\Cov(X, Y) \ne 0$ — величины зависимы
 
 \item Бонусная задача
 
@@ -468,11 +446,10 @@ $Pr(Y=\cdot)$ & 0.3 & 0.5 & 0.2
 
 \item В большой большой стране живет очень большое количество $n»0$ семей. Количества детей в разных семьях независимы. Количество детей в каждой семье — случайная величина с распределением заданным табличкой:
 
-
 \begin{tabular}{ccccc}
-$X_i$ & 0 & 1 & 2 & 3 \\
-\hline
-$\P()$ & 0.1 & 0.3 & 0.2 & 0.4 \\
+\toprule
+$X$ & $0$ & $1$ & $2$ & $3$ \\ \midrule
+$\P(\cdot)$ & $0.1$ & $0.3$ & $0.2$ & $0.4$ \\ \bottomrule
 \end{tabular}
 
 \begin{enumerate}
@@ -613,12 +590,12 @@ $\Var(X) = \E(X^2) - (\E(X))^2 = 0\cdot 0.1 + 1 \cdot 0.3 + 4 \cdot 0.2 + 9 \cdo
 \item Раз ребенок выбран, значит, в его семье дети есть! Всего детей $n\E(X) = 1.9n$. Семей с одним ребенком — $0.3n$, значит, детей из семей с одним ребенком — $0.3n$. Аналогично, детей из семей с двумя детьми — $0.4n$; детей из семей с тремя детьми — $1.2n$.
 
 Теперь легко построить закон распределения случайной величины $Y$:
-\begin{table}[h]
-\begin{tabular}{l|c|c|c}
-$Y$    & $1$                & $2$                & $3$                \\ \hline
-$\P(Y)$ & $3/19$ & $4/19$ & $12/19$
+\begin{tabular}{cccc}
+\toprule
+$Y$ & $1$ & $2$ & $3$  \\ \midrule
+$\P(\cdot)$ & $3/19$ & $4/19$ & $12/19$  \\ \bottomrule
 \end{tabular}
-\end{table}
+
 
 \[\E(Y) = \frac{3}{19} + \frac{8}{19} + \frac{36}{19} = \frac{47}{19} > \E(X)\]
 
@@ -697,15 +674,12 @@ p(k) = \P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}
 \]
 Тогда $X = \sum\limits_{i=1}^{400}X_i$. Рассмотрим отдельно $X_i$: \hspace{0.5cm}
 \begin{minipage}{0.3\linewidth}
-
-\begin{tabular}{c|c|c}
-$X_i$ & 1 & 0 \\
-\hline
-$\P(X_i = \cdot)$ & $\frac{1}{500} $ & $\frac{499}{500}$
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$X$         & $1$             & $0$               \\ \midrule
+$\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
 \end{tabular}
 \end{minipage}
-
-
 Так как $i$-ая опечатка наугад выбирает одну страницу из 500 и это должна быть именно 13.
 
 Тогда:
@@ -760,12 +734,11 @@ $\P(X_i = \cdot)$ & $\frac{1}{500} $ & $\frac{499}{500}$
 
 Тогда $X_A = \sum\limits_{i=1}^{30}X_i$. Рассмотрим отдельно $X_i$: \hspace{0.5cm}
 \begin{minipage}{0.3\linewidth}
-
-\begin{tabular}{c|c|c}
-$X_i$ & 1 & 0 \\
-\hline
-$\P(X_i = \cdot)$ & $0.9$ & $0.1$
-\end{tabular}
+  \begin{tabular}{@{}ccc@{}}
+  \toprule
+  $X$         & $1$             & $0$               \\ \midrule
+  $\P(\cdot)$ & $0.9$ & $0.1$ \\ \bottomrule
+  \end{tabular}
 \end{minipage}
 
 Вероятность 0.9 дана. Тогда:
@@ -924,12 +897,11 @@ $\begin{cases} \E_2 = \frac{1}{6} \cdot 6 +  \frac{5}{6} (\E_1 + 3)   \\ \E_1 = 
 
 \item Veni, vidi, vici
 \begin{center}
-
-\begin{tabular}{l|l}
-$X_n$ & 6 \\ \hline
-$\P(X_n)$ & 1
-\end{tabular}
-
+  \begin{tabular}{@{}cc@{}}
+  \toprule
+  $X_n$       & $6$ \\ \midrule
+  $\P(\cdot)$ & $1$ \\ \bottomrule
+  \end{tabular}
 \end{center}
 
 \end{enumerate}
@@ -955,9 +927,10 @@ $M = V$ произойдет только, если Машенька стоит 
 
 
 \begin{center}
-\begin{tabular}{l|c|c}
-$X_i$ & 1 & 0 \\ \hline
-$\P(X_i)$ & 1/3 & 2/3
+\begin{tabular}{ccc}
+\toprule
+$X_i$ & $1$ & $0$ \\ \midrule
+$\P(\cdot)$ & $1/3$ & $2/3$ \\ \bottomrule
 \end{tabular}
 
 \end{center}
@@ -1543,19 +1516,19 @@ X_2
 
 \begin{enumerate}
 \item
-Пусть $X$ — оценка Пети, $Y$ — оценка Васи. Тогда исзодя из условия:
+Пусть $X$ — оценка Пети, $Y$ — оценка Васи. Тогда исходя из условия:
 \begin{center}
 
-\begin{tabular}{c|c|c}
-$X$ & 7 & 8\\
-\hline
-$\P(\cdot)$ & $\frac{1}{2}$ & $\frac{1}{2}$
+\begin{tabular}{ccc}
+\toprule
+$X$ & $7$ & $8$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{2}$ & $\frac{1}{2}$ \\ \bottomrule
 \end{tabular}
 \hspace{1cm}
-\begin{tabular}{c|c|c}
-$Y$ & 7 & 8\\
-\hline
-$\P(\cdot)$ & $\frac{2}{3}$ & $\frac{1}{3}$
+\begin{tabular}{ccc}
+\toprule
+$Y$ & $7$ & $8$ \\ \midrule
+$\P(\cdot)$ & $\frac{2}{3}$ & $\frac{1}{3}$  \\ \bottomrule
 \end{tabular}
 \end{center}
 
@@ -1939,10 +1912,10 @@ $C=\begin{pmatrix}
 \begin{enumerate}
 \item Пусть случайная величина $S$ – это сумма поглощённых калорий
 
-\begin{tabular}{c|ccc}
-$S$ & $650$ & $800$ & $950$ \\
-\hline
-$\P()$ & $1/3$ & $1/3$ & $1/3$ \\
+\begin{tabular}{cccc}
+\toprule
+$S$ & $650$ & $800$ & $950$ \\ \midrule
+$\P(\cdot)$ & $1/3$ & $1/3$ & $1/3$ \\ \bottomrule
 \end{tabular}
 
 Тогда $\E(S) = \frac{1}{3}\cdot 650 +  \frac{1}{3}\cdot 800 +  \frac{1}{3}\cdot 950 = 800$, $\Var(S) = \frac{1}{3}(650-800)^2 + \frac{1}{3}(800-800)^2 + \frac{1}{3}(950-800)^2 = 15000$

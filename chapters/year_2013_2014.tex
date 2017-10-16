@@ -40,13 +40,12 @@ ce^x, \, x<0
 
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
-\begin{tabular}{c|ccc}
- & $X=-1$ & $X=0$ & $X=1$ \\
-\hline
-$Y=-1$ & $0.1$ & $0.2$ & $0.2$ \\
-$Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
+\begin{tabular}{@{}c|ccc@{}}
+\toprule
+    & $X=-1$ & $X=0$ & $X=1$ \\ \midrule
+$Y=-1$ & $0.1$  & $0.2$   & $0.2$ \\
+$Y=1$ & $0.2$  & $0.1$ & $0.2$ \\ \bottomrule
 \end{tabular}
-
 
 \begin{enumerate}
 \item Найдите  частные распределения случайных величин $X$ и $Y$
@@ -112,19 +111,17 @@ $\Cov(X, Y) = \Corr(X,Y) \cdot \sqrt{\Var(X) \cdot \Var(Y)} = 6$
 \end{enumerate}
 \item \begin{enumerate}
 \item
-$
-\begin{tabular}{c|ccc}
-      & $X = -1$    & $X = 0$ & $X = 1$       \\ \cline{1-4}
-$\P_X$  & $0.3$       & $0.3$   & $0.4$      \\
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$X$         & $-1$  & $0$   & $1$   \\ \midrule
+$\P(\cdot)$ & $0.3$ & $0.3$ & $0.4$ \\ \bottomrule
 \end{tabular}
-$
-и
-$
-\begin{tabular}{c|cc}
-        & $Y = -1$    & $Y = 1$        \\ \cline{1-3}
-$\P_Y$  & $0.5$       & $0.5$        \\
+
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$Y$         & $-1$  & $1$   \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
-$
 \item
 \begin{multline*}
 \Cov(X, Y) = \E(XY) - \E(X) \E(Y)  = (-1)\cdot (-1) \cdot 0.1 + (-1) \cdot 0 \cdot 0.2 + \\
@@ -132,12 +129,12 @@ $
 0.1 \cdot 0 = -0.1
 \end{multline*}
 \item Да, поскольку если случайные величины независимы, то их ковариция равна нулю.
-\item $
-\begin{tabular}{c|ccc}
-                   & $X = -1 | Y = -1$    & $X = 0 | Y = -1$ & $X = 1 | Y = -1$       \\ \cline{1-4}
-$\P_{X | Y = -1}$  & $0.2$       & $0.4$   & $0.4$      \\
+\item
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$X|Y=-1$    & $-1$  & $0$   & $1$   \\ \midrule
+$\P(\cdot)$ & $0.2$ & $0.4$ & $0.4$ \\ \bottomrule
 \end{tabular}
-$
 \item $\E(X | Y = -1) = -1 \cdot 0.2 + 0 \cdot 0.4 + 1 \cdot 0.4 = 0.2$
 \end{enumerate}
 \end{enumerate}
@@ -181,11 +178,11 @@ $
 
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
-\begin{tabular}{c|ccc}
- & $X=-1$ & $X=0$ & $X=1$ \\
-\hline
-$Y=-1$ & $0.1$ & $0.2$ & $0.2$ \\
-$Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
+\begin{tabular}{@{}c|ccc@{}}
+\toprule
+    & $X=-1$ & $X=0$ & $X=1$ \\ \midrule
+$Y=-1$ & $0.1$  & $0.2$   & $0.2$ \\
+$Y=1$ & $0.2$  & $0.1$ & $0.2$ \\ \bottomrule
 \end{tabular}
 
 Найдите:
@@ -364,8 +361,6 @@ $Z=(X,Y)$ с математическим ожиданием $\E(Z)=(175,74)$ и
 \item Каково условное распределение веса при фиксированном росте? Выпишите функцию плотности
 \item Какова вероятность того, что при росте 180 см человек будет обладать весом, меньшим 60 кг?
 \end{enumerate}
-
-\newpage
 
 
 \item Аня, Боря и Вова сдают устный экзамен. Экзамен принимают два преподавателя. Время ответа каждого студента — экспоненциальная случайная величина со средним в 20 минут. Аня и Боря начали отвечать одновременно первыми. Вова начнет отвечать, как только кто-то из них освободиться. Длительности ответов независимы.
@@ -552,13 +547,13 @@ $$
 
 \item $[$R] Как известно, Фрекен-Бок пьет коньяк по утрам и иногда видит привидения. За 110 дней имеются следующие статистические данные
 
-
-\begin{tabular}{c|ccc}
-Рюмок & 1 & 2 & 3 \\
-\hline
-Дней с привидениями & 10 & 25 & 20 \\
-Дней без привидений & 20 &  25 & 10 \\
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Рюмок               & 1    & 2    & 3    \\ \midrule
+Дней с приведениями & $10$ & $25$ & $20$ \\
+Дней без приведений & $20$ & $25$ & $10$ \\ \bottomrule
 \end{tabular}
+
 
 Вероятность увидеть привидение зависит от того, сколько рюмок коньяка было выпито утром, а именно, $p=\exp(a+bx)/(1+ \exp(a+bx))$, где $x$ — количество рюмок, а $a$ и $b$ — неизвестные параметры.
 
@@ -667,12 +662,13 @@ F_X(x) =          \begin{cases}
 Поэтому $\P\left(X=-10\right) = \frac{1}{4} - 0 = \frac{1}{4}$, $\P\left(X=0\right) = \frac{3}{4} - \frac{1}{4} = \frac{1}{2}$ и $\P\left(X=10\right) = 1 - \frac{3}{4} = \frac{1}{4}$.
 
 \item[б)] Из пункта (a) следует, что распределение случайной величины $X$ задается таблицей
-\[
-\begin{tabular}{c|c|c|c}
-  $X$             & $-10$   & $0$     & $10$ \\ \cline{1-4}
-  $\P_X$  & $1/4$   & $1/2$   & $1/4$ \\
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$X$         & $-10$ & $0$   & $10$  \\ \midrule
+$\P(\cdot)$ & $1/4$ & $1/2$ & $1/4$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 Поэтому $\E[X] = -10 \cdot \frac{1}{4} + 0 \cdot \frac{1}{2} + 10 \cdot \frac{1}{4} = 0$.
 
 \item[в)] Наконец, $\E[X^2] = (-10)^2 \cdot \frac{1}{4} + 0^2 \cdot \frac{1}{2} + 10^2 \cdot \frac{1}{4} = 50$. Следовательно, $\Var(X) = \E[X^2] - [\E X]^2 = 50$.
@@ -732,13 +728,15 @@ F_X(x) =
 \end{enumerate}
 
 \item Совместное распределение случайных величин $X$ и $Y$ задано при помощи таблицы
-\[
-\begin{tabular}{c|c|c|c}
-  {}     & $Y=1$   & $Y=2$   & $Y=3$ \\ \cline{1-4}
-  $X=0$  & $0.2$   & $0.1$   & $0.2$ \\ \cline{1-4}
-  $X=1$  & $0.1$   & $0.3$   & $0.1$ \\
+\begin{center}
+\begin{tabular}{@{}c|ccc@{}}
+\toprule
+      & $Y=1$ & $Y=2$ & $Y=3$ \\ \midrule
+$X=0$ & $0.2$ & $0.1$ & $0.2$ \\
+$X=1$ & $0.1$ & $0.3$ & $0.1$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 \begin{enumerate}
   \item Являются ли случайные величины $X$ и $Y$ независимыми? Ответ обоснуйте.
   \item Постройте графики функций распределения $F_X(x)$ и $F_Y(x)$.
@@ -756,18 +754,22 @@ F_X(x) =
 $0.2 = \P(X=0 \cap Y=1) \not= \P(X=0) \cdot \P(Y=1) = 0.5 \cdot 0.3$.
 
 \item[б)] Таблицы распределения случайных величин $X$ и $Y$ имеют вид
-\[
-\begin{tabular}{c|c|c}
-  $X$             & $0$     & $1$    \\ \cline{1-3}
-  $\P_X$  & $0.5$   & $0.5$  \\
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$X$         & $0$   & $1$   \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
-\]
-\[
-\begin{tabular}{c|c|c|c}
-  $Y$             & $1$     & $2$     & $3$   \\ \cline{1-4}
-  $\P_Y$  & $0.3$   & $0.4$   & $0.3$ \\
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y$         & $1$   & $2$   & $3$ \\ \midrule
+$\P(\cdot)$ & $0.3$ & $0.4$ & $0.3$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 Поэтому функции распределения равны
 \[
 F_X(x) =
@@ -788,12 +790,15 @@ F_Y(x) =
 \]
 
 \item[в)] Таблица распределения случайной величины $XY$ имеет вид
-\[
-\begin{tabular}{c|c|c|c|c}
-  $XY$               & $0$     & $1$     & $2$     & $3$ \\ \cline{1-5}
-  $\P_{XY}$  & $0.5$   & $0.1$   & $0.3$   & $0.1$ \\
+
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$XY$        & $0$   & $1$  & $2$  & $3$     \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.1$ & $0.3$ & $0.1$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 
 \item[г)] $\E[X] = 0 \cdot 0.5 + 1 \cdot 0.5 = 0.5$,
 
@@ -821,12 +826,13 @@ $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 1 - 0.5 \cdot 2 = 0$.
 \P( Y=3 | X=1 ) = \frac{\P( Y=3  \cap  X=1 )}{\P( X=1 )} = \frac{0.1}{0.5} = 0.2 \text{.}
 \]
 Поэтому таблица условного распределения случайной величины $Y$ при условии $\{X = 1\}$ имеет вид
-\[
-\begin{tabular}{c|c|c|c}
-  $Y$                          & $1$     & $2$     & $3$ \\ \cline{1-4}
-  $\P_{Y| X=1 }$     & $0.2$   & $0.6$   & $0.2$ \\
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y | X=1$         & $1$   & $2$   & $3$ \\ \midrule
+$\P(\cdot)$ & $0.2$ & $0.6$ & $0.2$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 
 \item[ж)]
 \begin{multline*}
@@ -987,18 +993,22 @@ F_X(x) =
 \item[а)] Случайные величины $X$ и $Y$ не являются независимыми, т.к., например, $0 = \P(X=1 \cap Y=1) \not= \P(X=1) \cdot \P(Y=1) = \frac{1}{8} \cdot \frac{1}{8}$.
 
 \item[б)] Таблицы распределения случайных величин $X$ и $Y$ имеют вид
-\[
-\begin{tabular}{c|c|c|c|c|c}
-  $X$             & $-1$            & $-\frac{\sqrt{2}}{2}$     & $0$             & $\frac{\sqrt{2}}{2}$     & $1$    \\ \cline{1-6}
-  $\P_X$  & $\frac{1}{8}$   & $\frac{1}{4}$             & $\frac{1}{4}$   & $\frac{1}{4}$            & $\frac{1}{8}$  \\
+\begin{center}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$X$         & $-1$   & $-\frac{\sqrt{2}}{2}$   & $0$ & $ \frac{\sqrt{2}}{2}$ & $1$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{8}$ \\ \bottomrule
 \end{tabular}
-\]
-\[
-\begin{tabular}{c|c|c|c|c|c}
-  $Y$             & $-1$            & $-\frac{\sqrt{2}}{2}$     & $0$             & $\frac{\sqrt{2}}{2}$     & $1$    \\ \cline{1-6}
-  $\P_Y$  & $\frac{1}{8}$   & $\frac{1}{4}$             & $\frac{1}{4}$   & $\frac{1}{4}$            & $\frac{1}{8}$  \\
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$Y$         & $-1$   & $-\frac{\sqrt{2}}{2}$   & $0$ & $ \frac{\sqrt{2}}{2}$ & $1$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{8}$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 Поэтому функции распределения равны
 \[
 F_X(x) =
@@ -1024,12 +1034,14 @@ F_Y(x) =
 \]
 
 \item[в)] Таблица распределения случайной величины $XY$ имеет вид
-\[
-\begin{tabular}{c|c|c|c}
-  $XY$               & $-\frac{1}{2}$     & $0$             & $\frac{1}{2}$  \\ \cline{1-4}
-  $\P_{XY}$  & $\frac{1}{4}$      & $\frac{1}{2}$   & $\frac{1}{4}$  \\
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$XY$         & $-\frac{1}{2}$  & $0$ & $ \frac{1}{2}$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{4}$ & $\frac{1}{2}$ & $\frac{1}{4}$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 
 \item[г)] $\E[X] = -1 \cdot \frac{1}{8} - \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 0 \cdot \frac{1}{4} + \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 1 \cdot \frac{1}{8} = 0$,
 $\E[Y] = -1 \cdot \frac{1}{8} - \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 0 \cdot \frac{1}{4} + \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 1 \cdot \frac{1}{8} = 0$,
@@ -1048,12 +1060,13 @@ $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 0 - 0 \cdot 0 = 0$.
 \frac{\P\left(Y=\frac{\sqrt{2}}{2} \cap X = \frac{\sqrt{2}}{2}\right)}{\P\left(X = \frac{\sqrt{2}}{2}\right)} = \frac{\frac{1}{8}}{\frac{2}{8}} = \frac{1}{2} \text{.}
 \]
 Поэтому таблица условного распределения случайной величины $Y$ при условии $\left\{X = \frac{\sqrt{2}}{2}\right\}$ имеет вид
-\[
-\begin{tabular}{c|c|c}
-  $Y$                                                             & $-\frac{\sqrt{2}}{2}$     & $\frac{\sqrt{2}}{2}$    \\ \cline{1-3}
-  $\P_{Y\bigm|X = \frac{\sqrt{2}}{2}}$     & $\frac{1}{2}$             & $\frac{1}{2}$           \\
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y | X = \frac{\sqrt{2}}{2}$         & $-\frac{\sqrt{2}}{2}$   & $\frac{\sqrt{2}}{2}$  \\ \midrule
+$\P(\cdot)$ &  $\frac{1}{2}$ & $\frac{1}{2}$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 
 \item[ж)]
 \begin{multline*}
