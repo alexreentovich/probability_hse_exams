@@ -1,5 +1,3 @@
-
-
 \subsection{Контрольная номер 1, базовый поток, 26.10.2015}
 
 \begin{enumerate}
@@ -9,7 +7,7 @@
 разными сторонами.
 \begin{enumerate}
     \item[$\alpha$)] Будут ли эти события попарно независимы?
-    \item[$\beta$)]  Сформулируйте определение независимости в совокупности для трех событий. Являются ли события $A$, $В$, $С$ независимыми в совокупности?
+    \item[$\beta$)]  Сформулируйте определение независимости в совокупности для трех событий. Являются ли события $A$, $B$, $C$ независимыми в совокупности?
 \end{enumerate}
 
 \item
@@ -113,6 +111,122 @@ f(y) =
 
 \end{enumerate}
 
+\subsection{Контрольная номер 1, базовый поток, 26.10.2015, решения}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Найдём вероятности каждого события: $\P(A) = 1/2$, $\P(B) = 1/2$, $\P(C) = 1/2$.
+
+Проверим попарную независимость:
+\begin{itemize}
+\item $\P(A \cap B) = 1/4$, $\P(A) \cdot \P(B) = 1/2 \cdot 1/2 = 1/4$
+\item $\P(A \cap C) = 1/4$, $\P(A) \cdot \P(C) = 1/2 \cdot 1/2 = 1/4$
+\item $\P(B \cap C) = 1/4$, $\P(B) \cdot \P(C) = 1/2 \cdot 1/2 = 1/4$
+\end{itemize}
+Значит, события попарно независимы.
+\item[$\beta$)] События $A_1, A_2, A_3$ называются независимыми в совокупности, если $\P(A_1 \cap A_2 \cap A_3) = \P(A_1) \cdot \P(A_2) \cdot \P(A_3)$.
+
+В нашем случае: $\P(A \cap B \cap C) = 0$, $ \P(A) \cdot \P(B) \cdot \P(C) =  \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} $, следовательно, события
+не являются независимыми в совокупности.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Воспользуемся формулой полной вероятности:
+\begin{multline*}
+\P(\text{выпала «6»}) = \P(\text{выпала «6»} \mid \text{взят белый кубик}) \cdot \P(\text{взят белый кубик}) + \\
++ \P(\text{выпала «6»} \mid \text{взят красный кубик}) \cdot \P(\text{взят красный кубик}) = \\
+= \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{4}
+\end{multline*}
+\item[$\beta$)] Воспользуемся формулой условной вероятности и результатом предыдущего пункта:
+\begin{multline*}
+\P(\text{взят красный кубик} \mid \text{выпала «6»}) = \frac{\P(\text{взят красный кубик} \cap \text{выпала «6»})}{\P(\text{выпала «6»})} =  \\
+= \frac{\frac{1}{2}\cdot \frac{1}{3}}{\frac{1}{4}} = \frac{2}{3}
+\end{multline*}
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Совместное распределение имеет вид:
+\begin{center}
+\begin{tabular}{@{}l|llllll@{}}
+\toprule
+$\eta$ $\backslash$ $\xi$ & $1$                            & $2$                            & $3$                            & $4$                            & $5$                            & $6$                            \\ \midrule
+$1$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$  & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$2$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$3$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$4$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$ & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$5$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$6$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{1}{3}\cdot\frac{1}{6}$ \\ \bottomrule
+\end{tabular}
+\end{center}
+\item[$\beta$)] $\P(\text{выиграет белый кубик}) = (6 + 5 + 4 + 3 + 2) \cdot \frac{2}{15}\cdot\frac{1}{6} + 1 \cdot \frac{1}{3}\cdot\frac{1}{6} = \frac{1}{2}$.
+
+Значит, Пете безразлично, какой кубик брать.
+\item[$\gamma)$] $F_{\zeta}(x) = \P(\zeta \leq x)$
+
+Выпишем таблицу распределения случайной величины $\zeta$:
+
+\begin{tabular}{@{}l|cccccc@{}}
+\toprule
+$\zeta$     & $1$                              & $2$                                      & $3$                                      & $4$                                      & $5$                                      & $6$                                                                              \\ \midrule
+$\P(\cdot)$ & $\frac{2}{15} \cdot \frac{1}{6}$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 3$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 5$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 7$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 9$ & $\frac{1}{3} \cdot \frac{1}{6} \cdot 6 + \frac{2}{15} \cdot \frac{1}{6} \cdot 5$ \\ \bottomrule
+\end{tabular}
+
+Тогда функция распределения имеет вид:
+\[
+F_{\zeta}(x) =
+\begin{cases}
+0 & x \leq 1 \\
+\frac{1}{45} & 1 < x \leq 2 \\
+\frac{4}{45} & 2 < x \leq 3 \\
+\frac{9}{45} & 3 < x \leq 4 \\
+\frac{16}{45} & 4 < x \leq 5 \\
+\frac{25}{45} & 5 < x \leq 6 \\
+1 & x > 6
+\end{cases}
+\]
+\item[$\delta$)] $\E(\zeta) = \frac{2}{15} \cdot \frac{1}{6} \cdot 1 + \frac{2}{15} \cdot \frac{1}{6} \cdot 3 \cdot 2 + \frac{2}{15} \cdot \frac{1}{6} \cdot 5 \cdot 3 + \frac{2}{15} \cdot \frac{1}{6} \cdot 7 \cdot 4 + \frac{2}{15} \cdot \frac{1}{6} \cdot 9 \cdot 5 + \frac{1}{3} \cdot \frac{1}{6} \cdot 6 + \frac{2}{15} \cdot \frac{1}{6} \cdot 6 = \frac{43}{9} \approx 4.8 $
+\end{enumerate}
+\item Пусть $x$ — вероятность того, что мужчина честно любит петь в душе.
+
+Распишем по формуле полной вероятности вероятность получить ответ «да»:
+\begin{multline*}
+P(\text{ответ «Да»}) = 1 \cdot \P(\text{выпала «6»}) + x \cdot(\P(\text{выпала «2»}) + \P(\text{выпала «3»}) +  \\
++ \P(\text{выпала «4»}) + \P(\text{выпала «5»})) = 1 \cdot \frac{1}{6} + x \cdot \frac{4}{6} \Rightarrow x = \frac{3}{4}
+\end{multline*}
+Тогда истинный процент «певцов» составляет $75 \%$
+\item Предположим, что ваше имя — Студент (7 букв), а фамилия — Идеальный (9 букв).
+\begin{enumerate}
+\item[$\alpha$)] $\P(\text{напишет фаимлию правильно}) = (0.9)^9$
+\item[$\beta$)] $\P(\text{ровно 2 ошибки в имени}) = C_{7}^2 \cdot 0.1^2 \cdot 0.9^5$
+\item[$\gamma$)] Наиболее вероятное число ошибок — 1
+\item[$\delta$)] $\P(\text{допустит хотя бы одну ошибку}) = 1 - \P(\text{не допустит ни одной ошибки}) = 1 - (0.9)^{16}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Из условия $\int_{0}^{1} (cy^2 + y) dy = 1$ получаем, что $c=3/2$.
+\item[$\beta$)]
+$F_{Y} (y) =
+\begin{cases}
+1 & y > 1 \\
+\frac{y^3 + y^2}{2} & 0 < y \leq 1 \\
+0 & y < 0
+\end{cases} $
+\item[$\gamma$)] $\P(Y < 0.5) = \int_{0}^{0.5} \left(\frac{3}{2} y^2 + y   \right) dy = \frac{3}{16}$
+\item[$\delta$)] $F_{Y} (y) = 0.5 \Rightarrow y \approx 0.75 $
+\item[$\epsilon$)] $\P(Y > 0.5 \mid Y \geq 0.25) = \frac{\P(Y > 0.5)}{\P(Y \geq 0.25)} = \frac{1 - \frac{3}{16}}{\int_{0.25}^{1} \left(\frac{3}{2} y^2 + y   \right) dy} = \frac{104}{123}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] $\P(\text{кисточка окажется на слоне}) = \frac{1}{1.5} = \frac{2}{3}$
+\item[$\beta$)] $f_{\xi, \eta}(x, y) = \frac{1}{1.5}$
+\item[$\gamma$)] $f_{\xi} (x) = \int_{0}^{1} \frac{1}{1.5} dy = 1.5$
+
+$f_{\eta}(y) = \int_{0}^{1.5} \frac{1}{1.5} dx = 1$
+\item[$\delta$)] Да, поскольку $ f_{\xi} (x) \cdot f_{\eta}(y) = f_{\xi, \eta}(x, y)$
+\item[$\epsilon$)] $f_{\xi+\eta} (t) = \int_{-\infty}^{+\infty} f_{\xi}(u) f_{\eta}(t-u) du $
+\end{enumerate}
+\end{enumerate}
 
 
 \subsection{Праздник номер 1, исследователи, индивидуальный тур}
