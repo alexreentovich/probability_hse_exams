@@ -3,3 +3,7 @@ probability_hse_exams.amc
 probability_hse_exams.xdv
 .DS_Store
 .DS_Store
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
