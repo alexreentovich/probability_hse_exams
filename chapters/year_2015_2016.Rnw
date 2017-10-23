@@ -1,5 +1,3 @@
-
-
 \subsection{Контрольная номер 1, базовый поток, 26.10.2015}
 
 \begin{enumerate}
@@ -9,7 +7,7 @@
 разными сторонами.
 \begin{enumerate}
     \item[$\alpha$)] Будут ли эти события попарно независимы?
-    \item[$\beta$)]  Сформулируйте определение независимости в совокупности для трех событий. Являются ли события $A$, $В$, $С$ независимыми в совокупности?
+    \item[$\beta$)]  Сформулируйте определение независимости в совокупности для трех событий. Являются ли события $A$, $B$, $C$ независимыми в совокупности?
 \end{enumerate}
 
 \item
@@ -113,6 +111,122 @@ f(y) =
 
 \end{enumerate}
 
+\subsection{Контрольная номер 1, базовый поток, 26.10.2015, решения}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Найдём вероятности каждого события: $\P(A) = 1/2$, $\P(B) = 1/2$, $\P(C) = 1/2$.
+
+Проверим попарную независимость:
+\begin{itemize}
+\item $\P(A \cap B) = 1/4$, $\P(A) \cdot \P(B) = 1/2 \cdot 1/2 = 1/4$
+\item $\P(A \cap C) = 1/4$, $\P(A) \cdot \P(C) = 1/2 \cdot 1/2 = 1/4$
+\item $\P(B \cap C) = 1/4$, $\P(B) \cdot \P(C) = 1/2 \cdot 1/2 = 1/4$
+\end{itemize}
+Значит, события попарно независимы.
+\item[$\beta$)] События $A_1, A_2, A_3$ называются независимыми в совокупности, если $\P(A_1 \cap A_2 \cap A_3) = \P(A_1) \cdot \P(A_2) \cdot \P(A_3)$.
+
+В нашем случае: $\P(A \cap B \cap C) = 0$, $ \P(A) \cdot \P(B) \cdot \P(C) =  \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} $, следовательно, события
+не являются независимыми в совокупности.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Воспользуемся формулой полной вероятности:
+\begin{multline*}
+\P(\text{выпала «6»}) = \P(\text{выпала «6»} \mid \text{взят белый кубик}) \cdot \P(\text{взят белый кубик}) + \\
++ \P(\text{выпала «6»} \mid \text{взят красный кубик}) \cdot \P(\text{взят красный кубик}) = \\
+= \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{4}
+\end{multline*}
+\item[$\beta$)] Воспользуемся формулой условной вероятности и результатом предыдущего пункта:
+\begin{multline*}
+\P(\text{взят красный кубик} \mid \text{выпала «6»}) = \frac{\P(\text{взят красный кубик} \cap \text{выпала «6»})}{\P(\text{выпала «6»})} =  \\
+= \frac{\frac{1}{2}\cdot \frac{1}{3}}{\frac{1}{4}} = \frac{2}{3}
+\end{multline*}
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Совместное распределение имеет вид:
+\begin{center}
+\begin{tabular}{@{}l|llllll@{}}
+\toprule
+$\eta$ $\backslash$ $\xi$ & $1$                            & $2$                            & $3$                            & $4$                            & $5$                            & $6$                            \\ \midrule
+$1$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$  & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$2$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6}\mbox{*}$   & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$3$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$   & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$4$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6} \mbox{*}$ & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$5$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{1}{3}\cdot\frac{1}{6} \mbox{*}$   \\
+$6$           & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{2}{15}\cdot\frac{1}{6}$ & $\frac{1}{3}\cdot\frac{1}{6}$ \\ \bottomrule
+\end{tabular}
+\end{center}
+\item[$\beta$)] $\P(\text{выиграет белый кубик}) = (6 + 5 + 4 + 3 + 2) \cdot \frac{2}{15}\cdot\frac{1}{6} + 1 \cdot \frac{1}{3}\cdot\frac{1}{6} = \frac{1}{2}$.
+
+Значит, Пете безразлично, какой кубик брать.
+\item[$\gamma)$] $F_{\zeta}(x) = \P(\zeta \leq x)$
+
+Выпишем таблицу распределения случайной величины $\zeta$:
+
+\begin{tabular}{@{}l|cccccc@{}}
+\toprule
+$\zeta$     & $1$                              & $2$                                      & $3$                                      & $4$                                      & $5$                                      & $6$                                                                              \\ \midrule
+$\P(\cdot)$ & $\frac{2}{15} \cdot \frac{1}{6}$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 3$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 5$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 7$ & $\frac{2}{15} \cdot \frac{1}{6} \cdot 9$ & $\frac{1}{3} \cdot \frac{1}{6} \cdot 6 + \frac{2}{15} \cdot \frac{1}{6} \cdot 5$ \\ \bottomrule
+\end{tabular}
+
+Тогда функция распределения имеет вид:
+\[
+F_{\zeta}(x) =
+\begin{cases}
+0 & x \leq 1 \\
+\frac{1}{45} & 1 < x \leq 2 \\
+\frac{4}{45} & 2 < x \leq 3 \\
+\frac{9}{45} & 3 < x \leq 4 \\
+\frac{16}{45} & 4 < x \leq 5 \\
+\frac{25}{45} & 5 < x \leq 6 \\
+1 & x > 6
+\end{cases}
+\]
+\item[$\delta$)] $\E(\zeta) = \frac{2}{15} \cdot \frac{1}{6} \cdot 1 + \frac{2}{15} \cdot \frac{1}{6} \cdot 3 \cdot 2 + \frac{2}{15} \cdot \frac{1}{6} \cdot 5 \cdot 3 + \frac{2}{15} \cdot \frac{1}{6} \cdot 7 \cdot 4 + \frac{2}{15} \cdot \frac{1}{6} \cdot 9 \cdot 5 + \frac{1}{3} \cdot \frac{1}{6} \cdot 6 + \frac{2}{15} \cdot \frac{1}{6} \cdot 6 = \frac{43}{9} \approx 4.8 $
+\end{enumerate}
+\item Пусть $x$ — вероятность того, что мужчина честно любит петь в душе.
+
+Распишем по формуле полной вероятности вероятность получить ответ «да»:
+\begin{multline*}
+P(\text{ответ «Да»}) = 1 \cdot \P(\text{выпала «6»}) + x \cdot(\P(\text{выпала «2»}) + \P(\text{выпала «3»}) +  \\
++ \P(\text{выпала «4»}) + \P(\text{выпала «5»})) = 1 \cdot \frac{1}{6} + x \cdot \frac{4}{6} \Rightarrow x = \frac{3}{4}
+\end{multline*}
+Тогда истинный процент «певцов» составляет $75 \%$
+\item Предположим, что ваше имя — Студент (7 букв), а фамилия — Идеальный (9 букв).
+\begin{enumerate}
+\item[$\alpha$)] $\P(\text{напишет фаимлию правильно}) = (0.9)^9$
+\item[$\beta$)] $\P(\text{ровно 2 ошибки в имени}) = C_{7}^2 \cdot 0.1^2 \cdot 0.9^5$
+\item[$\gamma$)] Наиболее вероятное число ошибок — 1
+\item[$\delta$)] $\P(\text{допустит хотя бы одну ошибку}) = 1 - \P(\text{не допустит ни одной ошибки}) = 1 - (0.9)^{16}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] Из условия $\int_{0}^{1} (cy^2 + y) dy = 1$ получаем, что $c=3/2$.
+\item[$\beta$)]
+$F_{Y} (y) =
+\begin{cases}
+1 & y > 1 \\
+\frac{y^3 + y^2}{2} & 0 < y \leq 1 \\
+0 & y < 0
+\end{cases} $
+\item[$\gamma$)] $\P(Y < 0.5) = \int_{0}^{0.5} \left(\frac{3}{2} y^2 + y   \right) dy = \frac{3}{16}$
+\item[$\delta$)] $F_{Y} (y) = 0.5 \Rightarrow y \approx 0.75 $
+\item[$\epsilon$)] $\P(Y > 0.5 \mid Y \geq 0.25) = \frac{\P(Y > 0.5)}{\P(Y \geq 0.25)} = \frac{1 - \frac{3}{16}}{\int_{0.25}^{1} \left(\frac{3}{2} y^2 + y   \right) dy} = \frac{104}{123}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item[$\alpha$)] $\P(\text{кисточка окажется на слоне}) = \frac{1}{1.5} = \frac{2}{3}$
+\item[$\beta$)] $f_{\xi, \eta}(x, y) = \frac{1}{1.5}$
+\item[$\gamma$)] $f_{\xi} (x) = \int_{0}^{1} \frac{1}{1.5} dy = 1.5$
+
+$f_{\eta}(y) = \int_{0}^{1.5} \frac{1}{1.5} dx = 1$
+\item[$\delta$)] Да, поскольку $ f_{\xi} (x) \cdot f_{\eta}(y) = f_{\xi, \eta}(x, y)$
+\item[$\epsilon$)] $f_{\xi+\eta} (t) = \int_{-\infty}^{+\infty} f_{\xi}(u) f_{\eta}(t-u) du $
+\end{enumerate}
+\end{enumerate}
 
 
 \subsection{Праздник номер 1, исследователи, индивидуальный тур}
@@ -560,22 +674,22 @@ $\P(\cdot)$ & $0.25$  & $0.75$ \\
 \begin{enumerate}
 
 \item
-a) [2 pts]
-\begin{multline}
+a)
+\begin{multline*}
 \E({\xi_1 \cdot \xi_2}) = \int_{0}^1 \int_0^1 xy f(x,y) \, dx \, dy = \int_0^1 \int_0^1 \frac{1}{2}\cdot x^2y + \frac{3}{2}\cdot xy^2 \, dx \, dy =\\
 =  \int_{0}^1 \frac{y}{6} + \frac{3y^2}{4} \,dy = \frac{1}{3}
-\nonumber\end{multline}
-b) [3 pts]
+\nonumber\end{multline*}
+b)
 \[
 f_{\xi_1 | \xi_2} (x | y) = \frac{f_{\xi_1, \xi_2}(x, y)}{f_{\xi_2}(y)} = \frac{0.5x + 1.5y}{0.25 + 1.5y}, \text{ при } y \in (0,1)
 \]
-c) [3 pts]
+c)
 
-\begin{multline}
+\begin{multline*}
 \E(\xi_1 | \xi_2 = y) = \int_0^1 x f_{\xi_1 | \xi_2} (x | y) dx = \\
 = \int\limits_{0}^{1}  x \dfrac{0,5x + 1,5y}{0,25 + 1,5y} dx = \dfrac{1}{0,25 + 1,5y}  \left. \left( \dfrac{0,5x^3}{3} +  \dfrac{1,5yx^2}{2} \right) \right|_0^1  =  \dfrac{1/6 + 3/4y}{0,25 + 1,5y}
-\end{multline}
-d) [2 pts]
+\end{multline*}
+d)
 Для того, чтобы функция являлась совместной плотностью для пары случайных величин, должно выполнятся следующее:
 \[
 \int_{\Omega} kx f(x,y) \, dx \, dy = 1
@@ -589,56 +703,46 @@ k = \frac{24}{13}
 \]
 \item При расчёте ковариации применим разложение случайной величины в сумму простых случайных величин!
 
-[4 pts]:
-
-\begin{multline}
+\begin{multline*}
 \Cov(\xi, \eta) = \Cov(\xi_1 + \ldots + \xi_{10}, \eta_1 + \ldots + \eta_{10})=\\
 =10\Cov(\xi_1, \eta_1)=10(0-0.2\cdot 0.3)=-0.6
-\nonumber\end{multline}
+\nonumber\end{multline*}
 
-
-
-[1 pt]:
 \[
 \Var(\xi)=10\cdot 0.2\cdot 0.8=1.6
 \]
 
-[1 pt]:
 \[
 \Var(\eta)=10\cdot 0.3\cdot 0.7=2.1
 \]
 
-[2 pts]:
 \[
 \Corr(\xi,\eta)=-0.6/\sqrt{1.6\cdot 2.1} \approx -0.33
 \]
 
-[1 pt]:
 \[
 \Cov(\xi - \eta, \xi) = \Var(\xi) - \Cov(\xi, \eta) \neq 0,
 \]
 
+Следовательно, $\xi$ и $\eta$ зависимы.
 
-[1 pt]:
-Следовательно $\xi$ и $\eta$ зависимы.
-
-\item Найдем ожидаемую доходность и риск портфеля $R = \alpha \xi + (1-\alpha) \eta$ для любого $\alpha$, тогда при $\alpha = 1$ получим результаты Пети, при $\alpha = 0.5$ — результаты Васи. [2 pts]
+\item Найдем ожидаемую доходность и риск портфеля $R = \alpha \xi + (1-\alpha) \eta$ для любого $\alpha$, тогда при $\alpha = 1$ получим результаты Пети, при $\alpha = 0.5$ — результаты Васи.
 \[
 \E R = \alpha + (1-\alpha) = 1 \: \, \forall \, \: \alpha \in [0,1]
 \]
 
-Находим дисперсию: [3 pts]
+Находим дисперсию:
 \[
 \Var(R) = \alpha^2 \cdot 4 + (1-\alpha)^2 \cdot 9 - 6\alpha (1-\alpha) = 19\alpha^2 -24\alpha + 9 \to \min_{\alpha} \Rightarrow
 \]
 
 
-Теперь, найдем оптимальное $\alpha$: [2 pts]
+Теперь, найдем оптимальное $\alpha$:
 \[
 \alpha = \frac{24}{38}
 \]
 
-Финальные цифры: [3 pts]
+Финальные цифры:
 \[
 \begin{cases}
 \Var(R)^{P} = 4 \Rightarrow \sigma_{P} = 2 \\
@@ -649,15 +753,14 @@ k = \frac{24}{13}
 
 
 
-
 \item
 \begin{enumerate}
-\item По ЗБЧ имеем: [2 pts]
+\item По ЗБЧ имеем:
 \[
 \frac{\xi_1 + \dots + \xi_n}{n} \to \E(\xi_1) = \frac{1}{2},
 \]
 Поэтому, чем больше $n$ (количество жителей в городе), тем меньше таких дней, когда количество мальчиков больше $75\%.$ \\
-\item Пусть $S$ количество мальчиков, тогда используя \href{https://en.wikipedia.org/wiki/Markov%27s_inequality}{неравенство Маркова} получаем: [2 pts]
+\item Пусть $S$ количество мальчиков, тогда используя \href{https://en.wikipedia.org/wiki/Markov%27s_inequality}{неравенство Маркова} получаем:
 \[
 \P(S \ge 750) \le \frac{\E(S)}{750} = \frac{2}{3}
 \]
@@ -669,15 +772,15 @@ X_i =
 0, \text{ иначе }
 \end{cases}
 \]
-тогда используя \href{https://en.wikipedia.org/wiki/Markov%27s_inequality}{неравенство Чебышева} получаем: [3 pts]
+тогда используя \href{https://en.wikipedia.org/wiki/Markov%27s_inequality}{неравенство Чебышева} получаем:
 \[
 \P(|\bar X - 0.5| \ge 0.25) \le \frac{\Var(\bar X)}{0.25^2} = \frac{1/4000}{0.25^2} = 0.004
 \]
-\item Вероятность их предыдущего пункта можно записать в таком виде: [3 pts]
-\begin{multline}
+\item Вероятность их предыдущего пункта можно записать в таком виде:
+\begin{multline*}
 \P(|\bar X - 0.5| \ge 0.25) = \P(\bar X \ge 0.75) + \P(\bar X \le 0.25) = 2\P(\bar X \ge 0.75)=\\
 = 2\P(\cN(0;1)\geq 0.25\sqrt{4000})=2\P(\cN(0;1)\geq 15.8) = 1.3 \cdot 10^{-56} \approx 0
-\nonumber\end{multline}
+\nonumber\end{multline*}
 \end{enumerate}
 
 \item
@@ -719,11 +822,11 @@ X_i =
 
 \item
 \begin{enumerate}
-\item Используем ЗБЧ [4 pts]:
+\item Используем ЗБЧ:
 \[
 \plim_{n \to \infty} \frac{\sum_{i=1}^n (X_i - \bar{X})^2}{n} = \plim \frac{\sum X_i^2}{n} - \plim \bar X \cdot \bar X = \E(X_1^2) - (\E(X_1))^2 = \Var(X_1) = 4
 \]
-\item Обозначим, $Y_i=X_i^2$, тогда наше выражение можно записать в виде: [6 pts]
+\item Обозначим, $Y_i=X_i^2$, тогда наше выражение можно записать в виде:
 \[
 Q=\bar Y - (\bar X)^2
 \]
@@ -741,11 +844,11 @@ Q\approx 4 + (\bar Y - 5) + 2 (\bar X - 1)
 \E(Q) \approx 4
 \]
 
-\begin{multline}
+\begin{multline*}
 \Var(Q) \approx \Var(\bar Y) + 4\Var(\bar X) + 4\Cov(\bar Y, \bar X) =\\
 = \frac{1}{n} \left(\Var(Y_1) + 4 \Var(X_1) + 4\Cov(X_1, Y_1) \right) = \\
 = 0.01 \cdot (16 + 4 \cdot 4 + 4 \cdot 8)= 0.64
-\end{multline}
+\end{multline*}
 
 Итого, $Q \approx \cN(4; 0.64)$
 
@@ -856,127 +959,130 @@ f(x)=\begin{cases}
 \subsection{Контрольная работа 3, решения}
 
 \begin{enumerate}
-	\item Пусть случайная величина $S$ – это сумма поглощённых калорий
+\item Пусть случайная величина $S$ – это сумма поглощённых калорий
 
-	\begin{tabular}{c|ccc}
-		$S$ & $650$ & $800$ & $950$ \\
-		\hline
-		$\P()$ & $1/3$ & $1/3$ & $1/3$ \\
-	\end{tabular}
+\begin{tabular}{cccc}
+\toprule
+$S$ & $650$ & $800$ & $950$ \\ \midrule
+$\P(\cdot)$ & $1/3$ & $1/3$ & $1/3$ \\ \bottomrule
+\end{tabular}
 
-	Тогда
-	\[
-	\E(S) = \frac{1}{3}\cdot 650 +  \frac{1}{3}\cdot 800 +  \frac{1}{3}\cdot 950 = 800
-	\]
-	\[
-	 \Var(S) = \frac{1}{3}(650-800)^2 + \frac{1}{3}(800-800)^2 + \frac{1}{3}(950-800)^2 = 15000
-	 \]
-	\item Вариационный ряд: $4, 6, 11$; медиана: $6$; выборочное среднее: $7$; несмещённая оценка дисперсии: $13$
-	\item Фунуция плотности двумерного нормального распределения имеет вид:
-	\begin{multline*}
-	f(x,y) =  \frac{1}{2\pi}\cdot \frac{1}{\sigma_x \sigma_y \sqrt{1-\rho^2}} \cdot \\
-	\cdot \exp\left\{{-\frac{1}{2}\frac{1}{\sigma_x^2 \sigma_y^2(1-\rho^2)}\left[\sigma_x^2(x-\mu_x)^2-2\rho\sigma_x\sigma_y(x-\mu_x)(y-\mu_y)+\sigma_y^2(y-\mu_y)^2\right]}\right\}
-	\end{multline*}
-	Откуда: $\mu_X=1$, $\mu_Y=0$, $\sigma_X = 1$, $\sigma_Y = 1$, $\rho = 0.2$
+Тогда
+\[
+\E(S) = \frac{1}{3}\cdot 650 +  \frac{1}{3}\cdot 800 +  \frac{1}{3}\cdot 950 = 800
+\]
+\[
+\Var(S) = \frac{1}{3}(650-800)^2 + \frac{1}{3}(800-800)^2 + \frac{1}{3}(950-800)^2 = 15000
+\]
+\item Вариационный ряд: $4, 6, 11$; медиана: $6$; выборочное среднее: $7$; несмещённая оценка дисперсии: $13$
+\item Фунуция плотности двумерного нормального распределения имеет вид:
+\begin{multline*}
+f(x,y) =  \frac{1}{2\pi}\cdot \frac{1}{\sigma_x \sigma_y \sqrt{1-\rho^2}} \cdot \\
+\cdot \exp\left\{{-\frac{1}{2}\frac{1}{\sigma_x^2 \sigma_y^2(1-\rho^2)}\left[\sigma_x^2(x-\mu_x)^2-2\rho\sigma_x\sigma_y(x-\mu_x)(y-\mu_y)+\sigma_y^2(y-\mu_y)^2\right]}\right\}
+\end{multline*}
+Откуда: $\mu_X=1$, $\mu_Y=0$, $\sigma_X = 1$, $\sigma_Y = 1$, $\rho = 0.2$
 
-	\item
-	\begin{enumerate}
-		\item $X \sim \mathcal{N}(178, 49)$, $\P(X>185) = 1  - \P(X<185) = 1- \P\left(\frac{X-178}{7} < \frac{185-178}{7}\right) = 1 - 0.8413 = 0.1587$
-		\item Нет, так как $\Cov(X, Y) = 5.6 \neq 0$
-		\item $Y \mid X \sim \mathcal{N}\left(\mu_Y + \rho\sigma_Y\cdot\frac{X-\mu_X}{\sigma_X}; \sigma_Y^2(1-\rho^2)\right)$
+\item
+\begin{enumerate}
+\item \begin{multline*}
+X \sim \cN(178, 49)$, $\P(X>185) = 1  - \P(X<185) = \\
+= 1- \P\left(\frac{X-178}{7} < \frac{185-178}{7}\right) = 1 - 0.8413 = 0.1587
+\end{multline*}
+\item Нет, так как $\Cov(X, Y) = 5.6 \neq 0$
+\item $Y \mid X \sim \cN\left(\mu_Y + \rho\sigma_Y\cdot\frac{X-\mu_X}{\sigma_X}; \sigma_Y^2(1-\rho^2)\right)$
 
-		$Y \mid X=185 \sim \mathcal{N}(42.8;0.36)$
+$Y \mid X=185 \sim \cN(42.8;0.36)$
 
-		$\P(Y<42 \mid X=185) = \P\left(\frac{Y-42.8}{0.6} < \frac{42-42.8}{0.6}\mid X=185\right) = 0.9082$
-	\end{enumerate}
+$\P(Y<42 \mid X=185) = \P\left(\frac{Y-42.8}{0.6} < \frac{42-42.8}{0.6}\mid X=185\right) = 0.9082$
+\end{enumerate}
 
-	\item
-	\begin{enumerate}
-		\item $\E(X) = \frac{0+2\theta}{2}\mid_{\hat{\theta}} = \overline{X}$, $\hat{\theta}_{MM} = \overline{X}$
-		\item $\forall \theta \in \Theta: \E(\hat{\theta})=\theta \Leftrightarrow \hat{\theta}$ – несмещённая.
+\item
+\begin{enumerate}
+\item $\E(X) = \frac{0+2\theta}{2}\mid_{\hat{\theta}} = \overline{X}$, $\hat{\theta}_{MM} = \overline{X}$
+\item $\forall \theta \in \Theta: \E(\hat{\theta})=\theta \Leftrightarrow \hat{\theta}$ – несмещённая.
 
-		$\forall \theta \in \Theta, \forall \epsilon > 0 : \P(\vert \widehat{\theta}_n - \theta \vert > \epsilon) \to 0 \Leftrightarrow  \widehat{\theta}_n$ – состоятельная.
+$\forall \theta \in \Theta, \forall \epsilon > 0 : \P(\vert \widehat{\theta}_n - \theta \vert > \epsilon) \to 0 \Leftrightarrow  \widehat{\theta}_n$ – состоятельная.
 
-		$\forall \theta \in \Theta: I_n (\theta) = \Var(\hat{\theta}) \Leftrightarrow \hat{\theta} $ – эффективная.
-		\item $\E(\theta) = \E(\overline{X}) = \E(X_1) = \theta \Rightarrow \hat{\theta}$ – несмещённая оценка
+$\forall \theta \in \Theta: I_n (\theta) = \Var(\hat{\theta}) \Leftrightarrow \hat{\theta} $ – эффективная.
+\item $\E(\theta) = \E(\overline{X}) = \E(X_1) = \theta \Rightarrow \hat{\theta}$ – несмещённая оценка
 
-		$\Var(\hat{\theta_n}) = \Var(\overline{X}) = \frac{\Var(X_1)}{n} = \frac{4\theta^2}{12\cdot n} \to 0$; из условий $\E(\widehat{\theta}_n) = \theta$ и $\Var(\widehat{\theta}_n)  \to_{n \to \infty} 0$ следует, что $\widehat{\theta}_n \stackrel{\P}{\to}  \theta$ при $n \to \infty$, т.е. $\widehat{\theta}_n$ является состоятельной.
+$\Var(\hat{\theta_n}) = \Var(\overline{X}) = \frac{\Var(X_1)}{n} = \frac{4\theta^2}{12\cdot n} \to 0$; из условий $\E(\widehat{\theta}_n) = \theta$ и $\Var(\widehat{\theta}_n)  \to_{n \to \infty} 0$ следует, что $\widehat{\theta}_n \stackrel{\P}{\to}  \theta$ при $n \to \infty$, т.е. $\widehat{\theta}_n$ является состоятельной.
 
-		\item
-		\begin{multline*}
-		F_{X_{(n)}} = \P(max(X_1, \ldots, X_n) \leq x) = \P(X_1 \leq x) \cdot \ldots \cdot \P(X_n \leq x) = (\P(X_1 \leq x))^n = \\
-		= \begin{cases}
-		0 & \text{при } x<0 \\
-		\left(\frac{x}{2\theta}\right)^n & \text{при }  x \in [0, 2\theta] \\
-		1 & \text{при }  x > 2\theta
-		\end{cases}
-		\end{multline*}
+\item
+\begin{multline*}
+F_{X_{(n)}} = \P(max(X_1, \ldots, X_n) \leq x) = \P(X_1 \leq x) \cdot \ldots \cdot \P(X_n \leq x) = (\P(X_1 \leq x))^n = \\
+= \begin{cases}
+0 & \text{при } x<0 \\
+\left(\frac{x}{2\theta}\right)^n & \text{при }  x \in [0, 2\theta] \\
+1 & \text{при }  x > 2\theta
+\end{cases}
+\end{multline*}
 
-		\[
-		f_{X_{(n)}} (x)  = \begin{cases}
-		0 & \text{при } x<0 \\
-		\frac{nx^{n-1}}{2^n \theta^n} & \text{при }  x \in [0, 2\theta] \\
-		0 & \text{при }  x > 2\theta
-		\end{cases}
-		\]
+\[
+f_{X_{(n)}} (x)  = \begin{cases}
+0 & \text{при } x<0 \\
+\frac{nx^{n-1}}{2^n \theta^n} & \text{при }  x \in [0, 2\theta] \\
+0 & \text{при }  x > 2\theta
+\end{cases}
+\]
 
-		\begin{multline*}
-		\E(X_{(n)}) = \int_{-\infty}^{+\infty} x \cdot f_{X_{(n)}} (x) dx = \int_{0}^{2\theta}	x \cdot \frac{nx^{n-1}}{2^n \theta^n} dx = \frac{n}{2^n \theta^n}  \cdot \frac{x^{n+1}}{n+1} \mid_{x=0}^{x=2\theta} \\
-		= \frac{n}{2^n \theta^n}  \cdot \frac{2^{n+1}\cdot \theta^{n+1}}{n+1} = \frac{n2\theta}{n+1}
-		\end{multline*}
-		Следовательно, $\E \left(\frac{n+1}{2n} \cdot X_{(n)}\right) = \theta$, а значит, $\tilde{\theta} = \frac{n+1}{2n} \cdot X_{(n)}$ – несмещённая оценка вида $c \cdot  X_{(n)}$
-		\item $\Var(\tilde{\theta}) = \frac{(n+1)^2}{4n^2} \Var(X_{(n)})$
+\begin{multline*}
+\E(X_{(n)}) = \int_{-\infty}^{+\infty} x \cdot f_{X_{(n)}} (x) dx = \int_{0}^{2\theta}	x \cdot \frac{nx^{n-1}}{2^n \theta^n} dx = \frac{n}{2^n \theta^n}  \cdot \frac{x^{n+1}}{n+1} \mid_{x=0}^{x=2\theta} \\
+= \frac{n}{2^n \theta^n}  \cdot \frac{2^{n+1}\cdot \theta^{n+1}}{n+1} = \frac{n2\theta}{n+1}
+\end{multline*}
+Следовательно, $\E \left(\frac{n+1}{2n} \cdot X_{(n)}\right) = \theta$, а значит, $\tilde{\theta} = \frac{n+1}{2n} \cdot X_{(n)}$ – несмещённая оценка вида $c \cdot  X_{(n)}$
+\item $\Var(\tilde{\theta}) = \frac{(n+1)^2}{4n^2} \Var(X_{(n)})$
 
-		\begin{multline*}
-		\E(X_{(n)}^2) = \int_{-\infty}^{+\infty} x^2 f_{X_{(n)}} (x) dx = \int_{0}^{2\theta} x^2 \frac{nx^{n-1}}{2^n \theta^n}  dx = \frac{n}{2^n \theta^n}  \int_{0}^{2\theta} x^{n+1} dx = \\
-		= \frac{n}{2^n \theta^n} \cdot \frac{x^{n+2}}{n+2} \mid_{x=0}^{x=2\theta} = \frac{n}{2^n \theta^n} \cdot  \frac{2^{n+2}\cdot \theta^{n+2}}{n+2} = \frac{n\cdot4\cdot\theta^2}{n+2}
-		\end{multline*}
+\begin{multline*}
+\E(X_{(n)}^2) = \int_{-\infty}^{+\infty} x^2 f_{X_{(n)}} (x) dx = \int_{0}^{2\theta} x^2 \frac{nx^{n-1}}{2^n \theta^n}  dx = \frac{n}{2^n \theta^n}  \int_{0}^{2\theta} x^{n+1} dx = \\
+= \frac{n}{2^n \theta^n} \cdot \frac{x^{n+2}}{n+2} \mid_{x=0}^{x=2\theta} = \frac{n}{2^n \theta^n} \cdot  \frac{2^{n+2}\cdot \theta^{n+2}}{n+2} = \frac{n\cdot4\cdot\theta^2}{n+2}
+\end{multline*}
 
-		\[
-		\Var(X_{(n)}) = \E(X_{(n)}^2)  - (\E(X_{(n)}))^2 = \frac{4n\theta^2}{n+2} - \frac{4 n^2 \cdot \theta^2}{(n+1)^2} = 4n\theta^2 \left(\frac{1}{n+2} - \frac{n}{(n+1)^2}\right)
-		\]
+\[
+\Var(X_{(n)}) = \E(X_{(n)}^2)  - (\E(X_{(n)}))^2 = \frac{4n\theta^2}{n+2} - \frac{4 n^2 \cdot \theta^2}{(n+1)^2} = 4n\theta^2 \left(\frac{1}{n+2} - \frac{n}{(n+1)^2}\right)
+\]
 
-		\[
-		\Var(\tilde{\theta}) = \frac{(n+1)^2}{4n^2} \Var(X_{(n)}) = \frac{(n+1)^2}{4n^2}  \cdot 4n\theta^2 \left(\frac{n^2+2n+1 - n^2-2n}{(n+2)(n+1)^2} \right) = \frac{\theta^2}{n(n+2)}
-		\]
-		Оценка $\tilde{\theta}_n$ является состоятельной, так как $\E(\tilde{\theta}_n) = \theta$ и $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)} \to_{n\to\infty} 0$
-		\item  Поскольку $\Var(\widehat{\theta}_n) = \frac{\theta^2}{3n}$, $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)}$ при достаточно большом $n$ $\Var(\tilde{\theta}_n) < \Var(\widehat{\theta}_n) $. Значит, при таких $n$ оценка $\tilde{\theta}_n$ будет более эффективной по сравнению с оценкой $\widehat{\theta}_n$.
-	\end{enumerate}
+\[
+\Var(\tilde{\theta}) = \frac{(n+1)^2}{4n^2} \Var(X_{(n)}) = \frac{(n+1)^2}{4n^2}  \cdot 4n\theta^2 \left(\frac{n^2+2n+1 - n^2-2n}{(n+2)(n+1)^2} \right) = \frac{\theta^2}{n(n+2)}
+\]
+Оценка $\tilde{\theta}_n$ является состоятельной, так как $\E(\tilde{\theta}_n) = \theta$ и $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)} \to_{n\to\infty} 0$
+\item  Поскольку $\Var(\widehat{\theta}_n) = \frac{\theta^2}{3n}$, $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)}$ при достаточно большом $n$ $\Var(\tilde{\theta}_n) < \Var(\widehat{\theta}_n) $. Значит, при таких $n$ оценка $\tilde{\theta}_n$ будет более эффективной по сравнению с оценкой $\widehat{\theta}_n$.
+\end{enumerate}
 
-	\item
-	\begin{enumerate}
-		\item $X_i \sim Bin (n=10, p)$
-		\item $L(p)  = \prod_{i=1}^{n} C_{10}^{x_i} p^{x_i} (1-p)^{10-x_i}$
-		\item $\ln L(p) = \sum_{i=1}^{n} \ln C_{10}^{x_i} + \sum_{i=1}^n x_i \ln p + \sum_{i=1}^{n} (10-x_i)\ln (1-p) \to \max_p$
+\item
+\begin{enumerate}
+\item $X_i \sim Bin (n=10, p)$
+\item $L(p)  = \prod_{i=1}^{n} C_{10}^{x_i} p^{x_i} (1-p)^{10-x_i}$
+\item $\ln L(p) = \sum_{i=1}^{n} \ln C_{10}^{x_i} + \sum_{i=1}^n x_i \ln p + \sum_{i=1}^{n} (10-x_i)\ln (1-p) \to \max_p$
 
-		$\frac{\partial \ln L}{\partial p} = \frac{\sum_{i=1}^n x_i}{p} - \frac{\sum_{i=1}^{n} (10-x_i)}{1-p} \mid_{p=\hat{p}} = 0 \Rightarrow \hat{p} = \frac{\overline{X}}{n} = \frac{\sum_{i=1}^{n} x_i}{10n}$
+$\frac{\partial \ln L}{\partial p} = \frac{\sum_{i=1}^n x_i}{p} - \frac{\sum_{i=1}^{n} (10-x_i)}{1-p} \mid_{p=\hat{p}} = 0 \Rightarrow \hat{p} = \frac{\overline{X}}{n} = \frac{\sum_{i=1}^{n} x_i}{10n}$
 
-		$\frac{\partial^2 \ln L}{\partial p^2} = -\frac{\sum_{i=1}^n x_i}{p^2} -  \frac{\sum_{i=1}^{n} (10-x_i)}{(1-p)^2}$
+$\frac{\partial^2 \ln L}{\partial p^2} = -\frac{\sum_{i=1}^n x_i}{p^2} -  \frac{\sum_{i=1}^{n} (10-x_i)}{(1-p)^2}$
 
-		\item $I(p) = -\E \left(\frac{\partial^2 \ln L}{\partial p^2}  \right) = \E \left(\frac{\sum_{i=1}^n x_i}{p^2} + \frac{\sum_{i=1}^{n} (10-x_i)}{(1-p)^2}\right) = \frac{10np}{p^2} + \frac{10n - 10np}{(1-p)^2} = \frac{10n}{p(1-p)}$
+\item $I(p) = -\E \left(\frac{\partial^2 \ln L}{\partial p^2}  \right) = \E \left(\frac{\sum_{i=1}^n x_i}{p^2} + \frac{\sum_{i=1}^{n} (10-x_i)}{(1-p)^2}\right) = \frac{10np}{p^2} + \frac{10n - 10np}{(1-p)^2} = \frac{10n}{p(1-p)}$
 
-		$i(p) = \frac{I(p)}{n} = \frac{10}{p(1-p)}$
+$i(p) = \frac{I(p)}{n} = \frac{10}{p(1-p)}$
 
-		\item $\Var(T) \geq \frac{1}{ni(T)}$
+\item $\Var(T) \geq \frac{1}{ni(T)}$
 
-		\item $\Var(\hat{p}_{ML}) = \Var\left(\frac{\sum_{i=1}^{n} x_i}{10n}\right) = \frac{1}{(10n)^2} n \Var(X_i) = \frac{1}{100n}10p(1-p) = \frac{p(1-p)}{10n}$
+\item $\Var(\hat{p}_{ML}) = \Var\left(\frac{\sum_{i=1}^{n} x_i}{10n}\right) = \frac{1}{(10n)^2} n \Var(X_i) = \frac{1}{100n}10p(1-p) = \frac{p(1-p)}{10n}$
 
-		$\frac{p(1-p)}{10n} = \frac{1}{\frac{10n}{p(1-p)}} \Rightarrow$ да
+$\frac{p(1-p)}{10n} = \frac{1}{\frac{10n}{p(1-p)}} \Rightarrow$ да
 
-		\item $\E(X_i) = 10p \Rightarrow \widehat{\E(X_i)} = 10 \hat{p}_{ML} = \overline{X}$
+\item $\E(X_i) = 10p \Rightarrow \widehat{\E(X_i)} = 10 \hat{p}_{ML} = \overline{X}$
 
-		$\Var(X_i) = 10p(1-p) \Rightarrow \widehat{\Var(X_i)} = \overline{X}\left(1-\frac{\overline{X}}{10}\right)$
+$\Var(X_i) = 10p(1-p) \Rightarrow \widehat{\Var(X_i)} = \overline{X}\left(1-\frac{\overline{X}}{10}\right)$
 
-		\item $\hat{p} = \frac{3+4+0+2+6}{10\cdot 5} = 0.3$
-	\end{enumerate}
+\item $\hat{p} = \frac{3+4+0+2+6}{10\cdot 5} = 0.3$
+\end{enumerate}
 
-	\item $L(x, \theta) = \prod_{i=1}^{n} (1 + \theta) x_i^\theta = (1+\theta)^n \prod_{i=1}^n x_i^\theta \to \max_\theta$
+\item $L(x, \theta) = \prod_{i=1}^{n} (1 + \theta) x_i^\theta = (1+\theta)^n \prod_{i=1}^n x_i^\theta \to \max_\theta$
 
-	$\ln L (x, \theta) = n\ln (1+\theta) + \theta\sum_{i=1}^{n} \ln x_i \to \max_\theta$
+$\ln L (x, \theta) = n\ln (1+\theta) + \theta\sum_{i=1}^{n} \ln x_i \to \max_\theta$
 
-	$\frac{\partial \ln L}{\partial \theta} = \frac{n}{1+\theta} + \sum_{i=1}^{n} \ln x_i \mid_{\theta=\hat{\theta}} = 0 \Rightarrow \hat{\theta}_{ML} = -\frac{1}{\sum_{i=1}^{n} \ln x_i} -1$
+$\frac{\partial \ln L}{\partial \theta} = \frac{n}{1+\theta} + \sum_{i=1}^{n} \ln x_i \mid_{\theta=\hat{\theta}} = 0 \Rightarrow \hat{\theta}_{ML} = -\frac{1}{\sum_{i=1}^{n} \ln x_i} -1$
 
-	\item $\overline{X} - 1.96 \frac{7}{\sqrt{20}} < \mu <\overline{X} + 1.96 \frac{7}{\sqrt{20}} $
+\item $\overline{X} - 1.96 \frac{7}{\sqrt{20}} < \mu <\overline{X} + 1.96 \frac{7}{\sqrt{20}} $
 \end{enumerate}
 
 

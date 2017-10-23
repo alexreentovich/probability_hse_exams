@@ -122,7 +122,7 @@ options(scipen = 10)
 \item Андрей Зубанов, решения (экзамен 26.03.2012, \ldots)
 \item Кирилл Пономарёв, решения (контрольная 1, 2014)
 \item Александр Левкун, решения (контрольная 1, 2014)
-\item Оля Гнилова, решения (кр 3 2011, 2014, 2015, 2016) 
+\item Оля Гнилова, решения (кр 3 2011, 2014, 2015, 2016)
 \end{enumerate}
 
 
@@ -130,53 +130,43 @@ options(scipen = 10)
 
 \section{2004-2005}
 
-<<child='chapters/year_2004_2005.Rnw'>>=
-@
+\input{chapters/year_2004_2005.tex}
 
 \section{2005-2006}
 
-
-<<child='chapters/year_2005_2006.Rnw'>>=
-@
-
+\input{chapters/year_2005_2006.tex}
 
 \section{2006-2007}
 
-<<child='chapters/year_2006_2007.Rnw'>>=
-@
-
+\input{chapters/year_2006_2007.tex}
 
 \section{2007-2008}
 
-<<child='chapters/year_2007_2008.Rnw'>>=
-@
+\input{chapters/year_2007_2008.tex}
 
 \section{2008-2009}
-<<child='chapters/year_2008_2009.Rnw'>>=
-@
 
+\input{chapters/year_2008_2009.tex}
 
 \section{2009-2010}
 
-<<child='chapters/year_2009_2010.Rnw'>>=
-@
+\input{chapters/year_2009_2010.tex}
 
 \section{2010-2011}
-<<child='chapters/year_2010_2011.Rnw'>>=
-@
 
+\input{chapters/year_2010_2011.tex}
 
 \section{2011-2012}
-<<child='chapters/year_2011_2012.Rnw'>>=
-@
+
+\input{chapters/year_2011_2012.tex}
 
 \section{2012-2013}
 <<child='chapters/year_2012_2013.Rnw'>>=
 @
 
 \section{2013-2014}
-<<child='chapters/year_2013_2014.Rnw'>>=
-@
+
+\input{chapters/year_2013_2014.tex}
 
 \section{2014-2015}
 
@@ -190,12 +180,10 @@ options(scipen = 10)
 
 \section{2016-2017}
 
-<<child='chapters/year_2016_2017.Rnw'>>=
-@
+\input{chapters/year_2016_2017.tex}
 
 \section{2017-2018}
 
-<<child='chapters/year_2017_2018.Rnw'>>=
-@
+\input{chapters/year_2017_2018.tex}
 
 \end{document}

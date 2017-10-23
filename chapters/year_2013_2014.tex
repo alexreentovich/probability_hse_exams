@@ -40,13 +40,12 @@ ce^x, \, x<0
 
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
-\begin{tabular}{c|ccc}
- & $X=-1$ & $X=0$ & $X=1$ \\
-\hline
-$Y=-1$ & $0.1$ & $0.2$ & $0.2$ \\
-$Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
+\begin{tabular}{@{}c|ccc@{}}
+\toprule
+    & $X=-1$ & $X=0$ & $X=1$ \\ \midrule
+$Y=-1$ & $0.1$  & $0.2$   & $0.2$ \\
+$Y=1$ & $0.2$  & $0.1$ & $0.2$ \\ \bottomrule
 \end{tabular}
-
 
 \begin{enumerate}
 \item Найдите  частные распределения случайных величин $X$ и $Y$
@@ -59,13 +58,85 @@ $Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
 
 \end{enumerate}
 
-Некоторые ответы:
+
+
+\subsection{Контрольная работа №1, 5.11.2013, решения}
+
 \begin{enumerate}
-\item xx
+\item Введём обозначения:
+\begin{itemize}
+\item $\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) = 0.18$ — Вася пришёл, а девушки — нет
+\item $\P(\text{В} | \text{A} \cap \text{М}) = 0.9$ — пришли и Вася, и девушки
+\item $\P(\text{В} | \text{A}^{c} \cap \text{М}) = 0.54$ — Вася пришёл, если пришла только Маша
+\item $\P(\text{В} | \text{A} \cap \text{М}^{c}) = 0.36$ — Вася пришёл, если пришла только Алёна
+\item $\P(\text{М}) = 0.4$ — Маша пришла на лекцию
+\item $\P(\text{А}) = 0.6$ — Алёна пришла на лекцию
+\end{itemize}
+\begin{enumerate}
+\item Используя формулы Байеса и полной вероятности, получим:
+\begin{multline*}
+\P(\text{A} | \text{В} ) = \frac{\P(\text{A} \cap \text{В})}{\P(\text{В})} =  \\
+=\frac{\P(\text{В} | \text{A}) \cdot \P(\text{А})}{\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) \cdot \P(\text{A}^{c} \cap \text{М}^{c})+
+\P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{A} \cap \text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{A}^{c} \cap \text{М})+
+\P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{A} \cap \text{М}^{c})} = \\
+= \frac{P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{А}) \cdot \P(\text{М}) + \P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{А})
+ \cdot \P(\text{М}^{c})}{\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) \cdot \P(\text{A}^{c} \cap \text{М}^{c})+
+ \P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{A} \cap \text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{A}^{c} \cap \text{М})+
+ \P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{A} \cap \text{М}^{c})} = \\
+ = \frac{0.9 \cdot 0.4 \cdot 0.6 + 0.36 \cdot 0.6 \cdot 0.6}{0.18 \cdot 0.6 \cdot 0.4 + 0.9 \cdot 0.4 \cdot 0.6 + 0.54 \cdot 0.4 \cdot 0.4 + 0.36 \cdot 0.6 \cdot 0.6} = 0.(72)
+\end{multline*}
+\item \begin{multline*}
+\P(\text{М} | \text{В}) = \frac{\P(\text{М} \cap \text{В})}{\P(\text{В})} = \\
+\frac{P(\text{В} | \text{М} \cap \text{А}) \cdot \P(\text{А}) \cdot \P(\text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{А}^{c})
+ \cdot \P(\text{М})}{\P(\text{В} | \text{A}^{c} \cap \text{М}^{c}) \cdot \P(\text{A}^{c} \cap \text{М}^{c})+
+ \P(\text{В} | \text{A} \cap \text{М}) \cdot \P(\text{A} \cap \text{М}) + \P(\text{В} | \text{A}^{c} \cap \text{М}) \cdot \P(\text{A}^{c} \cap \text{М})+
+ \P(\text{В} | \text{A} \cap \text{М}^{c}) \cdot \P(\text{A} \cap \text{М}^{c})} = \\
+ = \frac{0.9 \cdot 0.4 \cdot 0.6 + 0.54 \cdot 0.4 \cdot 0.4}{0.18 \cdot 0.6 \cdot 0.4 + 0.9 \cdot 0.4 \cdot 0.6 + 0.54 \cdot 0.4 \cdot 0.4 + 0.36 \cdot 0.6 \cdot 0.6} = 0.(63)
+\end{multline*}
+Если Вася на лекции, вероятность застать на ней Алёну выше.
+\end{enumerate}
+
+
 \item $\P(X=5)=C_{100}^5 0.002^5 0.998^{95}$, $\E(X)=0.2$, $\Var(X)=0.2\cdot 0.998$, наиболее вероятно событие $X=0$
 \item $c=1/2$, $P=5/8$, $\E(X)=0$, $\Var(X)=2$, $\E(X^{2k+1})=0$, $\E(X^{2k})=(2k)!$
-\item xx
-\item xx
+\item
+\begin{enumerate}
+\item $\E(Y - 2X - 3) = \E(Y) - 2 \E(X) - 3 = 0$
+
+$\Var(Y - 2X - 3) = \Var(Y) + 4\Var(X) - 2\Cov(Y, 2X) = 16$
+
+$\Cov(X, Y) = \Corr(X,Y) \cdot \sqrt{\Var(X) \cdot \Var(Y)} = 6$
+\item $\Corr(Y - 2X - 3, X) = \frac{\Cov(Y, X) - 2 \Var(X)}{\sqrt{\Var(Y - 2X - 3) \cdot \Var(X)}} = -1$
+\item Корреляция равна 1, значит, есть линейная взаимосвязь между переменными. Пусть $Y+\beta X=const$, тогда $\Var(Y+\beta X)=0$. Решая уравнение находим, что $\beta=-2/3$.
+\end{enumerate}
+\item \begin{enumerate}
+\item
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$X$         & $-1$  & $0$   & $1$   \\ \midrule
+$\P(\cdot)$ & $0.3$ & $0.3$ & $0.4$ \\ \bottomrule
+\end{tabular}
+
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$Y$         & $-1$  & $1$   \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
+\end{tabular}
+\item
+\begin{multline*}
+\Cov(X, Y) = \E(XY) - \E(X) \E(Y)  = (-1)\cdot (-1) \cdot 0.1 + (-1) \cdot 0 \cdot 0.2 + \\
++ (-1) \cdot 1 \cdot 0.2 + 1 \cdot (-1) \cdot 0.2 + 1 \cdot 0 \cdot 0.1 + 1 \cdot 1 \cdot 0.1 -
+0.1 \cdot 0 = -0.1
+\end{multline*}
+\item Да, поскольку если случайные величины независимы, то их ковариция равна нулю.
+\item
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$X|Y=-1$    & $-1$  & $0$   & $1$   \\ \midrule
+$\P(\cdot)$ & $0.2$ & $0.4$ & $0.4$ \\ \bottomrule
+\end{tabular}
+\item $\E(X | Y = -1) = -1 \cdot 0.2 + 0 \cdot 0.4 + 1 \cdot 0.4 = 0.2$
+\end{enumerate}
 \end{enumerate}
 
 
@@ -105,15 +176,13 @@ $Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
 \item Можно ли выразить $Y$ через $X$? Если да, то запишите уравнение связи.
 \end{enumerate}
 
-Решение: корреляция равна 1, значит есть линейная взаимосвязь между переменными. Пусть $Y+\beta X=const$, тогда $\Var(Y+\beta X)=0$. Решая уравнение находим, что $\beta=-2/3$.
-
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
-\begin{tabular}{c|ccc}
- & $X=-1$ & $X=0$ & $X=1$ \\
-\hline
-$Y=-1$ & $0.1$ & $0.2$ & $0.2$ \\
-$Y=1$ & $0.2$ & $0.1$ & $0.2$ \\
+\begin{tabular}{@{}c|ccc@{}}
+\toprule
+    & $X=-1$ & $X=0$ & $X=1$ \\ \midrule
+$Y=-1$ & $0.1$  & $0.2$   & $0.2$ \\
+$Y=1$ & $0.2$  & $0.1$ & $0.2$ \\ \bottomrule
 \end{tabular}
 
 Найдите:
@@ -293,8 +362,6 @@ $Z=(X,Y)$ с математическим ожиданием $\E(Z)=(175,74)$ и
 \item Какова вероятность того, что при росте 180 см человек будет обладать весом, меньшим 60 кг?
 \end{enumerate}
 
-\newpage
-
 
 \item Аня, Боря и Вова сдают устный экзамен. Экзамен принимают два преподавателя. Время ответа каждого студента — экспоненциальная случайная величина со средним в 20 минут. Аня и Боря начали отвечать одновременно первыми. Вова начнет отвечать, как только кто-то из них освободиться. Длительности ответов независимы.
 
@@ -339,7 +406,7 @@ $Z=(X,Y)$ с математическим ожиданием $\E(Z)=(175,74)$ и
 
 \item{Пусть $X$ — длина наугад выловленного удава в сантиметрах, а $Y$ — в дециметрах. Коэффициент корреляции между этими величинами равен $0.1$. Да. Нет.}
 
-\item{Для любой случайной величины $X$ (с конечной дисперсией) справедливо неравенство: $P(|X-\E(X)|>2\sqrt{\Var(X)}\leqslant \frac{1}{4}$. Да. Нет.}
+\item{Для любой случайной величины $X$ (с конечной дисперсией) справедливо неравенство: $\P(|X-\E(X)|>2\sqrt{\Var(X)}\leqslant \frac{1}{4}$. Да. Нет.}
 
 \item{Сумма независимых нормальных случайных величин нормальна. Да. Нет.}
 
@@ -361,7 +428,7 @@ $Z=(X,Y)$ с математическим ожиданием $\E(Z)=(175,74)$ и
 
 \centering{\subsubsection*{Задачи}}
 \begin{enumerate}
-\item (10) Совместная функция плотности с. в. $(X,Y)$ имеет вид:
+\item  Совместная функция плотности случайной величины $(X,Y)$ имеет вид:
 \begin{equation*}
 f(x,y) =
  \begin{cases}
@@ -373,11 +440,12 @@ f(x,y) =
 Найдите:
 \begin{enumerate}
 \item $P(Y<X^2)$
-\item функцию плотности и математическое ожидание с. в. $X$
-\item условную функцию плотности и условное математическое ожидание с. в. $X$ при условии, что $Y=2$
+\item функцию плотности и математическое ожидание случайной величины $X$
+\item условную функцию плотности и условное математическое ожидание случайной величины $X$ при условии, что $Y=2$
 \end{enumerate}
 
-\item (10) Случайный вектор $(X,Y)^T$ имеет двумерное нормальное распределение с математическим ожиданием $(0,0)^T$ и ковариационной матрицей \\
+\item Случайный вектор $(X,Y)^T$ имеет двумерное нормальное распределение с математическим ожиданием $(0,0)^T$ и ковариационной матрицей
+
 $C = \begin{pmatrix}
 9 & -1 \\
 -1 & 4 \\
@@ -388,18 +456,18 @@ $C = \begin{pmatrix}
 \item $P(X>1)$
 \item $P(2X+Y>3)$
 \item $P(2X+Y>3|X=1)$
-\item $P\left(\dfrac{X^2}{9}+\dfrac{Y^2}{4} >12\right)$
+\item $P\left(\frac{X^2}{9}+\frac{Y^2}{4} >12\right)$
 \item Запишите совместную функцию плотности  $(X,Y)^T$
 \end{enumerate}
 
 \item Вычислите:
 \begin{enumerate}
-\item $P\left(\dfrac{X_1}{\sqrt{X_3^2+X_4^2+X_5^2}}>\dfrac{5}{4\sqrt{3}}\right)$
-\item $P\left(\dfrac{X_1+2X_2}{\sqrt{X_3^2+X_4^2+X_5^2}}<4.5\right)$
-\item $P\left(\dfrac{X_1^2}{X_2^2+X_3^2}>17\right)$
+\item $P\left(\frac{X_1}{\sqrt{X_3^2+X_4^2+X_5^2}}>\frac{5}{4\sqrt{3}}\right)$
+\item $P\left(\frac{X_1+2X_2}{\sqrt{X_3^2+X_4^2+X_5^2}}<4.5\right)$
+\item $P\left(\frac{X_1^2}{X_2^2+X_3^2}>17\right)$
 \end{enumerate}
 
-\item (15) Оценка за зачет по теории вероятности $i$-го студента — неотрицательная с. в. $X_i$ с $\E(X_i)=\dfrac{1}{2}$ и $\Var(X_i)=\dfrac{1}{12}$. Для случайной выборки из $36$ студентов оцените или вычислите следующие вероятности $\left(\bar{X} = \dfrac{1}{n} \sum \limits_1^n X_i \right)$:
+\item Оценка за зачет по теории вероятности $i$-го студента — неотрицательная с. в. $X_i$ с $\E(X_i)=\frac{1}{2}$ и $\Var(X_i)=\frac{1}{12}$. Для случайной выборки из $36$ студентов оцените или вычислите следующие вероятности $\left(\bar{X} = \frac{1}{n} \sum \limits_1^n X_i \right)$:
 \begin{enumerate}
 \item $P(|X_i-0.5|\geqslant 0.3)$
 \item $P(X_i\geqslant 0.8)$
@@ -451,9 +519,9 @@ $C = \begin{pmatrix}
 \item 	По выборке независимых одинаково распределенных случайных величин\\ $X_1,\dots,X_n$ с функцией плотности $f(x)=\frac{1}{\theta} x^{-1+\frac{1}{\theta}}$, $x\in(0, 1)$, найдите оценки максимального правдоподобия параметра $\theta$. Сформулируйте определения свойств несмещенности, состоятельности и эффективности и проверьте, выполняются ли эти свойства для найденной оценки.
 \end{enumerate}
 \underline{Примечание.} В помощь несчастным, забывшим формулу интегрирования по частям и таблицу неопределенных интегралов, или просто ленивым студентам:
-\[
+$$
 \int\limits_{0}^1 t^\alpha \ln (t) dt = -\frac{1}{(\alpha+1)^2}
-\]
+$$
 
 
 
@@ -479,13 +547,13 @@ $C = \begin{pmatrix}
 
 \item $[$R] Как известно, Фрекен-Бок пьет коньяк по утрам и иногда видит привидения. За 110 дней имеются следующие статистические данные
 
-
-\begin{tabular}{c|ccc}
-Рюмок & 1 & 2 & 3 \\
-\hline
-Дней с привидениями & 10 & 25 & 20 \\
-Дней без привидений & 20 &  25 & 10 \\
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Рюмок               & 1    & 2    & 3    \\ \midrule
+Дней с приведениями & $10$ & $25$ & $20$ \\
+Дней без приведений & $20$ & $25$ & $10$ \\ \bottomrule
 \end{tabular}
+
 
 Вероятность увидеть привидение зависит от того, сколько рюмок коньяка было выпито утром, а именно, $p=\exp(a+bx)/(1+ \exp(a+bx))$, где $x$ — количество рюмок, а $a$ и $b$ — неизвестные параметры.
 
@@ -536,26 +604,24 @@ $C = \begin{pmatrix}
 
 
 \subsection{Переписывание кр1, вариант 1}
-
-\paragraph{Задача 1.} % [Кочетков, Смерчинскаяб Соколов] 5.12
+\begin{enumerate}
+\item % [Кочетков, Смерчинскаяб Соколов] 5.12
 Вероятности попадания в мишень для трех стрелков равны 4/5, 3/4 и 2/3 соответственно. В результате одновременного выстрела трех стрелков в мишени образовалось две пробоины. Какова вероятность того, что 3-ий стрелок попал в мишень?
 
-\verb"Решение." Положим $A_i = \{\text{``попал $i$-й стрелок''}\}$, $i = 1,2,3$, и $B = (A_1^c \cap A_2 \cap A_3) \cup (A_1 \cap A_2^c \cap A_3) \cup (A_1 \cap A_2 \cap A_3^c)$. Имеем
-\[
-\P(A_3|B) = \frac{\P(A_3 \cap B)}{\P(B)} = \frac{\P(A_1^c \cap A_2 \cap A_3) + \P(A_1 \cap A_2^c \cap A_3)}{\P(A_1^c \cap A_2 \cap A_3) + \P(A_1 \cap A_2^c \cap A_3) + \P(A_1 \cap A_2 \cap A_3^c)} =
-\]
-\[
+\verb"Решение." Положим $A_i = \{\text{«попал $i$-й стрелок»}\}$, $i = 1,2,3$, и $B = (A_1^c \cap A_2 \cap A_3) \cup (A_1 \cap A_2^c \cap A_3) \cup (A_1 \cap A_2 \cap A_3^c)$. Имеем
+\begin{multline*}
+\P(A_3|B) = \frac{\P(A_3 \cap B)}{\P(B)} = \frac{\P(A_1^c \cap A_2 \cap A_3) + \P(A_1 \cap A_2^c \cap A_3)}{\P(A_1^c \cap A_2 \cap A_3) + \P(A_1 \cap A_2^c \cap A_3) + \P(A_1 \cap A_2 \cap A_3^c)} = \\
 = \frac{\P(A_1^c)\P(A_2)\P(A_3) + \P(A_1)\P(A_2^c)\P(A_3)}{\P(A_1^c)\P(A_2)\P(A_3) + \P(A_1)\P(A_2^c)\P(A_3) + \P(A_1)\P(A_2)\P(A_3^c)} = \frac{7}{13}
-\]
- $\Box$
-\paragraph{Задача 2.}
-В лифт 11-этажного дома на первом этаже вошли 5 человек.
-\begin{itemize}
-  \item[(a)] Найдите вероятность того, что хотя бы один из них выйдет на 6-ом этаже.
-  \item[(b)] Вычислите среднее значение тех из них, кто не выйдет на 6-ом этаже.
-\end{itemize}
+\end{multline*}
+\item В лифт 11-этажного дома на первом этаже вошли 5 человек.
+\begin{enumerate}
+\item Найдите вероятность того, что хотя бы один из них выйдет на 6-ом этаже.
+\item Вычислите среднее значение тех из них, кто не выйдет на 6-ом этаже.
+\end{enumerate}
 
-\verb"Решение." (a) Рассмотрим случайные величины
+\verb"Решение."
+\begin{enumerate}
+\item[а)] Рассмотрим случайные величины
 \[
 X_i =
                   \begin{cases}
@@ -566,12 +632,12 @@ X_i =
 $i = 1,\ldots,5$. Поскольку в условии задачи не сказано ничего иного, считаем, что пассажиры ведут себя независимо друг от друга, и каждый из них может выйти из лифта на любом этаже со второго по одиннадцатый. Поэтому случайные величины $X_1, \dots, X_5$ независимы и $X_i \sim \mathrm{Be}(1/10)$, $i = 1,\ldots,5$.
 Случайная величина $X:=X_1+\ldots+X_5$ означает число пассажиров, которые вышли на 6-ом этаже. Тогда используя то, что $X \sim \mathrm{Bi}(5,1/10)$, получаем искомую вероятность в пункте (a)
 \[
-\P(\{X>0\}) = 1 - \P(\{X=0\}) = 1 - C_{5}^{0}\left(\tfrac{1}{10}\right)^{0}\left(\tfrac{9}{10}\right)^{5} = 1 - \left(\tfrac{9}{10}\right)^{5} \text{.}
+\P(X>0) = 1 - \P(X=0) = 1 - C_{5}^{0}\left(\frac{1}{10}\right)^{0}\left(\frac{9}{10}\right)^{5} = 1 - \left(\frac{9}{10}\right)^{5} \text{.}
 \]
 
-(b) Заметим, что случайная величина $Y = 5 - X$ означает число пассажиров, которые не вышли на 6-ом этаже. Поэтому $\E[Y] = 5 - \E[X] = 5 - 5\cdot\left(\tfrac{1}{10}\right) = \tfrac{9}{2}$. $\Box$
-\paragraph{Задача 3.}
-Пусть случайная величина $X$ имеет функцию распределения
+\item[б)] Заметим, что случайная величина $Y = 5 - X$ означает число пассажиров, которые не вышли на 6-ом этаже. Поэтому $\E[Y] = 5 - \E[X] = 5 - 5\cdot\left(\frac{1}{10}\right) = \frac{9}{2}$.
+\end{enumerate}
+\item Пусть случайная величина $X$ имеет функцию распределения
 \[
 F_X(x) =          \begin{cases}
                      0     &   \text{при $x < -10$,} \\
@@ -581,30 +647,35 @@ F_X(x) =          \begin{cases}
                   \end{cases}
 \]
 Найдите
-\begin{itemize}
-  \item[(a)] $\P(\{X=-10\})$, $\P(\{X=0\})$, $\P(\{X=10\})$,
-  \item[(b)] $\E[X]$,
-  \item[(c)] $\Var(X)$.
-\end{itemize}
+\begin{enumerate}
+  \item $\P(X=-10)$, $\P(X=0)$, $\P(X=10)$,
+  \item $\E[X]$,
+  \item $\Var(X)$.
+\end{enumerate}
 
-\verb"Решение." (a) Известно, что для любого $a \in \mathbb{R}$ имеет место
+\verb"Решение."
+\begin{enumerate}
+\item[а)] Известно, что для любого $a \in \mathbb{R}$ имеет место
 \[
-\P(\{X=a\}) = F_X(a) - \lim_{n \rightarrow \infty}F_X\left(a-\tfrac{1}{n}\right) \text{.}
+\P(X=a) = F_X(a) - \lim_{n \rightarrow \infty}F_X\left(a-\frac{1}{n}\right) \text{.}
 \]
-Поэтому $\P\left(\{X=-10\}\right) = \frac{1}{4} - 0 = \frac{1}{4}$, $\P\left(\{X=0\}\right) = \frac{3}{4} - \frac{1}{4} = \frac{1}{2}$ и $\P\left(\{X=10\}\right) = 1 - \frac{3}{4} = \frac{1}{4}$.
+Поэтому $\P\left(X=-10\right) = \frac{1}{4} - 0 = \frac{1}{4}$, $\P\left(X=0\right) = \frac{3}{4} - \frac{1}{4} = \frac{1}{2}$ и $\P\left(X=10\right) = 1 - \frac{3}{4} = \frac{1}{4}$.
 
-(b) Из пункта (a) следует, что распределение случайной величины $X$ задается таблицей
-\[
-\begin{tabular}{c|c|c|c}
-  $X$             & $-10$   & $0$     & $10$ \\ \cline{1-4}
-  $\P_X$  & $1/4$   & $1/2$   & $1/4$ \\
+\item[б)] Из пункта (a) следует, что распределение случайной величины $X$ задается таблицей
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$X$         & $-10$ & $0$   & $10$  \\ \midrule
+$\P(\cdot)$ & $1/4$ & $1/2$ & $1/4$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 Поэтому $\E[X] = -10 \cdot \frac{1}{4} + 0 \cdot \frac{1}{2} + 10 \cdot \frac{1}{4} = 0$.
 
-(c) Наконец, $\E[X^2] = (-10)^2 \cdot \frac{1}{4} + 0^2 \cdot \frac{1}{2} + 10^2 \cdot \frac{1}{4} = 50$. Следовательно, $\Var(X) = \E[X^2] - [\E X]^2 = 50$. $\Box$
-\paragraph{Задача 4.}
-Плотность распределения случайной величины $X$ имеет вид
+\item[в)] Наконец, $\E[X^2] = (-10)^2 \cdot \frac{1}{4} + 0^2 \cdot \frac{1}{2} + 10^2 \cdot \frac{1}{4} = 50$. Следовательно, $\Var(X) = \E[X^2] - [\E X]^2 = 50$.
+\end{enumerate}
+
+
+\item Плотность распределения случайной величины $X$ имеет вид
 \[
 f_X(x) =          \begin{cases}
                      0     &   \text{при $x < 0$,} \\
@@ -613,26 +684,28 @@ f_X(x) =          \begin{cases}
                   \end{cases}
 \]
 Найдите
-\begin{itemize}
-  \item[(a)] $\P(\{X=1/2\})$, $\P(\{X \in [1/2;2]\})$,
-  \item[(b)] $F_X(x)$,
-  \item[(c)] $\E[X]$,
-  \item[(d)] $\Var(X)$.
-\end{itemize}
+\begin{enumerate}
+  \item $\P(X=1/2)$, $\P(X \in [1/2;2])$,
+  \item $F_X(x)$,
+  \item $\E[X]$,
+  \item $\Var(X)$.
+\end{enumerate}
 
-\verb"Решение." (a) Известно, что если случайная величина $X$ является абсолютно непрерывной, то для любого множества $B \subseteq \mathbb{R}$, для которого определена вероятность $\P(\{X \in B\})$, имеет место формула
+\verb"Решение."
+\begin{enumerate}
+\item[а)] Известно, что если случайная величина $X$ является абсолютно непрерывной, то для любого множества $B \subseteq \mathbb{R}$, для которого определена вероятность $\P(\{X \in B\})$, имеет место формула
 \[
-\P(\{X \in B\}) = \int_{B}f_X(x)dx \text{.}
+\P(X \in B) = \int_{B}f_X(x)dx \text{.}
 \]
-Поэтому $\P(\{X = 1/2\}) = \P(\{X \in [1/2;1/2]\}) = \int_{1/2}^{1/2}f_X(x)dx = 0$ и $\P(\{X \in [1/2;2]\}) = \int_{1/2}^{2}f_X(x)dx = \int_{1/2}^{1}(x+1/2)dx =5/8$.
+Поэтому $ \P(X = 1/2) = \P(X \in [1/2;1/2]) = \int_{1/2}^{1/2}f_X(x)dx = 0$ и $\P(X \in [1/2;2]) = \int_{1/2}^{2}f_X(x)dx = \int_{1/2}^{1}(x+\frac{1}{2})dx =\frac{5}{8}$.
 
-(b) Если $x < 0$, то
+\item[б)] Если $x < 0$, то
 \[
 F_X(x) = \int_{-\infty}^{x}f_X(t)dt = \int_{-\infty}^{x}0dt = 0 \text{.}
 \]
 Если $0 \leq x \leq 1$, то
 \[
-F_X(x) = \int_{-\infty}^{0}f_X(t)dt + \int_{0}^{x}f_X(t)dt= \int_{-\infty}^{0}0dt + \int_{0}^{x}(t+1/2)dt = \left.\tfrac{t^2}{2}\right|_{t=0}^{t=x} + \tfrac{x}{2} = \tfrac{x(x+1)}{2} \text{.}
+F_X(x) = \int_{-\infty}^{0}f_X(t)dt + \int_{0}^{x}f_X(t)dt= \int_{-\infty}^{0}0dt + \int_{0}^{x}(t+1/2)dt = \left.\frac{t^2}{2}\right|_{t=0}^{t=x} + \frac{x}{2} = \frac{x(x+1)}{2} \text{.}
 \]
 Если $x > 1$, то
 \[
@@ -643,49 +716,60 @@ F_X(x) = \int_{-\infty}^{0}f_X(t)dt + \int_{0}^{1}f_X(t)dt + \int_{1}^{x}f_X(t)d
 F_X(x) =
                  \begin{cases}
                      0                   &   \text{при $x < 0$,} \\
-                     \tfrac{x(x+1)}{2}   &   \text{при $0 \leq x \leq 1$,} \\
+                     \frac{x(x+1)}{2}   &   \text{при $0 \leq x \leq 1$,} \\
                      1                   &   \text{при $x > 1$.}
                   \end{cases}
 \]
 
-(c) $\E[X] = \int_{-\infty}^{\infty}xf_X(x)dx = \int_{0}^{1}x\left(x+\tfrac{1}{2}\right)dx = \int_{0}^{1}\left(x^2+\tfrac{x}{2}\right)dx = \left.\tfrac{x^3}{3}\right|_{x=0}^{x=1} + \left.\tfrac{x^2}{4}\right|_{x=0}^{x=1} = \tfrac{1}{3} + \tfrac{1}{4} = \tfrac{7}{12}$.
+\item[в)] $\E[X] = \int_{-\infty}^{\infty}xf_X(x)dx = \int_{0}^{1}x\left(x+\frac{1}{2}\right)dx = \int_{0}^{1}\left(x^2+\frac{x}{2}\right)dx = \left.\frac{x^3}{3}\right|_{x=0}^{x=1} + \left.\frac{x^2}{4}\right|_{x=0}^{x=1} = \frac{1}{3} + \frac{1}{4} = \frac{7}{12}$.
 
-(d) $\E[X^2] = \int_{-\infty}^{\infty}x^2f_X(x)dx = \int_{0}^{1}x^2\left(x+\tfrac{1}{2}\right)dx = \int_{0}^{1}\left(x^3+\tfrac{x^2}{2}\right)dx = \left.\tfrac{x^4}{4}\right|_{x=0}^{x=1} + \left.\tfrac{x^3}{6}\right|_{x=0}^{x=1} = \tfrac{1}{4} + \tfrac{1}{6} = \tfrac{5}{12}$.
-Следовательно, $\Var(X) = \tfrac{5}{12} - \tfrac{49}{144} = \tfrac{60-49}{144} = \tfrac{11}{144}$. $\Box$
-\paragraph{Задача 5.}
-Совместное распределение случайных величин $X$ и $Y$ задано при помощи таблицы
-\[
-\begin{tabular}{c|c|c|c}
-  {}     & $Y=1$   & $Y=2$   & $Y=3$ \\ \cline{1-4}
-  $X=0$  & $0.2$   & $0.1$   & $0.2$ \\ \cline{1-4}
-  $X=1$  & $0.1$   & $0.3$   & $0.1$ \\
-\end{tabular}
-\]
-\begin{itemize}
-  \item[(a)] Являются ли случайные величины $X$ и $Y$ независимыми? Ответ обоснуйте.
-  \item[(b)] Постройте графики функций распределения $F_X(x)$ и $F_Y(x)$.
-  \item[(c)] Постройте таблицу распределения случайной величины $XY$.
-  \item[(d)] Найдите $\E[X]$, $\E[Y]$, $\E[XY]$ и $\Cov(X,Y)$.
-  \item[(e)] Являются ли случайные величины $X$ и $Y$ некоррелированными? Ответ обоснуйте.
-  \item[(f)] Постройте таблицу условного распределения случайной величины $Y$ при условии $\{X = 1\}$.
-  \item[(g)] Найдите $\E[Y|\{X = 1\}]$.
-\end{itemize}
+\item[г)] $\E[X^2] = \int_{-\infty}^{\infty}x^2f_X(x)dx = \int_{0}^{1}x^2\left(x+\frac{1}{2}\right)dx = \int_{0}^{1}\left(x^3+\frac{x^2}{2}\right)dx = \left.\frac{x^4}{4}\right|_{x=0}^{x=1} + \left.\frac{x^3}{6}\right|_{x=0}^{x=1} = \frac{1}{4} + \frac{1}{6} = \frac{5}{12}$.
+Следовательно, $\Var(X) = \frac{5}{12} - \frac{49}{144} = \frac{60-49}{144} = \frac{11}{144}$.
+\end{enumerate}
 
-\verb"Решение." (a) Случайные величины $X$ и $Y$ не являются независимыми, т.к., например, $0.2 = \P(\{X=0\} \cap \{Y=1\}) \not= \P(\{X=0\}) \cdot \P(\{Y=1\}) = 0.5 \cdot 0.3$.
+\item Совместное распределение случайных величин $X$ и $Y$ задано при помощи таблицы
+\begin{center}
+\begin{tabular}{@{}c|ccc@{}}
+\toprule
+      & $Y=1$ & $Y=2$ & $Y=3$ \\ \midrule
+$X=0$ & $0.2$ & $0.1$ & $0.2$ \\
+$X=1$ & $0.1$ & $0.3$ & $0.1$ \\ \bottomrule
+\end{tabular}
+\end{center}
 
-(b) Таблицы распределения случайных величин $X$ и $Y$ имеют вид
-\[
-\begin{tabular}{c|c|c}
-  $X$             & $0$     & $1$    \\ \cline{1-3}
-  $\P_X$  & $0.5$   & $0.5$  \\
+\begin{enumerate}
+  \item Являются ли случайные величины $X$ и $Y$ независимыми? Ответ обоснуйте.
+  \item Постройте графики функций распределения $F_X(x)$ и $F_Y(x)$.
+  \item Постройте таблицу распределения случайной величины $XY$.
+  \item Найдите $\E[X]$, $\E[Y]$, $\E[XY]$ и $\Cov(X,Y)$.
+  \item Являются ли случайные величины $X$ и $Y$ некоррелированными? Ответ обоснуйте.
+  \item Постройте таблицу условного распределения случайной величины $Y$ при условии $\{X = 1\}$.
+  \item Найдите $\E[Y|X = 1]$.
+\end{enumerate}
+
+\verb"Решение."
+\begin{enumerate}
+\item[а)] Случайные величины $X$ и $Y$ не являются независимыми, т.к., например,
+
+$0.2 = \P(X=0 \cap Y=1) \not= \P(X=0) \cdot \P(Y=1) = 0.5 \cdot 0.3$.
+
+\item[б)] Таблицы распределения случайных величин $X$ и $Y$ имеют вид
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$X$         & $0$   & $1$   \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
-\]
-\[
-\begin{tabular}{c|c|c|c}
-  $Y$             & $1$     & $2$     & $3$   \\ \cline{1-4}
-  $\P_Y$  & $0.3$   & $0.4$   & $0.3$ \\
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y$         & $1$   & $2$   & $3$ \\ \midrule
+$\P(\cdot)$ & $0.3$ & $0.4$ & $0.3$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 Поэтому функции распределения равны
 \[
 F_X(x) =
@@ -705,59 +789,70 @@ F_Y(x) =
                   \end{cases}
 \]
 
-(с) Таблица распределения случайной величины $XY$ имеет вид
-\[
-\begin{tabular}{c|c|c|c|c}
-  $XY$               & $0$     & $1$     & $2$     & $3$ \\ \cline{1-5}
-  $\P_{XY}$  & $0.5$   & $0.1$   & $0.3$   & $0.1$ \\
-\end{tabular}
-\]
+\item[в)] Таблица распределения случайной величины $XY$ имеет вид
 
-(d) $\E[X] = 0 \cdot 0.5 + 1 \cdot 0.5 = 0.5$, $\E[Y] = 1 \cdot 0.3 + 2 \cdot 0.4 + 3 \cdot 0.3 = 2$, $\E[XY] = 0 \cdot 0.5 + 1 \cdot 0.1 + 2 \cdot 0.3 + 3 \cdot 0.1 = 1$, $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 1 - 0.5 \cdot 2 = 0$.
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$XY$        & $0$   & $1$  & $2$  & $3$     \\ \midrule
+$\P(\cdot)$ & $0.5$ & $0.1$ & $0.3$ & $0.1$ \\ \bottomrule
+\end{tabular}
+\end{center}
+
+
+\item[г)] $\E[X] = 0 \cdot 0.5 + 1 \cdot 0.5 = 0.5$,
+
+$\E[Y] = 1 \cdot 0.3 + 2 \cdot 0.4 + 3 \cdot 0.3 = 2$,
+
+$\E[XY] = 0 \cdot 0.5 + 1 \cdot 0.1 + 2 \cdot 0.3 + 3 \cdot 0.1 = 1$,
+
+$\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 1 - 0.5 \cdot 2 = 0$.
 
 Имеется также альтернативный способ подсчета $\E[XY]$, который использует совместное распределение случайных величин $X$ и $Y$:
 \[
 \E[XY] = 0\cdot1\cdot0.2 + 0\cdot2\cdot0.1 + 0\cdot3\cdot0.2 + 1\cdot1\cdot0.1 + 1\cdot2\cdot0.3 + 1\cdot3\cdot0.1 = 1 \text{.}
 \]
 
-(e) Поскольку $\Cov(X,Y) = 0$, то случайные величины $X$ и $Y$ являются некоррелированными.
+\item[д)] Поскольку $\Cov(X,Y) = 0$, то случайные величины $X$ и $Y$ являются некоррелированными.
 
-(f) Находим условные вероятности
+\item[е)] Находим условные вероятности
 \[
-\P(\{Y=1\}|\{X=1\}) = \frac{\P(\{Y=1\} \cap \{X=1\})}{\P(\{X=1\})} = \frac{0.1}{0.5} = 0.2 \text{,}
+\P(Y=1 | X=1 ) = \frac{\P( Y=1  \cap  X=1 )}{\P( X=1 )} = \frac{0.1}{0.5} = 0.2 \text{,}
 \]
 \[
-\P(\{Y=2\}|\{X=1\}) = \frac{\P(\{Y=2\} \cap \{X=1\})}{\P(\{X=1\})} = \frac{0.3}{0.5} = 0.6 \text{,}
+\P( Y=2 | X=1 ) = \frac{\P( Y=2  \cap  X=1 )}{\P( X=1 )} = \frac{0.3}{0.5} = 0.6 \text{,}
 \]
 \[
-\P(\{Y=3\}|\{X=1\}) = \frac{\P(\{Y=3\} \cap \{X=1\})}{\P(\{X=1\})} = \frac{0.1}{0.5} = 0.2 \text{.}
+\P( Y=3 | X=1 ) = \frac{\P( Y=3  \cap  X=1 )}{\P( X=1 )} = \frac{0.1}{0.5} = 0.2 \text{.}
 \]
 Поэтому таблица условного распределения случайной величины $Y$ при условии $\{X = 1\}$ имеет вид
-\[
-\begin{tabular}{c|c|c|c}
-  $Y$                          & $1$     & $2$     & $3$ \\ \cline{1-4}
-  $\P_{Y|\{X=1\}}$     & $0.2$   & $0.6$   & $0.2$ \\
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y | X=1$         & $1$   & $2$   & $3$ \\ \midrule
+$\P(\cdot)$ & $0.2$ & $0.6$ & $0.2$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 
-(g)
-\begin{multline}
-\E[Y|{X=1}] = 1 \cdot \P(\{Y=1\}|\{X=1\}) + 2 \cdot \P(\{Y=2\}|\{X=1\}) + 3 \cdot \P(\{Y=3\}|\{X=1\}) = \\
+\item[ж)]
+\begin{multline*}
+\E[Y|X=1] = 1 \cdot \P(Y=1 | X=1) + 2 \cdot \P(Y=2 | X=1) + 3 \cdot \P(Y=3 | X=1) = \\
 = 1 \cdot 0.2 + 2 \cdot 0.6 + 3 \cdot 0.2 = 2
-\end{multline}
-\qed
+\end{multline*}
+\end{enumerate}
+\end{enumerate}
+
 \subsection{Переписывание кр1, вариант 2}
 \begin{enumerate}
 \item % \paragraph{Задача 1.} % [Кочетков, Смерчинская Соколов] 5.13
 Вероятности попадания в цель для трех стрелков равны $4/5$, $3/4$ и $2/3$ соответственно. Для поражения цели в нее нужно попасть не менее двух раз. В результате одновременного выстрела трех стрелков цель была поражена. Какова вероятность того, что 3-й стрелок попал в цель?
 
-\verb"Решение." Положим $A_i = \{\text{``$i$-й стрелок попал в цель''}\}$, $i = 1,2,3$, и $B = (A_1^c \cap A_2 \cap A_3) \cup (A_1 \cap A_2^c \cap A_3) \cup (A_1 \cap A_2 \cap A_3^c) \cup (A_1 \cap A_2 \cap A_3)$. Имеем
-\begin{multline}
+\verb"Решение." Положим $A_i = \{\text{«$i$-й стрелок попал в цель»}\}$, $i = 1,2,3$, и $B = (A_1^c \cap A_2 \cap A_3) \cup (A_1 \cap A_2^c \cap A_3) \cup (A_1 \cap A_2 \cap A_3^c) \cup (A_1 \cap A_2 \cap A_3)$. Имеем
+\begin{multline*}
 \P(A_3|B) = \frac{\P(A_3 \cap B)}{\P(B)} = \\
 = \frac{\P(A_1^c \cap A_2 \cap A_3) + \P(A_1 \cap A_2^c \cap A_3) + \P(A_1 \cap A_2 \cap A_3)}{\P(A_1^c \cap A_2 \cap A_3) + \P(A_1 \cap A_2^c \cap A_3) + \P(A_1 \cap A_2 \cap A_3^c) + \P(A_1 \cap A_2 \cap A_3)} = \\
 = \frac{\P(A_1^c)\P(A_2)\P(A_3) + \P(A_1)\P(A_2^c)\P(A_3) + \P(A_1)\P(A_2)\P(A_3)}{\P(A_1^c)\P(A_2)\P(A_3) + \P(A_1)\P(A_2^c)\P(A_3) + \P(A_1)\P(A_2)\P(A_3^c) + \P(A_1)\P(A_2)\P(A_3)} = \frac{19}{25}
-\end{multline}
-\qed
+\end{multline*}
 \item % \paragraph{Задача 2.} % [Кочетков, Смерчинская Соколов] 9.18
 Пусть $X$ — число единиц, а $Y$ — число шестерок, выпадающих при подбрасывании шести игральных костей. Найдите математическое ожидание и дисперсию суммы $X+Y$.
 
@@ -778,37 +873,40 @@ Y_i =
 \]
 $i=1, \ldots, 6$. Пусть $Z_i := X_i + Y_i$ и $Z := Z_1 + \ldots + Z_6$. Имеем
 \[
-\E[Z] = \E[Z_1 + \ldots + Z_6] = 6\E[Z_1] = 6\E[X_1 + Y_1] = 6\E[X_1] + 6\E[Y_1] = 6\cdot\tfrac{1}{6} + 6\cdot\tfrac{1}{6} = 2,
+\E[Z] = \E[Z_1 + \ldots + Z_6] = 6\E[Z_1] = 6\E[X_1 + Y_1] = 6\E[X_1] + 6\E[Y_1] = 6\cdot\frac{1}{6} + 6\cdot\frac{1}{6} = 2,
 \]
 \[
 \Var[Z] = \Var[Z_1 + \ldots + Z_6] = 6\Var[Z_1] = 6\Var[X_1 + Y_1] = 6(\Var[X_1] + 2\Cov(X_1,Y_1) + \Var[Y_1]) =
 \]
 \[
- = 6(\Var[X_1] + 2\E[X_1Y_1] - 2\E[X_1]\E[Y_1] + \Var[Y_1]) = 6\left( \tfrac{1}{6}\cdot\tfrac{5}{6} + 2\cdot0 - 2\cdot\tfrac{1}{6}\cdot\tfrac{1}{6} + \tfrac{1}{6}\cdot\tfrac{5}{6} \right) = \tfrac{4}{3}\text{. $\Box$}
+ = 6(\Var[X_1] + 2\E[X_1Y_1] - 2\E[X_1]\E[Y_1] + \Var[Y_1]) = 6\left( \frac{1}{6}\cdot\frac{5}{6} + 2\cdot0 - 2\cdot\frac{1}{6}\cdot\frac{1}{6} + \frac{1}{6}\cdot\frac{5}{6} \right) = \frac{4}{3}
 \]
 \item % \paragraph{Задача 3.}
 Пусть $\E[X] = -1$, $\E[Y] = 2$, $\Var[X] = 1$, $\Var[Y] = 2$, $\Cov(X,Y) = -1$. Найдите
-\begin{itemize}
-  \item[(a)] $\E[2X+Y-4]$,
-  \item[(b)] $\Var[X+Y-1]$,
-  \item[(c)] $\Var[X-Y+1]$,
-  \item[(d)] $\Cov(X+Y,X-Y)$,
-  \item[(e)] $\Corr(X+Y,X-Y)$.
-\end{itemize}
+\begin{enumerate}
+  \item $\E[2X+Y-4]$,
+  \item $\Var[X+Y-1]$,
+  \item $\Var[X-Y+1]$,
+  \item $\Cov(X+Y,X-Y)$,
+  \item $\Corr(X+Y,X-Y)$.
+\end{enumerate}
 
-\verb"Решение." (a) $\E[2X+Y-4] = 2\E[X] + \E[Y] - 4 = -2 + 2 - 4 = -4$.
+\verb"Решение."
+\begin{enumerate}
+\item[а)] $\E[2X+Y-4] = 2\E[X] + \E[Y] - 4 = -2 + 2 - 4 = -4$.
 
-(b) $\Var[X+Y-1] = \Var[X+Y] = \Var[X] + 2\Cov(X,Y) + \Var[Y] = 1 - 2 + 2 = 1$.
+\item[б)] $\Var[X+Y-1] = \Var[X+Y] = \Var[X] + 2\Cov(X,Y) + \Var[Y] = 1 - 2 + 2 = 1$.
 
-(c) $\Var[X-Y+1] = \Var[X-Y] = \Var[X] - 2\Cov(X,Y) + \Var[Y] = 1 + 2 + 2 = 5$.
+\item[в)] $\Var[X-Y+1] = \Var[X-Y] = \Var[X] - 2\Cov(X,Y) + \Var[Y] = 1 + 2 + 2 = 5$.
 
-(d)
-\begin{multline}
-\Cov(X+Y, X-Y) = \Cov(X, X) + \Cov(Y, X) - \Cov(X, Y) - \Cov(Y, Y) = \Var[X] - \Var[Y] = \\
- = 1 - 2 = -1.
-\end{multline}
+\item[г)]
+\begin{multline*}
+\Cov(X+Y, X-Y) = \Cov(X, X) + \Cov(Y, X) - \Cov(X, Y) - \Cov(Y, Y) = \\
+ \Var[X] - \Var[Y] = 1 - 2 = -1
+\end{multline*}
 
-(e) $\Corr(X+Y, X-Y) = \frac{\Cov(X+Y, X-Y)}{\sqrt{\Var[X+Y]}\sqrt{\Var[X-Y]}} = \frac{-1}{\sqrt{1}\sqrt{5}} = -\frac{1}{\sqrt{5}}$. $\Box$
+\item[д)] $\Corr(X+Y, X-Y) = \frac{\Cov(X+Y, X-Y)}{\sqrt{\Var[X+Y]}\sqrt{\Var[X-Y]}} = \frac{-1}{\sqrt{1}\sqrt{5}} = -\frac{1}{\sqrt{5}}$.
+\end{enumerate}
 \item % \paragraph{Задача 4.}
 Плотность распределения случайной величины $X$ имеет вид
 \[
@@ -826,45 +924,48 @@ f_X(x) =          \begin{cases}
   \item $\Var[X]$.
 \end{enumerate}
 
-\verb"Решение." (a) Известно, что если случайная величина $X$ является абсолютно непрерывной, то для любого множества $B \subseteq \mathbb{R}$, для которого определена вероятность $\P(\{X \in B\})$, имеет место формула
+\verb"Решение."
+\begin{enumerate}
+\item[а)] Известно, что если случайная величина $X$ является абсолютно непрерывной, то для любого множества $B \subseteq \mathbb{R}$, для которого определена вероятность $\P(\{X \in B\})$, имеет место формула
 \[
-\P(\{X \in B\}) = \int_{B}f_X(x)dx.
+\P(X \in B) = \int_{B}f_X(x)dx.
 \]
-Поэтому $\P(\{X = 2\}) = \P(\{X \in [2;2]\}) = \int_{2}^{2}f_X(x)dx = 0$ и $\P(\{X \in [0;2]\}) = \int_{0}^{2}f_X(x)dx = \int_{0}^{2}\left(-\frac{x^2}{36} + \frac{1}{4}\right)dx = \left.-\frac{x^3}{3\cdot36}\right|_{x=0}^{x=2} + \frac{2}{4} = -\frac{2}{27} + \frac{1}{2} = \frac{23}{54}$.
+Поэтому $\P(X = 2) = \P(X \in [2;2]) = \int_{2}^{2}f_X(x)dx = 0$ и $\P(X \in [0;2]) = \int_{0}^{2}f_X(x)dx = \int_{0}^{2}\left(-\frac{x^2}{36} + \frac{1}{4}\right)dx = \left.-\frac{x^3}{3\cdot36}\right|_{x=0}^{x=2} + \frac{2}{4} = -\frac{2}{27} + \frac{1}{2} = \frac{23}{54}$.
 
-(b) Если $x < -3$, то
+\item[б)] Если $x < -3$, то
 \[
 F_X(x) = \int_{-\infty}^{x}f_X(t)dt = \int_{-\infty}^{x}0dt = 0 \text{.}
 \]
 Если $-3 \leq x \leq 3$, то
 \[
-F_X(x) = \int_{-\infty}^{-3}f_X(t)dt + \int_{-3}^{x}f_X(t)dt= \int_{-\infty}^{-3}0dt + \int_{-3}^{x}\left(-\tfrac{t^2}{36} + \tfrac{1}{4}\right)dt =
+F_X(x) = \int_{-\infty}^{-3}f_X(t)dt + \int_{-3}^{x}f_X(t)dt= \int_{-\infty}^{-3}0dt + \int_{-3}^{x}\left(-\frac{t^2}{36} + \frac{1}{4}\right)dt =
 \]
 \[
-= -\left.\tfrac{t^3}{3\cdot36}\right|_{t=-3}^{t=x} + \tfrac{x+3}{4} = -\tfrac{x^3}{108} + \tfrac{x}{4} + \tfrac{1}{2} \text{.}
+= -\left.\frac{t^3}{3\cdot36}\right|_{t=-3}^{t=x} + \frac{x+3}{4} = -\frac{x^3}{108} + \frac{x}{4} + \frac{1}{2} \text{.}
 \]
 Если $x > 3$, то
 \[
-F_X(x) = \int_{-\infty}^{-3}f_X(t)dt + \int_{-3}^{3}f_X(t)dt + \int_{3}^{x}f_X(t)dt = \int_{-\infty}^{-3}0dt + \int_{-3}^{3}\left(-\tfrac{t^2}{36} + \tfrac{1}{4}\right)dt + \int_{3}^{x}0dt = 1 \text{.}
+F_X(x) = \int_{-\infty}^{-3}f_X(t)dt + \int_{-3}^{3}f_X(t)dt + \int_{3}^{x}f_X(t)dt = \int_{-\infty}^{-3}0dt + \int_{-3}^{3}\left(-\frac{t^2}{36} + \frac{1}{4}\right)dt + \int_{3}^{x}0dt = 1 \text{.}
 \]
 В итоге
 \[
 F_X(x) =
                  \begin{cases}
                      0                   &   \text{при $x < -3$,} \\
-                     -\tfrac{x^3}{108} + \tfrac{x}{4} + \tfrac{1}{2}   &   \text{при $-3 \leq x \leq 3$,} \\
+                     -\frac{x^3}{108} + \frac{x}{4} + \frac{1}{2}   &   \text{при $-3 \leq x \leq 3$,} \\
                      1                   &   \text{при $x > 3$.}
                   \end{cases}
 \]
 
-(c) $\E[X] = \int_{-\infty}^{\infty}xf_X(x)dx = \int_{-3}^{3}x\left(-\frac{x^2}{36} + \tfrac{1}{4}\right)dx = 0$.
+\item[в)] $\E[X] = \int_{-\infty}^{\infty}xf_X(x)dx = \int_{-3}^{3}x\left(-\frac{x^2}{36} + \frac{1}{4}\right)dx = 0$.
 
-(d)
-\begin{multline}
-\E[X^2] = \int_{-\infty}^{\infty}x^2f_X(x)dx = \int_{-3}^{3}x^2\left(-\frac{x^2}{36} + \tfrac{1}{4}\right)dx = \int_{-3}^{3}\left(-\frac{x^4}{36} + \tfrac{x^2}{4}\right)dx = -\left.\tfrac{x^5}{5\cdot36}\right|_{x=-3}^{x=3} + \left.\tfrac{x^3}{3\cdot4}\right|_{x=-3}^{x=3} = \\
-= \tfrac{9}{5}
-\end{multline}
-Следовательно, $\Var[X] = \tfrac{9}{5}$. $\Box$
+\item[г)]
+\begin{multline*}
+\E[X^2] = \int_{-\infty}^{\infty}x^2f_X(x)dx = \int_{-3}^{3}x^2\left(-\frac{x^2}{36} + \frac{1}{4}\right)dx = \int_{-3}^{3}\left(-\frac{x^4}{36} + \frac{x^2}{4}\right)dx = \\
+= -\left.\frac{x^5}{5\cdot36}\right|_{x=-3}^{x=3} + \left.\frac{x^3}{3\cdot4}\right|_{x=-3}^{x=3} = \frac{9}{5}
+\end{multline*}
+Следовательно, $\Var[X] = \frac{9}{5}$.
+\end{enumerate}
 \item % \paragraph{Задача 5.}
 
 Пусть $\Omega = \{1,\ldots,8\}$, $\P(\{1\}) = \ldots = \P(\{8\}) = 1/8$, $X(\omega) = \cos(\pi\omega/4)$ и $Y(\omega) = \sin(\pi\omega/4)$.
@@ -875,7 +976,7 @@ F_X(x) =
   \item Найдите $\E[X]$, $\E[Y]$, $\E[XY]$ и $\Cov(X,Y)$.
   \item Являются ли случайные величины $X$ и $Y$ некоррелированными? Ответ обоснуйте.
   \item Постройте таблицу условного распределения случайной величины $Y$ при условии $\{X = \sqrt{2}/2\}$.
-  \item Найдите $\E[Y|\{X = \sqrt{2}/2\}]$.
+  \item Найдите $\E[Y|X = \sqrt{2}/2]$.
 \end{enumerate}
 
 \verb"Решение." Для дальнейшего решения случайные величины $X$, $Y$ и $XY$ удобно задать табличным способом:
@@ -888,21 +989,26 @@ F_X(x) =
 \end{tabular}
 \]
 
-(a) Случайные величины $X$ и $Y$ не являются независимыми, т.к., например, $0 = \P(\{X=1\} \cap \{Y=1\}) \not= \P(\{X=1\}) \cdot \P(\{Y=1\}) = \frac{1}{8} \cdot \frac{1}{8}$.
+\begin{enumerate}
+\item[а)] Случайные величины $X$ и $Y$ не являются независимыми, т.к., например, $0 = \P(X=1 \cap Y=1) \not= \P(X=1) \cdot \P(Y=1) = \frac{1}{8} \cdot \frac{1}{8}$.
 
-(b) Таблицы распределения случайных величин $X$ и $Y$ имеют вид
-\[
-\begin{tabular}{c|c|c|c|c|c}
-  $X$             & $-1$            & $-\frac{\sqrt{2}}{2}$     & $0$             & $\frac{\sqrt{2}}{2}$     & $1$    \\ \cline{1-6}
-  $\P_X$  & $\frac{1}{8}$   & $\frac{1}{4}$             & $\frac{1}{4}$   & $\frac{1}{4}$            & $\frac{1}{8}$  \\
+\item[б)] Таблицы распределения случайных величин $X$ и $Y$ имеют вид
+\begin{center}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$X$         & $-1$   & $-\frac{\sqrt{2}}{2}$   & $0$ & $ \frac{\sqrt{2}}{2}$ & $1$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{8}$ \\ \bottomrule
 \end{tabular}
-\]
-\[
-\begin{tabular}{c|c|c|c|c|c}
-  $Y$             & $-1$            & $-\frac{\sqrt{2}}{2}$     & $0$             & $\frac{\sqrt{2}}{2}$     & $1$    \\ \cline{1-6}
-  $\P_Y$  & $\frac{1}{8}$   & $\frac{1}{4}$             & $\frac{1}{4}$   & $\frac{1}{4}$            & $\frac{1}{8}$  \\
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$Y$         & $-1$   & $-\frac{\sqrt{2}}{2}$   & $0$ & $ \frac{\sqrt{2}}{2}$ & $1$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{8}$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
+
 Поэтому функции распределения равны
 \[
 F_X(x) =
@@ -927,45 +1033,48 @@ F_Y(x) =
                   \end{cases}
 \]
 
-(с) Таблица распределения случайной величины $XY$ имеет вид
-\[
-\begin{tabular}{c|c|c|c}
-  $XY$               & $-\frac{1}{2}$     & $0$             & $\frac{1}{2}$  \\ \cline{1-4}
-  $\P_{XY}$  & $\frac{1}{4}$      & $\frac{1}{2}$   & $\frac{1}{4}$  \\
+\item[в)] Таблица распределения случайной величины $XY$ имеет вид
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$XY$         & $-\frac{1}{2}$  & $0$ & $ \frac{1}{2}$ \\ \midrule
+$\P(\cdot)$ & $\frac{1}{4}$ & $\frac{1}{2}$ & $\frac{1}{4}$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 
-(d) $\E[X] = -1 \cdot \frac{1}{8} - \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 0 \cdot \frac{1}{4} + \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 1 \cdot \frac{1}{8} = 0$,
+
+\item[г)] $\E[X] = -1 \cdot \frac{1}{8} - \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 0 \cdot \frac{1}{4} + \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 1 \cdot \frac{1}{8} = 0$,
 $\E[Y] = -1 \cdot \frac{1}{8} - \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 0 \cdot \frac{1}{4} + \frac{\sqrt{2}}{2} \cdot \frac{1}{4} + 1 \cdot \frac{1}{8} = 0$,
 $\E[XY] = -\frac{1}{2} \cdot \frac{1}{4} + 0 \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{4} = 0$,
 $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 0 - 0 \cdot 0 = 0$.
 
-(e) Поскольку $\Cov(X,Y) = 0$, то случайные величины $X$ и $Y$ являются некоррелированными.
+\item[д)] Поскольку $\Cov(X,Y) = 0$, то случайные величины $X$ и $Y$ являются некоррелированными.
 
-(f) В случае, когда $X = \frac{\sqrt{2}}{2}$, случайная величина $Y$ принимает значения $-\frac{\sqrt{2}}{2}$ и $\frac{\sqrt{2}}{2}$. Находим условные вероятности
+\item[е)] В случае, когда $X = \frac{\sqrt{2}}{2}$, случайная величина $Y$ принимает значения $-\frac{\sqrt{2}}{2}$ и $\frac{\sqrt{2}}{2}$. Находим условные вероятности
 \[
-\P\left(\left\{Y=-\tfrac{\sqrt{2}}{2}\right\} \bigm| \left\{X = \tfrac{\sqrt{2}}{2}\right\}\right) =
-\frac{\P\left(\left\{Y=-\tfrac{\sqrt{2}}{2}\right\} \bigcap \left\{X = \tfrac{\sqrt{2}}{2}\right\}\right)}{\P\left(\left\{X = \tfrac{\sqrt{2}}{2}\right\}\right)} = \frac{\tfrac{1}{8}}{\tfrac{2}{8}} = \frac{1}{2} \text{,}
+\P\left(Y=-\frac{\sqrt{2}}{2} \bigm| X = \frac{\sqrt{2}}{2}\right) =
+\frac{\P\left(Y=-\frac{\sqrt{2}}{2} \cap X = \frac{\sqrt{2}}{2}\right)}{\P\left(X = \frac{\sqrt{2}}{2}\right)} = \frac{\frac{1}{8}}{\frac{2}{8}} = \frac{1}{2} \text{,}
 \]
 \[
-\P\left(\left\{Y=\tfrac{\sqrt{2}}{2}\right\} \bigm| \left\{X = \tfrac{\sqrt{2}}{2}\right\}\right) =
-\frac{\P\left(\left\{Y=\tfrac{\sqrt{2}}{2}\right\} \bigcap \left\{X = \tfrac{\sqrt{2}}{2}\right\}\right)}{\P\left(\left\{X = \tfrac{\sqrt{2}}{2}\right\}\right)} = \frac{\tfrac{1}{8}}{\tfrac{2}{8}} = \frac{1}{2} \text{.}
+\P\left(Y=\frac{\sqrt{2}}{2} \bigm| X = \frac{\sqrt{2}}{2}\right) =
+\frac{\P\left(Y=\frac{\sqrt{2}}{2} \cap X = \frac{\sqrt{2}}{2}\right)}{\P\left(X = \frac{\sqrt{2}}{2}\right)} = \frac{\frac{1}{8}}{\frac{2}{8}} = \frac{1}{2} \text{.}
 \]
 Поэтому таблица условного распределения случайной величины $Y$ при условии $\left\{X = \frac{\sqrt{2}}{2}\right\}$ имеет вид
-\[
-\begin{tabular}{c|c|c}
-  $Y$                                                             & $-\frac{\sqrt{2}}{2}$     & $\frac{\sqrt{2}}{2}$    \\ \cline{1-3}
-  $\P_{Y\bigm|\left\{X = \frac{\sqrt{2}}{2}\right\}}$     & $\frac{1}{2}$             & $\frac{1}{2}$           \\
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$Y | X = \frac{\sqrt{2}}{2}$         & $-\frac{\sqrt{2}}{2}$   & $\frac{\sqrt{2}}{2}$  \\ \midrule
+$\P(\cdot)$ &  $\frac{1}{2}$ & $\frac{1}{2}$ \\ \bottomrule
 \end{tabular}
-\]
+\end{center}
 
-(g)
-\begin{multline}
-\E\left[Y\bigm|\left\{X = \frac{\sqrt{2}}{2}\right\}\right] = -\frac{\sqrt{2}}{2} \cdot \P\left(\left\{Y=-\tfrac{\sqrt{2}}{2}\right\} \bigm| \left\{X = \tfrac{\sqrt{2}}{2}\right\}\right) + \frac{\sqrt{2}}{2} \cdot \P\left(\left\{Y=\tfrac{\sqrt{2}}{2}\right\} \bigm| \left\{X = \tfrac{\sqrt{2}}{2}\right\}\right) = \\
- = -\frac{\sqrt{2}}{2} \cdot \frac{1}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = 0
-\end{multline}
+\item[ж)]
+\begin{multline*}
+\E\left[Y\bigm|X = \frac{\sqrt{2}}{2}\right] = -\frac{\sqrt{2}}{2} \cdot \P\left(Y=-\frac{\sqrt{2}}{2} \bigm| X = \frac{\sqrt{2}}{2}\right) + \\
+\frac{\sqrt{2}}{2} \cdot \P\left(Y=\frac{\sqrt{2}}{2} \bigm| X = \frac{\sqrt{2}}{2}\right) = -\frac{\sqrt{2}}{2} \cdot \frac{1}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = 0
+\end{multline*}
 \qed
-
+\end{enumerate}
 
 \end{enumerate}
 
@@ -1133,7 +1242,7 @@ $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 0 - 0 \cdot 0 = 0$.
 \otvet{N(0,1)}{$t_2$}{N(0,5)}{N(0,2)}{U[0;2]}
 
 %18
-\item $Z_1,Z_2,\ldots,Z_n\sim N(0,1)$. Тогда величина $\frac{Z_1\sqrt{n-2}}{\sqrt{\sum_{i=3}^n Z_i^2}}$ имеет распределение
+\item $Z_1,Z_2,...,Z_n\sim \cN(0,1)$. Тогда величина $\frac{Z_1\sqrt{n-2}}{\sqrt{\sum_{i=3}^n Z_i^2}}$ имеет распределение
 
 \otvet {$N(0,1)$}{$t_n$}{$F_{1,n-2}$}{$\chi^2_n$}{$t_{n-2}$}
 
@@ -1149,13 +1258,13 @@ $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 0 - 0 \cdot 0 = 0$.
 \lotvet{вырожденному с $\P(X=0)=1$}
 {$U[-\sqrt{3},\sqrt{3}]$}
 {$U[0;1]$}
-{$N(0,1)$}
-{$N(0,3)$}
+{$\cN(0,1)$}
+{$\cN(0,3)$}
 
 %21
-\item Если $X_i$ независимы и имеют нормальное распределение $N(\mu;\sigma^2)$, то $\sqrt{n}(\bar{X}-\mu)/\hat{\sigma}$ имеет распределение
+\item Если $X_i$ независимы и имеют нормальное распределение $\cN(\mu;\sigma^2)$, то $\sqrt{n}(\bar{X}-\mu)/\hat{\sigma}$ имеет распределение
 
-\otvet{$N(0;1)$}{$t_{n-1}$}{$\chi^2_{n-1}$}{$N(\mu;\sigma^2)$}{нет верного ответа}
+\otvet{$\cN(0;1)$}{$t_{n-1}$}{$\chi^2_{n-1}$}{$N(\mu;\sigma^2)$}{нет верного ответа}
 
 %22
 \item Последовательность оценок $\hat{\theta}_1$, $\hat{\theta}_2$, \ldots называется состоятельной, если
@@ -1175,7 +1284,7 @@ $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 0 - 0 \cdot 0 = 0$.
 %24
 \item При построении доверительного интервала для дисперсии по выборке из $n$ наблюдений при неизвестном ожидании используется статистика, имеющая распределение
 
-\otvet{$N(0;1)$}{$t_{n-1}$}{$\chi^2_{n-1}$}{$\chi^2_{n}$}{$t_n$}
+\otvet{$\cN(0;1)$}{$t_{n-1}$}{$\chi^2_{n-1}$}{$\chi^2_{n}$}{$t_n$}
 
 %25
 \item Из 100 случайно выбранных человек ровно 50 ответили, что предпочитают молочный шоколад темному. Реализация 90\% доверительного интервала для предпочтения молочного шоколада равна:
@@ -1244,9 +1353,9 @@ $\Cov(X,Y) = \E[XY] - \E[X]\E[Y] = 0 - 0 \cdot 0 = 0$.
 \begin{enumerate}
 \item Найдите  $\P\left(X>3\right)$
 
-\item Найдите  $Var\left(X\right)$  и  $Cov\left(X,Y\right)$
+\item Найдите  $\Var\left(X\right)$  и  $\Cov\left(X,Y\right)$
 
-\item Найдите  $Corr\left(X,Z\right)$
+\item Найдите  $\Corr\left(X,Z\right)$
 \end{enumerate}
 
 
@@ -1286,8 +1395,6 @@ $H_{A}$: $\mu =30$  по выборке из 20 наблюдений. Крите
 \item Что произойдет с указанными вероятностями при росте количества
 наблюдений если известно что $c\in(10;30)$?
 \item Каким должно быть $c$, чтобы вероятность ошибки второго рода
-равнялась $0,15$?
+равнялась $0.15$?
 \end{enumerate}
 \end{enumerate}
-
-
