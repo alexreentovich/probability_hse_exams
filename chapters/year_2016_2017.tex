@@ -301,34 +301,19 @@ $\P_{\tau}$ & $1/4$ & $3/4\cdot1/4$ & $(3/4)^2 \cdot 1/4$ & $(3/4)^3 \cdot 1/4$ 
 Здесь мы воспользовались тем фактом, что если $\eta \sim G(p)$, то $\E (\eta) = 1/p$
 \item Найдём теперь вероятность $\P (\eta \geq 5 )$. Для нахождения искомой вероятности воспользуемся формулой полной вероятности:
 \[
-\P (\eta \geq 5 ) = \sum_{k=1}^{\infty} \P ( \eta \geq 5   \mid \tau = k ) \cdot \P(\tau = k )
+	\P (\eta \geq 5 ) = \P(\eta \geq 5, \tau < 3) +\P(\eta \geq 5, \tau = 3)+\P(\eta \geq 5, \tau > 3)
 \]
 
-Имеем:
-\begin{multline*}
-\P ( \eta \geq 5  \mid \tau = k )  = \P (\xi + b \cdot (\tau-1) \geq 5 \mid \tau = k) = \\
-= \P (\xi + 2 \cdot (k-1) \geq 5  \mid \tau = k ) \stackrel{\xi, \tau \text{– нез.}}{=} \P (\xi + 2 \cdot (k-1) \geq 5 ) = \\
-= \begin{cases}
-1 & \text{при } k \geq 4 \\
-\P (\xi + 4 \geq 5 ) & \text{при } k=3 \\
-\P (\xi + 2 \geq 5 ) & \text{при } k=2 \\
-\P (\xi  \geq 5 ) & \text{при } k=1 \\
-\end{cases} =
-\begin{cases}
-1 & \text{при } k \geq 4  \\
-1/2 & \text{при } k = 3 \\
-0 & \text{при } k = 2 \\
-0 & \text{при } k = 1
-\end{cases}
-\end{multline*}
+Если Глафира уехала на первом или втором поезде, то ждать больше 5 минут она не могла, то есть $\P(\eta \geq 5, \tau <3)=0$.
 
-Таким образом,
+Если Глафира уехала на третьем поезде, то чтобы ждать больше пяти минут, ей нужно ждать первый поезд больше минуты, то есть $\P(\eta \geq 5, \tau = 3)=0.5 \P(\tau = 3)$.
 
-\begin{multline*}
-\P (\eta \geq 5 ) = 0 + 0 + \frac{1}{2} \P (\tau = 3) + \sum_{k=4}^{\infty} \P (\tau=k ) = \frac{1}{2} \P (\tau = 3)  + \sum_{k=1}^{\infty} \P (\tau=k ) -\\
-- \P (\tau = 1 ) - \P (\tau = 2 ) - \P (\tau = 3 ) = 1 - \P (\tau = 1 ) - \P (\tau = 2 ) - \frac{1}{2} \P (\tau = 3 ) = \\
-= 1 - \frac{1}{4} - \frac{3}{4} \cdot \frac{1}{4} - \frac{1}{2} \cdot \left(\frac{3}{4}\right)^2 \cdot \frac{1}{4} \approx0.49
-\end{multline*}
+Если Глафира уехала на четвертом поезде или позже, то она точно ждала больше 5 минут, $\P(\eta \geq 5, \tau >3)=\P(\tau>3)$.
+
+\[
+	\P(\eta \geq 5) = 0.5\P(\tau = 3) + \P(\tau > 3) = 0.5 \cdot (3/4)^2 \cdot (1/4) + (3/4)^3 = 63 / 128
+\]
+
 \end{enumerate}
 \item Пусть $\xi$ — случайная величина, обозначающая число остановок лифта. Предствим её в виде суммы $\xi = \xi_2 + \ldots + \xi_{10}$, где $\xi_i$ — индикатор
 того, что лифт остановился на $i$-ом этаже, то есть
