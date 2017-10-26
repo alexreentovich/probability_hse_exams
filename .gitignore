@@ -7,3 +7,4 @@ probability_hse_exams.xdv
 *.fdb_latexmk
 *.fls
 *.log
+chapters/.DS_Store
