@@ -189,7 +189,7 @@ $\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
 \]
 Значит
 \[
-\E(X) = \E\left()\sum\limits_{i=1}^{400}X_i\right) = \sum\limits_{i=1}^{400}\E(X_i)  = \frac{400}{500} = 0.8
+\E(X) = \E\left(\sum\limits_{i=1}^{400}X_i\right) = \sum\limits_{i=1}^{400}\E(X_i)  = \frac{400}{500} = 0.8
 \]
 
 \[
@@ -716,7 +716,6 @@ $\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
 \includegraphics[width=6cm]{images/13}
 \end{center}
 \end{enumerate}
-\newpage
 
 \item
 Пусть $A = \{\text{«Лекция полезна»}\}$, $B = \{\text{«Лекция интересна»}\}$. Заметим, что лекции вообще независимы друг от друга.
