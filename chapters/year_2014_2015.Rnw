@@ -1128,9 +1128,8 @@ P[n\text{-ый не сядет на свое место}] = \P(A_n) + P[A_{n-1}]
 
 \begin{tabular}{llll}
 \toprule
-$X_n$ & $-\sqrt{n}$ & $0$ & $\sqrt{n}$ \\
-% \midrule
-$\P(X_n = \cdot)$ & $1/2n$ & $1-1/n$ & $1/2n$ \\
+$X_n$ & $-\sqrt{n}$ & $0$ & $\sqrt{n}$ \\ \midrule
+$\P(\cdot)$ & $1/2n$ & $1-1/n$ & $1/2n$ \\
 \bottomrule
 \end{tabular}
 
@@ -1163,7 +1162,7 @@ $\P(X_n = \cdot)$ & $1/2n$ & $1-1/n$ & $1/2n$ \\
 
 
 
-\subsection{Решение. Контрольная работа 2. Базовый поток. 15.12.2014}
+\subsection{Контрольная работа 2. Базовый поток. 15.12.2014, решение}
 
 
 \begin{enumerate}
@@ -1195,7 +1194,7 @@ $\P(X_n = \cdot)$ & $1/2n$ & $1-1/n$ & $1/2n$ \\
 \end{tikzpicture}
 \end{center}
 
-Соответственно: \[\P\left\{X+Y > \frac{1}{2}\right\} = \frac{S_0}{S_0+S_1} = \frac{0.5-S_1}{0.5} = \frac{\frac{1}{2}-\frac{1}{8}}{\frac{1}{2}} = \frac{3}{4}\]
+Соответственно: \[\P\left(X+Y > \frac{1}{2}\right) = \frac{S_0}{S_0+S_1} = \frac{0.5-S_1}{0.5} = \frac{\frac{1}{2}-\frac{1}{8}}{\frac{1}{2}} = \frac{3}{4}\]
 
 \item
 \[
@@ -1548,18 +1547,12 @@ $\P(\cdot)$ & $\frac{2}{3}$ & $\frac{1}{3}$  \\ \bottomrule
 Можем составить табличку для совместного распределения, немножко подумав:
 
 \begin{center}
-\begin{tabular}{c|c|c|c|c|}
-\multicolumn{5}{c}{\hspace*{1cm}$Y$}\\
-\cline{2-5}
-\multirow{4}{*}{$X$}  & &  7 & 8 &  \\
-\cline{2-5}
-& 7 & $p$ & $\frac{1}{2}-p$&$\frac{1}{2}$\\
-\cline{2-5}
-& 8  & $\frac{2}{3}-p$&$p-\frac{1}{6}$ & $\frac{1}{2}$\\
-\cline{2-5}
-& & $\frac{2}{3}$ & $\frac{1}{3}$& \\
-\cline{2-5}
-
+\begin{tabular}{@{}lccr@{}}
+\toprule
+$Y$ \textbackslash $X$ & $7$             & $8$             & $\sum$        \\ \midrule
+$7$                              & $p$             & $\frac{1}{2}-p$ & $\frac{1}{2}$ \\
+$8$                              & $\frac{2}{3}-p$ & $p-\frac{1}{6}$ & $\frac{1}{2}$ \\
+$\sum$                           & $\frac{2}{3}$   & $\frac{1}{3}$   &               \\ \bottomrule
 \end{tabular}
 \end{center}
 
@@ -1641,7 +1634,7 @@ F(x) = \begin{cases}
 
 Сответственно:
 \[
-\E(X) = \int \limits_{0}^{0.3} 2x dx = x^2 |_{0}^{0.3} = 0.09
+\E(X) = \int \limits_{0}^{0.3} 2x dx = \left.  x^2 \right|_{0}^{0.3} = 0.09
 \]
 \end{enumerate}
 
@@ -1650,11 +1643,11 @@ F(x) = \begin{cases}
 \item
 
 \begin{enumerate}
-\item \[\P(X+Y > 1) = \iint \limits_{\mathcal{G}}2(x^3+y^3)dxdy = \int \limits_{0}^{1} dx \int \limits_{1-x}^{1}2(x^3+y^3)dy = \dots  = 0.8\]
+\item \[\P(X+Y > 1) = \iint \limits_{\mathcal{G}}2(x^3+y^3)dxdy = \int \limits_{0}^{1} dx \int \limits_{1-x}^{1}2(x^3+y^3)dy = \ldots  = 0.8\]
 \item Для того, чтобы найти ковариацию, придется найти :
-\[\E(X) = \int\limits_{0}^{1} dx \int\limits _{0}^{1}2x(x^3+y^3)dy = \dots = 0.65\]
-\[\E(Y) = \int\limits_{0}^{1} dy \int\limits_{0}^{1}2y(x^3+y^3)dx = \dots = 0.65 \]
-\[\E(XY) = \int\limits_{0}^{1}dx\int\limits_{0}^{1}2xy(x^3+y^3)dy = \dots = 0.4\]
+\[\E(X) = \int\limits_{0}^{1} dx \int\limits _{0}^{1}2x(x^3+y^3)dy = \ldots = 0.65\]
+\[\E(Y) = \int\limits_{0}^{1} dy \int\limits_{0}^{1}2y(x^3+y^3)dx = \ldots = 0.65 \]
+\[\E(XY) = \int\limits_{0}^{1}dx\int\limits_{0}^{1}2xy(x^3+y^3)dy = \ldots = 0.4\]
 
 Ну а потом все просто: $\Cov(X, Y) = \E(XY) - \E(X)\E(Y) = -0.0225$
 
