@@ -552,10 +552,10 @@ $Z=(X,Y)$ с математическим ожиданием $\E(Z)=(175,74)$ и
 \item Какова вероятность того, что $X+Y>1$?
 \item Найдите ожидаемое расстояние от точки до начала координат
 \end{enumerate}
-
-
-
 \end{enumerate}
+
+
+
 
 \subsection{Контрольная работа №2, 25.12.2013}
 
@@ -604,7 +604,7 @@ f(x,y) =
 
 Найдите:
 \begin{enumerate}
-\item $P(Y<X^2)$
+\item $\P(Y<X^2)$
 \item функцию плотности и математическое ожидание случайной величины $X$
 \item условную функцию плотности и условное математическое ожидание случайной величины $X$ при условии, что $Y=2$
 \end{enumerate}
@@ -618,29 +618,29 @@ $C = \begin{pmatrix}
 
 Найдите:
 \begin{enumerate}
-\item $P(X>1)$
-\item $P(2X+Y>3)$
-\item $P(2X+Y>3|X=1)$
-\item $P\left(\frac{X^2}{9}+\frac{Y^2}{4} >12\right)$
+\item $\P(X>1)$
+\item $\P(2X+Y>3)$
+\item $\P(2X+Y>3|X=1)$
+\item $\P\left(\frac{X^2}{9}+\frac{Y^2}{4} >12\right)$
 \item Запишите совместную функцию плотности  $(X,Y)^T$
 \end{enumerate}
 
 \item Вычислите:
 \begin{enumerate}
-\item $P\left(\frac{X_1}{\sqrt{X_3^2+X_4^2+X_5^2}}>\frac{5}{4\sqrt{3}}\right)$
-\item $P\left(\frac{X_1+2X_2}{\sqrt{X_3^2+X_4^2+X_5^2}}<4.5\right)$
-\item $P\left(\frac{X_1^2}{X_2^2+X_3^2}>17\right)$
+\item $\P\left(\frac{X_1}{\sqrt{X_3^2+X_4^2+X_5^2}}>\frac{5}{4\sqrt{3}}\right)$
+\item $\P\left(\frac{X_1+2X_2}{\sqrt{X_3^2+X_4^2+X_5^2}}<4.5\right)$
+\item $\P\left(\frac{X_1^2}{X_2^2+X_3^2}>17\right)$
 \end{enumerate}
 
 \item Оценка за зачет по теории вероятности $i$-го студента — неотрицательная с. в. $X_i$ с $\E(X_i)=\frac{1}{2}$ и $\Var(X_i)=\frac{1}{12}$. Для случайной выборки из $36$ студентов оцените или вычислите следующие вероятности $\left(\bar{X} = \frac{1}{n} \sum \limits_1^n X_i \right)$:
 \begin{enumerate}
-\item $P(|X_i-0.5|\geqslant 0.3)$
-\item $P(X_i\geqslant 0.8)$
-\item $P(\bar{X}\geqslant 0.8)$
+\item $\P(|X_i-0.5|\geqslant 0.3)$
+\item $\P(X_i\geqslant 0.8)$
+\item $\P(\overline{X}\geqslant 0.8)$
 
 Пусть дополнительно известно, что $X_i \sim U(0,1)$:
 \item Вычислите вероятность $\P(|X_i-0.5|\geqslant 0.3)$
-\item Оцените погрешность вычисленной вероятности $\P(\bar{X}\geqslant 0.8)$
+\item Оцените погрешность вычисленной вероятности $\P(\overline{X}\geqslant 0.8)$
 \item Покажите, что средняя оценка за экзамен сходится по вероятности к $0.5$
 
 \end{enumerate}
@@ -653,8 +653,76 @@ $C = \begin{pmatrix}
 \item Постройте выборочную функцию распределения;
 \item Вычислите значение выборочного среднего и выборочной дисперсии.
 \end{enumerate}
-
 \end{enumerate}
+
+
+\subsection{Контрольная работа №2, 25.12.2013, решения}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item
+\begin{multline*}
+\P(Y<X^2) = \int_0^1 \int_0^{x^2} (x+y) dy dx = \left. \int_0^1 \left(xy \frac{y^2}{2} \right) \right|_0^{x^2} dx =  \int_0^1 \left(x^3 + \frac{x^4}{2} \right) dx = \\
+= \left. \frac{x^4}{4} + \frac{x^5}{10} \right|_0^1 = 0.35
+\end{multline*}
+\item $f_X (x) = \int_0^1 (x+y) dy = \left. xy + \frac{y^2}{2} \right|_0^1 = x + 0.5$
+
+$\E(X) = \int_0^1 f_X (x) \cdot x dx = \int_0^1 (x^2 + 0.5x) dx = 7/12$
+\item $f_{X|Y=2}(x) = \frac{f_{X, Y}(x, 2)}{f_Y (2)} = \frac{x+2}{2.5}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Из условия находим, что $X \sim \cN (0, 9)$, тогда
+\[
+\P(X>1) = \P \left(\frac{X-0}{3} > \frac{1-0}{3} \right) = \P\left(\cN(0,1) > \frac{1}{3} \right) = 0.37
+\]
+\item Подготовимся: $\E(2X+Y) = 0$, $\Var(2X+Y) = 4\Var(X) + \Var(Y) + 4 \Cov(X, Y) = 36$
+\[
+\P(2X+Y > 3) = \P\left(\frac{2X+Y-0}{6} > \frac{3-0}{6} \right) = \P(\cN(0, 1) > 0.5) = 0.31
+\]
+\item $ \P(2X+Y > 3 | X=1) = \P(Y > 1) = \P \left(\frac{Y-0}{2} > \frac{1}{2} \right) = \P(\cN(0, 1) > 0.5) = 0.31$
+\item Заметим, что $\frac{X^2}{9}+\frac{Y^2}{4} \sim \chi^2_2$, и тогда по таблице находим, что $\P\left(\frac{X^2}{9}+\frac{Y^2}{4} >12\right) = 0.0025$
+\item Совместная функция плотности имеет вид:
+\[
+f(x, y) = \frac{1}{2\pi}\cdot \frac{1}{2\cdot 3\sqrt{1- \left(-\frac{1}{6}\right)^2}}\cdot \exp \left(- \frac{1}{2} \cdot \frac{1}{4\cdot9} \left(1- \left(-\frac{1}{6}\right)^2\right) \left(9x^2 + 2xy + 4y^2 \right) \right)
+\]
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Заметим, что $\frac{X_1}{\sqrt{\frac{X_3^2+X_4^2+X_5^2}{3}}} \sim t_3$. По таблице находим искомую вероятность: $0.15$.
+\item
+\item Заметим, что $\frac{X_1^2}{X_2^2+X_3^2} \sim F_{1, 2}$. Нужное значение находим в таблице: $0.95$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item По неравенству Чебышёва: $ \P(|X_i-0.5|\geqslant 0.3) \leqslant \frac{1/12}{9/100} = \frac{25}{27}$
+\item По неравенству Маркова: $\P(X_i \geqslant 0.8) \leqslant \frac{5}{8}$
+\item $\P(\overline{X}\geqslant 0.8) = \P(\overline{X} - 0.5 \geqslant 0.3) \leqslant \frac{1/12n}{9/100} = \frac{25}{27n}$
+\item $ \P(|X_i-0.5|\geqslant 0.3) = 1 - \P(|X_i-0.5|\geqslant 0.3) = 1 - \P(-0.3 \leqslant X_i - 0.5 \leqslant 0.3) = 0.4$
+\item
+\item
+\end{enumerate}
+\item
+\item
+\begin{enumerate}
+\item $3, 4, 5, 7, 8, 9$
+\item $F(x) = \begin{cases}
+0 &  x < 3 \\
+1/6 & 3 < x \leq 4 \\
+2/6 & 4 < x \leq 5 \\
+3/6 & 5 < x \leq 7 \\
+4/6 & 7 < x \leq 8 \\
+5/6 & 8 < x \leq 9 \\
+1 &  x > 9 \\
+\end{cases}$
+\item $\overline{X} = 6$, $\widehat{\Var}(X) = 28$
+\end{enumerate}
+\end{enumerate}
+
+
+
+
 
 
 \subsection{Контрольная работа 3}
