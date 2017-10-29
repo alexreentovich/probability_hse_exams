@@ -3,7 +3,20 @@
 # .Rnw extension is automatically added
 file_name = probability_hse_exams
 
-$(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw
+auto_tikz_folder = auto_figures_tikz
+r_chunks_folder = R_chunks
+r_chunks_files = $(wildcard $(r_chunks_folder)/*.R)
+r_done_files = $(r_chunks_files:.R=.Rdone)
+
+tikz_files = $(wildcard $(auto_tikz_folder)/*.tex)
+
+# just replace .tex by .pdf for every file in tikz_files
+pdf_from_tikz_files = $(tikz_files:.tex=.pdf)
+
+
+
+
+$(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw $(pdf_from_tikz_files) $(r_done_files)
 	# protection against biber error
 	# http://tex.stackexchange.com/questions/140814/
 	rm -rf `biber --cache`
@@ -11,7 +24,7 @@ $(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw
 	# create pdf
 	# will automatically run pdflatex/biber if necessary
 	latexmk -xelatex $(file_name).tex
-	
+
 	# clean
 	latexmk -c $(file_name).tex
 
@@ -19,9 +32,20 @@ $(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw
 $(file_name).tex : $(file_name).Rnw chapters/*.Rnw
 	Rscript -e "library(knitr); knit('$(file_name).Rnw')"
 
-auto_figures_tikz/%.pdf: auto_figures_tikz/%.tex
-	latexmk -xelatex -cd auto_figures_tikz/%.tex
-	latexmk -c auto_figures_tikz/%.tex
+
+$(auto_tikz_folder)/%.pdf: $(auto_tikz_folder)/%.tex
+	latexmk -xelatex -cd $<
+	latexmk -c $<
+	# $< means the name of the first prerequisite
+	# %.pdf is a wildcard (every .pdf)
+
+R: $(r_done_files)
+
+
+$(r_chunks_folder)/%.Rdone: $(r_chunks_folder)/%.R
+	Rscript $<
+	touch $@
+
 
 clean:
 	latexmk -c $(file_name).tex

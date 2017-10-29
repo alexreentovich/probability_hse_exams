@@ -776,7 +776,7 @@ $\P(\cdot)$ & $0.9$ & $0.1$ \\ \bottomrule
 \item
 Будем пользоваться свойствами функций распределения и плотности. Для начала:
 \[
-\lim\limits_{x \rightarrow +\infty} F(X) = 1, \hspace{0.5cm} \lim\limits_{x \rightarrow -\infty} F(X) = 0,
+\lim\limits_{x \rightarrow +\infty} F(x) = 1, \hspace{0.5cm} \lim\limits_{x \rightarrow -\infty} F(x) = 0,
 \]
 \[
 \lim\limits_{x \rightarrow +\infty} \left(\frac{ae^x}{1+e^x}+b\right) = a+b := 1
@@ -795,28 +795,11 @@ f(x) = F'(x) = \frac{e^x}{(1+e^x)^2}
  \]
  Из того этого следует, что \textbf{математическое ожидание, а так же мода и медиана равны нулю}. Более того, так как функция плотности симметрична относительно \textbf{нулевого} математического ожидания, \textbf{центральный и начальный моменты третьего порядка равны между собой и равны нулю.} Можно было выписать интегралы для математического ожидания и третьего начального момента и сослаться на нечетность функции.
 
-
-<<eval=FALSE>>=
-x <- seq(-4, 4, length = 50)
-y <- dlogis(x)
-qplot(x, y, geom = "line", xlab = "x", ylab = "f(x)") + theme_bw()
-@
-
-
-<<"logis_pdf", echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
-x <- seq(-4, 4, length = 50)
-y <- dlogis(x)
-tikz("R_plots/logis_pdf.tikz", standAlone = FALSE, bareBones = TRUE)
-plot.ecdf(v, main = "Эмпирическая функция распределения", xlab = "", ylab = "")
-invisible(dev.off())
-@
-
-\begin{figure}
-\begin{tikzpicture}[scale = 0.025]
-  \input{R_plots/logis_pdf.tikz}
-\end{tikzpicture}
-\end{figure}
-
+\begin{minipage}{0.6\textwidth}
+\begin{center}
+\includegraphics[scale=0.5]{auto_figures_tikz/2014_2015_fig_01_dlogis.pdf}
+\end{center}
+\end{minipage}
 
 
 \end{enumerate}

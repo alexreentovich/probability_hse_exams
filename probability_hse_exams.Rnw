@@ -188,8 +188,7 @@ options(scipen = 10)
 
 \section{2014-2015}
 
-<<child='chapters/year_2014_2015.Rnw'>>=
-@
+\input{chapters/year_2014_2015.tex}
 
 \section{2015-2016}
 

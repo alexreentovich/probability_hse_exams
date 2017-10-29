@@ -251,8 +251,9 @@ n.star <- round(uniroot(f, lower = 0, upper = 10^7)$root)
 
 Решаем квадратное уравнение, находим корни, один — отрицательный, другой, $n\approx \Sexpr{n.star}$.
 \item
-<<>>=
-v <- c(8, 5, 6, 7, 3, 9) # now we may calculate mean(v) and sd(v)
+
+<<include=FALSE, echo=FALSE>>=
+v <- c(3, 5, 6, 7, 8, 9)
 n <- length(v)
 @
 
@@ -260,22 +261,13 @@ n <- length(v)
 $\frac{\sum (X_i-\bar{X})^2}{n-1}\approx \Sexpr{var(v)}$,
 $\frac{\sum (X_i-\bar{X})^2}{n}\approx \Sexpr{var(v) * (n-1) / n}$
 
-<<eval=FALSE>>=
-plot.ecdf(v, main = "Эмпирическая функция распределения", xlab = "", ylab = "")
-@
+\begin{minipage}{0.6\textwidth}
+\begin{center}
+\includegraphics[scale=0.5]{auto_figures_tikz/2012_2013_fig_02_empirical_dist.pdf}
+\end{center}
+\end{minipage}
 
 
-<<"empirical_cdf", echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
-tikz("R_plots/empirical_cdf.tikz", standAlone = FALSE, bareBones = TRUE)
-plot.ecdf(v, main = "Эмпирическая функция распределения", xlab = "", ylab = "")
-invisible(dev.off())
-@
-
-\begin{figure}
-\begin{tikzpicture}[scale = 0.025]
-  \input{R_plots/empirical_cdf.tikz}
-\end{tikzpicture}
-\end{figure}
 \end{enumerate}
 
 \subsection{Демо-версия зачёта}
