@@ -1945,6 +1945,22 @@ $\E(2X+Y \mid X=2) = 2\E (X\mid X=2) + \E(Y\mid X=2) = 4 + 1.5 = 5.5$
 \item $X_1^2 + X_2^2 \sim \chi^2_2$, $\P(X_1^2 + X_2^2 > 6)  \approx 0.05$
 \item $\P\left(\frac{X_1^2}{X_2^2+X_3^2} > 9.25\right) = \P\left(\frac{\frac{X_1^2}{1}}{\frac{X_2^2+X_3^2}{2}} > 18.5\right) \approx 0.05$, $\frac{\frac{X_1^2}{1}}{\frac{X_2^2+X_3^2}{2}} \sim F_{1, 2}$
 \end{enumerate}
+\item
+\begin{enumerate}
+\item $\E(cX_{(n)}) = c \E(X_{(n)}) = c \cdot \frac{\theta}{2} = \theta \Rightarrow c=2$
+\item $\Var(2X_{(n)}) = 4 \cdot \frac{\theta^2}{12} \not\to_{n\to\infty} 0 \Rightarrow$ нет
+\item $\E(X_1) = \left. \frac{\theta}{2} \right|_{\theta = \hat{\theta}} = \overline{X} \Rightarrow \hat{\theta} = 2\overline{X}$
+\item $\Var(2\overline{X}) = \frac{4}{n^2}n\Var(X_1) = \frac{4\theta}{12n} \to_{n\to\infty} 0$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item $L(x, p) = \prod_{i=1}^n p^{x_i-1} (1-p) = p^{\sum_{i=1}^n(x_i-1)} (1-p)$
+
+$\ln L (x, p) = \sum_{i=1}^n(x_i-1) \ln p  + \ln(1-p)$
+
+$\frac{\partial \ln L}{\partial p} = \frac{\sum_{i=1}^n(x_i-1)}{p} - \frac{1}{1-p} = 0 \Rightarrow \hat{p} = \frac{\sum_{i=1}^n(x_i-1)}{1+\sum_{i=1}^n(x_i-1)}$
+\item $\E(X) = \frac{n}{p} \Rightarrow \hat{\E}(X) = \frac{n(1 + \sum_{i=1}^n(x_i-1))}{\sum_{i=1}^n(x_i-1)}$
+\end{enumerate}
 \end{enumerate}
 
 \subsection{Контрольная номер 4, 05.06.2015}

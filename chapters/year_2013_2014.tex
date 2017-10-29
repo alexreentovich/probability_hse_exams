@@ -700,10 +700,12 @@ f(x, y) = \frac{1}{2\pi}\cdot \frac{1}{2\cdot 3\sqrt{1- \left(-\frac{1}{6}\right
 \item По неравенству Маркова: $\P(X_i \geqslant 0.8) \leqslant \frac{5}{8}$
 \item $\P(\overline{X}\geqslant 0.8) = \P(\overline{X} - 0.5 \geqslant 0.3) \leqslant \frac{1/12n}{9/100} = \frac{25}{27n}$
 \item $ \P(|X_i-0.5|\geqslant 0.3) = 1 - \P(|X_i-0.5|\geqslant 0.3) = 1 - \P(-0.3 \leqslant X_i - 0.5 \leqslant 0.3) = 0.4$
-\item
-\item
+\item $\varepsilon \leq \sqrt{\frac{1/12}{\alpha \cdot 36}}$, $\alpha = \frac{1/12n}{9/100}$
+\item $\P(\overline{X} - 0.5 > 0.3) = \frac{25}{27n} \to_{n \to \infty} 0$
 \end{enumerate}
-\item
+\item $\P(\hat{p} \leq 0.25) = \P\left(\frac{\hat{p} - 0.2}{\sqrt{\frac{0.2\cdot0.8}{n}}} \leq \frac{0.25}{\sqrt{\frac{0.2\cdot0.8}{n}}}\right) = 0.99$
+
+По таблице: $\frac{0.25}{\sqrt{\frac{0.2\cdot0.8}{n}}} = 2.33 \Rightarrow n = 348$
 \item
 \begin{enumerate}
 \item $3, 4, 5, 7, 8, 9$
