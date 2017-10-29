@@ -5,11 +5,12 @@ file_name = probability_hse_exams
 
 auto_tikz_folder = auto_figures_tikz
 r_chunks_folder = R_chunks
+
 r_chunks_files = $(wildcard $(r_chunks_folder)/*.R)
 r_done_files = $(r_chunks_files:.R=.Rdone)
 
-tikz_files = $(wildcard $(auto_tikz_folder)/*.tex)
 
+tikz_files = $(wildcard $(auto_tikz_folder)/*.tex)
 # just replace .tex by .pdf for every file in tikz_files
 pdf_from_tikz_files = $(tikz_files:.tex=.pdf)
 
