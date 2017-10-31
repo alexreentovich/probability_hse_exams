@@ -40,9 +40,6 @@ $(auto_tikz_folder)/%.pdf: $(auto_tikz_folder)/%.tex
 	# $< means the name of the first prerequisite
 	# %.pdf is a wildcard (every .pdf)
 
-R: $(r_done_files)
-
-
 $(r_chunks_folder)/%.Rdone: $(r_chunks_folder)/%.R
 	Rscript $<
 	touch $@
@@ -52,3 +49,5 @@ clean:
 	latexmk -c $(file_name).tex
 	-rm $(file_name).amc $(file_name).bbl $(file_name).log
 	-rm $(file_name).fdb_latexmk $(file_name).fls $(file_name).xdv
+
+R: $(r_done_files)
