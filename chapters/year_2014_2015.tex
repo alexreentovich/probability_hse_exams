@@ -93,7 +93,7 @@ f(x) =
 
 \item Совместное распределение случайных величин $X$ и $Y$ задано в виде таблицы:
 
-\begin{tabular}{c|cc}
+\begin{tabular}{ccc}
 \toprule
  & $X=1$ & $X=2$ \\ \midrule
 $Y=-1$ & $0.1$ & $0.2$ \\
@@ -174,8 +174,8 @@ p(k) = \P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}
 
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$X$         & $1$             & $0$               \\ \midrule
-$\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
+$x$         & $1$             & $0$               \\ \midrule
+$\P(X=x)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
 \end{tabular}
 
 Так как $i$-ая опечатка наугад выбирает одну страницу из 500 и это должна быть именно 13.
@@ -315,8 +315,8 @@ $F(x) = \begin{cases}
 
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$X$         & $1$             & $0$               \\ \midrule
-$\P(\cdot)$ & $0.9$ & $0.1$ \\ \bottomrule
+$x$         & $1$             & $0$               \\ \midrule
+$\P(X=x)$ & $0.9$ & $0.1$ \\ \bottomrule
 \end{tabular}
 
 Вероятность 0.9 дана. Тогда:
@@ -378,9 +378,9 @@ $\P(\cdot)$ & $0.9$ & $0.1$ \\ \bottomrule
  \item $\Cov(X-Y-1, X+Y+1)=0 \Rightarrow \Corr(X-Y-1, X+Y+1) = 0 $
 \end{itemize}
 
-\item Найдем частные распределения $Y$ и $Y^2$:
+\item Найдём частные распределения $Y$ и $Y^2$:
 \begin{center}
-\begin{tabular}{c|cc|c}
+\begin{tabular}{cccc}
 \toprule
  & $X=1$ & $X=2$ & $\sum$ \\ \midrule
 $Y=-1$ & $0.1$ & $0.2$ & $0.3$ \\
@@ -393,8 +393,8 @@ $\sum$ & $0.3$ & $0.7$ & \\ \bottomrule
 \begin{center}
 \begin{tabular}{@{}cccc@{}}
 \toprule
-$Y$         & $-1$             & $0$      & $1$         \\ \midrule
-$\P(\cdot)$ & $0.3$ & $0.5$  & $0.2$\\ \bottomrule
+$y$         & $-1$             & $0$      & $1$         \\ \midrule
+$\P(Y=y)$ & $0.3$ & $0.5$  & $0.2$\\ \bottomrule
 \end{tabular}
 \end{center}
 
@@ -403,8 +403,8 @@ $\P(\cdot)$ & $0.3$ & $0.5$  & $0.2$\\ \bottomrule
 \begin{center}
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$Y^2$         & $0$             & $1$               \\ \midrule
-$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
+$y^2$         & $0$             & $1$               \\ \midrule
+$\P(Y^2 = y^2)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
 \end{center}
 А ковариация:
@@ -445,8 +445,8 @@ $\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
 
 \begin{tabular}{ccccc}
 \toprule
-$X$ & $0$ & $1$ & $2$ & $3$ \\ \midrule
-$\P(\cdot)$ & $0.1$ & $0.3$ & $0.2$ & $0.4$ \\ \bottomrule
+$x$ & $0$ & $1$ & $2$ & $3$ \\ \midrule
+$\P(X=x)$ & $0.1$ & $0.3$ & $0.2$ & $0.4$ \\ \bottomrule
 \end{tabular}
 
 \begin{enumerate}
@@ -590,8 +590,8 @@ $\Var(X) = \E(X^2) - (\E(X))^2 = 0\cdot 0.1 + 1 \cdot 0.3 + 4 \cdot 0.2 + 9 \cdo
 
 \begin{tabular}{cccc}
 \toprule
-$Y$ & $1$ & $2$ & $3$  \\ \midrule
-$\P(\cdot)$ & $3/19$ & $4/19$ & $12/19$  \\ \bottomrule
+$y$ & $1$ & $2$ & $3$  \\ \midrule
+$\P(Y=y)$ & $3/19$ & $4/19$ & $12/19$  \\ \bottomrule
 \end{tabular}
 
 
@@ -674,8 +674,8 @@ p(k) = \P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}
 
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$X$         & $1$             & $0$               \\ \midrule
-$\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
+$x$         & $1$             & $0$               \\ \midrule
+$\P(X=x)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
 \end{tabular}
 
 Так как $i$-ая опечатка наугад выбирает одну страницу из 500 и это должна быть именно 13.
@@ -733,8 +733,8 @@ $\P(\cdot)$ & $\frac{1}{500}$ & $\frac{499}{500}$ \\ \bottomrule
 
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$X$         & $1$             & $0$               \\ \midrule
-$\P(\cdot)$ & $0.9$ & $0.1$ \\ \bottomrule
+$x$         & $1$             & $0$               \\ \midrule
+$\P(X=x)$ & $0.9$ & $0.1$ \\ \bottomrule
 \end{tabular}
 
 Вероятность 0.9 дана. Тогда:
@@ -877,8 +877,8 @@ $\begin{cases} \E_2 = \frac{1}{6} \cdot 6 +  \frac{5}{6} (\E_1 + 3)   \\ \E_1 = 
 \begin{center}
   \begin{tabular}{@{}cc@{}}
   \toprule
-  $X_n$       & $6$ \\ \midrule
-  $\P(\cdot)$ & $1$ \\ \bottomrule
+  $x_n$       & $6$ \\ \midrule
+  $\P(X_n = x_n)$ & $1$ \\ \bottomrule
   \end{tabular}
 \end{center}
 
@@ -907,8 +907,8 @@ $M = V$ произойдет только, если Машенька стоит 
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-$X_i$ & $1$ & $0$ \\ \midrule
-$\P(\cdot)$ & $1/3$ & $2/3$ \\ \bottomrule
+$x_i$ & $1$ & $0$ \\ \midrule
+$\P(X_i = x_i)$ & $1/3$ & $2/3$ \\ \bottomrule
 \end{tabular}
 
 \end{center}
@@ -1121,8 +1121,8 @@ P[n\text{-ый не сядет на свое место}] = \P(A_n) + P[A_{n-1}]
 
 \begin{tabular}{llll}
 \toprule
-$X_n$ & $-\sqrt{n}$ & $0$ & $\sqrt{n}$ \\ \midrule
-$\P(\cdot)$ & $1/2n$ & $1-1/n$ & $1/2n$ \\
+$x_n$ & $-\sqrt{n}$ & $0$ & $\sqrt{n}$ \\ \midrule
+$\P(X_n = x_n)$ & $1/2n$ & $1-1/n$ & $1/2n$ \\
 \bottomrule
 \end{tabular}
 
@@ -1509,14 +1509,14 @@ X_2
 
 \begin{tabular}{ccc}
 \toprule
-$X$ & $7$ & $8$ \\ \midrule
-$\P(\cdot)$ & $\frac{1}{2}$ & $\frac{1}{2}$ \\ \bottomrule
+$x$ & $7$ & $8$ \\ \midrule
+$\P(X=x)$ & $\frac{1}{2}$ & $\frac{1}{2}$ \\ \bottomrule
 \end{tabular}
 \hspace{1cm}
 \begin{tabular}{ccc}
 \toprule
-$Y$ & $7$ & $8$ \\ \midrule
-$\P(\cdot)$ & $\frac{2}{3}$ & $\frac{1}{3}$  \\ \bottomrule
+$y$ & $7$ & $8$ \\ \midrule
+$\P(Y=y)$ & $\frac{2}{3}$ & $\frac{1}{3}$  \\ \bottomrule
 \end{tabular}
 \end{center}
 
@@ -1896,8 +1896,8 @@ $C=\begin{pmatrix}
 
 \begin{tabular}{cccc}
 \toprule
-$S$ & $650$ & $800$ & $950$ \\ \midrule
-$\P(\cdot)$ & $1/3$ & $1/3$ & $1/3$ \\ \bottomrule
+$s$ & $650$ & $800$ & $950$ \\ \midrule
+$\P(S=s)$ & $1/3$ & $1/3$ & $1/3$ \\ \bottomrule
 \end{tabular}
 
 Тогда $\E(S) = \frac{1}{3}\cdot 650 +  \frac{1}{3}\cdot 800 +  \frac{1}{3}\cdot 950 = 800$, $\Var(S) = \frac{1}{3}(650-800)^2 + \frac{1}{3}(800-800)^2 + \frac{1}{3}(950-800)^2 = 15000$

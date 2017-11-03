@@ -40,7 +40,7 @@ ce^x, \, x<0
 
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
-\begin{tabular}{@{}c|ccc@{}}
+\begin{tabular}{@{}cccc@{}}
 \toprule
     & $X=-1$ & $X=0$ & $X=1$ \\ \midrule
 $Y=-1$ & $0.1$  & $0.2$   & $0.2$ \\
@@ -127,14 +127,14 @@ $\Cov(X, Y) = \Corr(X,Y) \cdot \sqrt{\Var(X) \cdot \Var(Y)} = 6$
 
 \begin{tabular}{@{}cccc@{}}
 \toprule
-$X$         & $-1$  & $0$   & $1$   \\ \midrule
-$\P(\cdot)$ & $0.3$ & $0.3$ & $0.4$ \\ \bottomrule
+$x$         & $-1$  & $0$   & $1$   \\ \midrule
+$\P(X=x)$ & $0.3$ & $0.3$ & $0.4$ \\ \bottomrule
 \end{tabular}
 \hspace{1cm}
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$Y$         & $-1$  & $1$   \\ \midrule
-$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
+$y$         & $-1$  & $1$   \\ \midrule
+$\P(Y=y)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
 \item
 \begin{multline*}
@@ -192,7 +192,7 @@ $\P(\cdot)$ & $0.2$ & $0.4$ & $0.4$ \\ \bottomrule
 
 \item Совместное распределение доходов акций двух компаний $Y$ и $X$ задано в виде таблицы
 
-\begin{tabular}{@{}c|ccc@{}}
+\begin{tabular}{@{}cccc@{}}
 \toprule
     & $X=-1$ & $X=0$ & $X=1$ \\ \midrule
 $Y=-1$ & $0.1$  & $0.2$   & $0.2$ \\
@@ -340,8 +340,8 @@ $Y=1$ & $0.2$  & $0.1$ & $0.2$ \\ \bottomrule
 \begin{center}
 \begin{tabular}{@{}lccc@{}}
 \toprule
-$S_i$       & $0$                & $2000$  & $3000$             \\ \midrule
-$\P(\cdot)$ & $0.998 \cdot 0.99$ & $0.002$ & $0.998 \cdot 0.01$ \\ \bottomrule
+$s_i$       & $0$                & $2000$  & $3000$             \\ \midrule
+$\P(S_i = s_i)$ & $0.998 \cdot 0.99$ & $0.002$ & $0.998 \cdot 0.01$ \\ \bottomrule
 \end{tabular}
 \end{center}
 \begin{itemize}
@@ -367,14 +367,14 @@ $\Cov(X, Y) = \Corr(X,Y) \cdot \sqrt{\Var(X) \cdot \Var(Y)} = 6$
 
 \begin{tabular}{@{}lccl@{}}
 \toprule
-$X$         & $-1$  & $0$   & $1$   \\ \midrule
-$\P(\cdot)$ & $0.3$ & $0.3$ & $0.4$ \\ \bottomrule
+$x$         & $-1$  & $0$   & $1$   \\ \midrule
+$\P(X=x)$ & $0.3$ & $0.3$ & $0.4$ \\ \bottomrule
 \end{tabular}
 \hspace{1cm}
 \begin{tabular}{@{}lcc@{}}
 \toprule
-$Y$         & $-1$  & $1$   \\ \midrule
-$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
+$y$         & $-1$  & $1$   \\ \midrule
+$\P(Y=y)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
 \item
 \begin{multline*}
@@ -896,12 +896,12 @@ F_X(x) =          \begin{cases}
 \]
 Поэтому $\P\left(X=-10\right) = \frac{1}{4} - 0 = \frac{1}{4}$, $\P\left(X=0\right) = \frac{3}{4} - \frac{1}{4} = \frac{1}{2}$ и $\P\left(X=10\right) = 1 - \frac{3}{4} = \frac{1}{4}$.
 
-\item[б)] Из пункта (a) следует, что распределение случайной величины $X$ задается таблицей
+\item[б)] Из пункта (a) следует, что распределение случайной величины $X$ задаётся таблицей
 \begin{center}
 \begin{tabular}{@{}cccc@{}}
 \toprule
-$X$         & $-10$ & $0$   & $10$  \\ \midrule
-$\P(\cdot)$ & $1/4$ & $1/2$ & $1/4$ \\ \bottomrule
+$x$         & $-10$ & $0$   & $10$  \\ \midrule
+$\P(X=x)$ & $1/4$ & $1/2$ & $1/4$ \\ \bottomrule
 \end{tabular}
 \end{center}
 Поэтому $\E(X) = -10 \cdot \frac{1}{4} + 0 \cdot \frac{1}{2} + 10 \cdot \frac{1}{4} = 0$.
@@ -964,7 +964,7 @@ F_X(x) =
 
 \item Совместное распределение случайных величин $X$ и $Y$ задано при помощи таблицы
 \begin{center}
-\begin{tabular}{@{}c|ccc@{}}
+\begin{tabular}{@{}cccc@{}}
 \toprule
       & $Y=1$ & $Y=2$ & $Y=3$ \\ \midrule
 $X=0$ & $0.2$ & $0.1$ & $0.2$ \\
@@ -992,14 +992,14 @@ $0.2 = \P(X=0 \cap Y=1) \not= \P(X=0) \cdot \P(Y=1) = 0.5 \cdot 0.3$.
 
 \begin{tabular}{@{}ccc@{}}
 \toprule
-$X$         & $0$   & $1$   \\ \midrule
-$\P(\cdot)$ & $0.5$ & $0.5$ \\ \bottomrule
+$x$         & $0$   & $1$   \\ \midrule
+$\P(X=x)$ & $0.5$ & $0.5$ \\ \bottomrule
 \end{tabular}
 \hspace{1cm}
 \begin{tabular}{@{}cccc@{}}
 \toprule
-$Y$         & $1$   & $2$   & $3$ \\ \midrule
-$\P(\cdot)$ & $0.3$ & $0.4$ & $0.3$ \\ \bottomrule
+$y$         & $1$   & $2$   & $3$ \\ \midrule
+$\P(Y=y)$ & $0.3$ & $0.4$ & $0.3$ \\ \bottomrule
 \end{tabular}
 
 Поэтому функции распределения равны
@@ -1026,8 +1026,8 @@ F_Y(x) =
 \begin{center}
 \begin{tabular}{@{}ccccc@{}}
 \toprule
-$XY$        & $0$   & $1$  & $2$  & $3$     \\ \midrule
-$\P(\cdot)$ & $0.5$ & $0.1$ & $0.3$ & $0.1$ \\ \bottomrule
+$xy$        & $0$   & $1$  & $2$  & $3$     \\ \midrule
+$\P(XY=xy)$ & $0.5$ & $0.1$ & $0.3$ & $0.1$ \\ \bottomrule
 \end{tabular}
 \end{center}
 

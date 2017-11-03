@@ -42,7 +42,7 @@
 
 \item Совместное распределение случайных величин $X$ и $Y$ задано таблицей
 
-\begin{tabular}{@{}c|ccc@{}}
+\begin{tabular}{@{}cccc@{}}
 \toprule
       & $X=-2$ & $X=0$ & $X=2$ \\ \midrule
 $Y=1$ & $0.2$  & $0.3$ & $0.1$ \\
@@ -427,8 +427,8 @@ x <- rexp(200, rate = 2)
 
 \begin{tabular}{@{}cccc@{}}
 \toprule
-$X$         & $-1$  & $0$   & $1$ \\ \midrule
-$\P(\cdot)$ & $0.4$ & $0.2$ & ?   \\ \bottomrule
+$x$         & $-1$  & $0$   & $1$ \\ \midrule
+$\P(X=x)$ & $0.4$ & $0.2$ & ?   \\ \bottomrule
 \end{tabular}
 
 Дисперсия величины $X$, $\Var(X)$, равняется
