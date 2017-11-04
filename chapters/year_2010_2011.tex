@@ -36,7 +36,7 @@
 
 \item Закон распределения пары случайных величин $X$ и $Y$  и  задан таблицей
 
-\begin{tabular}{@{}c|ccc@{}}
+\begin{tabular}{@{}cccc@{}}
 \toprule
     & $X=-1$ & $X=0$ & $X=2$ \\ \midrule
 $Y=1$ & $0.2$  & $0.1$ & $0.2$ \\
@@ -169,8 +169,31 @@ $\P(X<\sqrt2)$, $\P\left( \frac{|X|}{\sqrt{Y^2+Z^2}}>1\right)$, $\P(X^2+Y^2>4)$.
 \[
 \P \left(\frac{\hat{p} - 0.8}{\frac{0.8 \cdot 0.2}{n}} > \frac{0.02}{\frac{0.8 \cdot 0.2}{n}} \right) = 0.95 \Rightarrow \frac{0.02}{\frac{0.8 \cdot 0.2}{n}} = 1.65 \Rightarrow n =33
 \]
-\item
-\item
+\item %$\E\left(\frac{X_1+X_2}{2}\right) = 40.5$
+
+%$\Var\left(\frac{X_1+X_2}{2}\right) = 3.9$
+
+%$\Cov(X_1, X_2) = -0.45$
+\item Необоходимо решить следующую систему уравнений:
+\[
+\begin{cases}
+D(\overline{X}_S) = \sum_{l=1}^L \left(\frac{w_l^2 \sigma_l^2}{n_l} \right) \to \min \\
+n = n_1 + n_2 + n_3
+\end{cases}
+\]
+Выпишем лагранжиан:
+\[
+L  = \sum_{l=1}^L \frac{w_l^2 \sigma_l^2}{n_l} - \lambda(n_1 + n_2 + n_3 -n)
+\]
+\[
+\frac{\partial L}{\partial n_l} = 0 \Rightarrow n_l^o = \sqrt{\frac{w_l^2 \sigma_l^2}{-\lambda}} \Rightarrow \sum_{l=1}^L w_l \sigma_l = \sqrt{-\lambda} n \Rightarrow \sqrt{-\lambda} = \frac{\sum_{l=1}^L w_l \sigma_l }{n}
+\]
+Тогда находим объём выборки каждой группы по формуле: $n^o = \frac{w_l \sigma_l }{\sum_{k=1}^L w_k \sigma_k } n$
+\begin{itemize}
+\item $n^o_{\text{недорогие}} = 0.255n$
+\item $n^o_{\text{средние}} = 0.532n$
+\item $n^o_{\text{дорогие}} = 0.213n$
+\end{itemize}
 \item Выборочное среднее: $-0.2$; выборочная дисперсия: $70.98$;
 
 вариационный ряд: $-5.6, -3.2, -0.8, 1.1, 2.9, 4.4$.
@@ -191,6 +214,26 @@ $\P(X<\sqrt2)$, $\P\left( \frac{|X|}{\sqrt{Y^2+Z^2}}>1\right)$, $\P(X^2+Y^2>4)$.
 \Var(T_2) = (n+1)^2 \cdot \frac{\theta^2}{12}
 \]
 Оценка $T_1$ является более эффективной, и она состоятельна. $T_2$ не является состоятельной оценкой.
+\item По формуле Байеса:
+\[
+\P(X=k | X+Y = k) = \frac{\P(X=k \cap X+Y = n)}{\P(X+Y=n)} = \frac{\P(X+Y = k | X=k)\P(X=k)}{\P(X+Y=n)}
+\]
+Находим числитель:
+\[
+\P(X+Y = n | X=k) \cdot \P(X=k) = \P(Y = n-k) \cdot \P(X=k) = p\cdot (1-p)^{n-k-1} \cdot p \cdot p^{k-1} = p^2 \cdot (1-p)^{n-2}
+\]
+И знаменатель:
+\[
+\P(X+Y = n) = \sum_{i=1}^n \P(X = i \cap Y = n-i) =  \sum_{i=1}^n p \cdot (1-p)^{i-1} \cdot p \cdot (1-p)^{n-i-1} =  \sum_{i=1}^n p^2 (1-p)^n
+\]
+Итого:
+\[
+\P(X=k | X+Y = k) = \frac{ p^2 \cdot (1-p)^{n-2}}{\sum_{i=1}^n p^2 (1-p)^n} = \frac{(1-p)^{n-2}}{\sum_{i=1}^n(1-p)^n}
+\]
+Второе выражение:
+\[
+\P(Y=k | X=Y) = \frac{\P(Y=k \cap X=Y)}{\P(X=Y)} = \P(Y=k) = p(1-p)^{k-1}
+\]
 \end{enumerate}
 
 
