@@ -209,7 +209,7 @@ $\E(X) = \int_0^1 (x+0.5)x dx = 7/12$
 % f_{X| Y>X} = \int_x^1 (x+y) dy  = -1.5 x^2 + x + 0.5
 
 % \E(X|Y>X) = \int_0^1 (-1.5 x^2 + x + 0.5)x dx  = 5/24
-\item
+\item $\P(\hat{p} < 0.21) = \P\left(\frac{\hat{p} - 0.8}{\sqrt{\frac{0.8(1-0.8)}{200}}} < \frac{0.21 - 0.8}{\sqrt{\frac{0.8(1-0.8)}{200}}} \right) \approx 0$ % проверить!
 \item
 \item
 \begin{enumerate}
@@ -219,6 +219,12 @@ $\E(X) = \int_0^1 (x+0.5)x dx = 7/12$
 \end{enumerate}
 \item Если $S$ — финальная стоимость акции, то $S=1000+X_1+X_2+\ldots+X_{100}$. Тогда по ЦПТ $S\sim \cN(1000,100)$ и $\P(S>1030)\approx 0.001$.
 \item $\E(X) = -c \sqrt{\frac{\pi}{2}}$, $\Var(X) = c \frac{5}{4} \frac{\pi}{2} - c^2 \frac{\pi}{2}$
+\item
+\begin{multline*}
+\P(X=k|X+Y=50) = \frac{\P(X+Y =50 | X=k)\P(X=k)}{\P(X+Y=50)} = \frac{\P(Y=50-k)\P(X=k)}{\P(X+Y=50)} = \\
+\frac{\left(\frac{e^{-15} 15^{50-k}}{(50-k)!}\right) \left(\frac{e^{-5} 5^k}{k!}\right)}{\frac{e^{-(5+15)}(5+15)^{50}}{50!}} = C_{50}^k \frac{5^k \cdot 15^{50-k}}{(5+15)^{50}} = C_{50}^k \left(\frac{5}{5+15}\right)^k \left(\frac{15}{5+15}\right)^{50-k}
+\end{multline*}
+Получили биномиальное распределение с параметрами $p=1/4$, $n=50$.
 \end{enumerate}
 
 

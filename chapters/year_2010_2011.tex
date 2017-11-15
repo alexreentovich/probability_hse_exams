@@ -223,12 +223,13 @@ L  = \sum_{l=1}^L \frac{w_l^2 \sigma_l^2}{n_l} - \lambda(n_1 + n_2 + n_3 -n)
 \P(X+Y = n | X=k) \cdot \P(X=k) = \P(Y = n-k) \cdot \P(X=k) = p\cdot (1-p)^{n-k-1} \cdot p \cdot p^{k-1} = p^2 \cdot (1-p)^{n-2}
 \]
 И знаменатель:
-\[
-\P(X+Y = n) = \sum_{i=1}^n \P(X = i \cap Y = n-i) =  \sum_{i=1}^n p \cdot (1-p)^{i-1} \cdot p \cdot (1-p)^{n-i-1} =  \sum_{i=1}^n p^2 (1-p)^n
-\]
+\begin{multline*}
+\P(X+Y = n) = \sum_{i=1}^n \P(X = i \cap Y = n-i) =  \sum_{i=1}^n p \cdot (1-p)^{i-1} \cdot p \cdot (1-p)^{n-i-1}= \\
+ =  \sum_{i=1}^n p^2 (1-p)^n = np^2 (1-p)^n
+\end{multline*}
 Итого:
 \[
-\P(X=k | X+Y = k) = \frac{ p^2 \cdot (1-p)^{n-2}}{\sum_{i=1}^n p^2 (1-p)^n} = \frac{(1-p)^{n-2}}{\sum_{i=1}^n(1-p)^n}
+\P(X=k | X+Y = k) = \frac{ p^2 \cdot (1-p)^{n-2}}{np^2 (1-p)^n} = \frac{1}{n(1-p)^2}
 \]
 Второе выражение:
 \[
