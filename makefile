@@ -20,7 +20,7 @@ pdf_full_from_R_files = $(addprefix $(auto_tikz_folder)/, $(pdf_from_R_files))
 
 all: $(r_done_files) $(file_name).pdf
 
-$(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw $(pdf_full_from_R_files)
+$(file_name).pdf: $(file_name).tex chapters/*.tex $(pdf_full_from_R_files)
 	# protection against biber error
 	# http://tex.stackexchange.com/questions/140814/
 	rm -rf `biber --cache`
@@ -33,7 +33,7 @@ $(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw $(pdf_full_from
 	latexmk -c $(file_name).tex
 
 
-$(file_name).tex: $(file_name).Rnw chapters/*.Rnw
+$(file_name).tex: $(file_name).Rnw 
 	Rscript -e "library(knitr); knit('$(file_name).Rnw')"
 
 $(auto_tikz_folder)/%.pdf: $(auto_tikz_folder)/%.tex

@@ -160,20 +160,6 @@ U=\sqrt{\frac{(X-\E(X))^2}{\Var(X)}+\frac{(Y-\E(Y))^2}{\Var(Y)}}
 
 \end{enumerate}
 
-<<echo=FALSE>>=
-mu.x <- 0.45
-mu.y <- 0.16
-var.x <- 0.144
-var.y <- 0.144
-cov.xy <- -0.9 * 0.144
-s.x <- sqrt(var.x)
-s.y <- sqrt(var.y)
-corr.xy <- cov.xy / s.x / s.y
-var.xpy <- var.x + var.y + 2 * cov.xy
-s.xpy <- sqrt(var.xpy)
-@
-
-
 \item Вычислите (или оцените) вероятность того, что по результатам 4000 бросаний симметричной монеты,  частота выпадения герба будет отличаться от 0.5 не более, чем на $0.01$. Решите задачу с помощью неравенства Чебышёва и с помощью ЦПТ.
 
 
@@ -351,11 +337,11 @@ f(x,y)=\frac{1}{x}e^{-x},\: \text{при}\: 0<y<x
 Продолжительность 1 час 10 минут, разрешено пользоваться конспектами, книжками, заготовками программ, нельзя общаться, использовать Интернет. Текст работы в группах с R:
 
 \begin{enumerate}
-\item Величины $X$ и $Y$ независимы. Величина $X$ распределена нормально, $X\sim \cN(4.\Sexpr{sample(9,1)},6.\Sexpr{sample(9,1)})$, величина $Y$ распределена экспоненциально, $Y\sim \exp(\lambda=2.\Sexpr{sample(9,1)})$. Используя симуляционный подход примерно посчитайте
+\item Величины $X$ и $Y$ независимы. Величина $X$ распределена нормально, $X\sim \cN(4.4, 6.5)$, величина $Y$ распределена экспоненциально, $Y\sim \exp(\lambda=2.3)$. Используя симуляционный подход примерно посчитайте
 
 \begin{enumerate}
-\item $\P(X+Y>5.\Sexpr{sample(9,1)})$
-\item $\E(X/(X+\Sexpr{sample(2:9,1)}Y))$
+\item $\P(X+Y>5.2)$
+\item $\E(X/(X+6Y))$
 \item $\Var(XY)$
 \item $\Cov(XY,X/Y)$
 \end{enumerate}
@@ -380,10 +366,14 @@ h <- h[sample(1:nrow(h), 1000), ]
 
 
 \item Сгенерируйте искусственные данные, выполнив команды:
-<<eval=FALSE, echo=TRUE>>=
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               frame=lines,
+               framesep=2mm]{r}
 set.seed(round(100 * a) + 42) # здесь "a" — это ответ на первый пункт первой задачи
 x <- rexp(200, rate = 2)
-@
+\end{minted}
 
 Величины $X_i$ независимы и имеют функцию плотности $f(x)=e^{b-xe^b}$ при $x>0$.
 \begin{enumerate}
@@ -588,14 +578,6 @@ $\P(X=x)$ & $0.4$ & $0.2$ & ?   \\ \bottomrule
 
 \end{enumerate}
 
-<<"titanic",echo=FALSE,include=FALSE>>=
-hd2 <- Titanic %>% as.data.frame() %>%
-        group_by(Class, Survived) %>% summarise(num = sum(Freq))
-tab <- dcast(hd2, formula = Survived ~ Class)
-colnames(tab) <- c("", "1 класс", "2 класс", "3 класс", "Экипаж")
-rownames(tab) <- c("Погиб", "Выжил")
-@
-
 
 \textbf{Экзамен по теории вероятностей! Суперигра!}
 
@@ -633,9 +615,17 @@ rownames(tab) <- c("Погиб", "Выжил")
 
 \item В таблице представлены данные по количеству пассажиров «Титаника», поделенные на группы по классу каюты:
 
-<<echo=FALSE, results="asis">>=
-xtable(tab[, 2:4], digits = 0)
-@
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \toprule
+ & 1 класс & 2 класс & 3 класс \\
+  \midrule
+Погиб & 122 & 167 & 528 \\
+  Выжил & 203 & 118 & 178 \\
+   \bottomrule
+\end{tabular}
+\end{table}
 
 Проверьте гипотезу о независимости шансов выжить от класса каюты.
 
