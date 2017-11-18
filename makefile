@@ -33,8 +33,8 @@ $(file_name).pdf: $(file_name).tex chapters/*.tex $(pdf_full_from_R_files)
 	latexmk -c $(file_name).tex
 
 
-$(file_name).tex: $(file_name).Rnw 
-	Rscript -e "library(knitr); knit('$(file_name).Rnw')"
+# $(file_name).tex: $(file_name).Rnw 
+#	Rscript -e "library(knitr); knit('$(file_name).Rnw')"
 
 $(auto_tikz_folder)/%.pdf: $(auto_tikz_folder)/%.tex
 	latexmk -xelatex -cd $<
