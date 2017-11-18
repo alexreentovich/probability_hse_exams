@@ -27,7 +27,7 @@ $(file_name).pdf: $(file_name).tex chapters/*.tex chapters/*.Rnw $(pdf_full_from
 
 	# create pdf
 	# will automatically run pdflatex/biber if necessary
-	latexmk -xelatex $(file_name).tex
+	latexmk -xelatex -latexoption=-shell-escape $(file_name).tex
 
 	# clean
 	latexmk -c $(file_name).tex

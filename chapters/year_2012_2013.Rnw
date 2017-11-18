@@ -176,12 +176,6 @@ s.xpy <- sqrt(var.xpy)
 
 \item Вычислите (или оцените) вероятность того, что по результатам 4000 бросаний симметричной монеты,  частота выпадения герба будет отличаться от 0.5 не более, чем на $0.01$. Решите задачу с помощью неравенства Чебышёва и с помощью ЦПТ.
 
-<<echo=FALSE>>=
-e.hp <- 0.5
-var.hp <- 1/16000
-@
-
-
 
 \item Компания кабельного телевидения НВТ, Новая Вершина Телевидения, анализирует возможность присоединения к своей сети пригородов N-ска. Опросы показали, что в среднем каждые 3 из 10 семей жителей пригородов хотели бы стать абонентами сети. Стоимость работ, необходимых для организации сети в любом пригороде оценивается величиной 2\,080\,000 у.е. При подключении каждого пригорода НВТ надеется получить 1\,000\,000 у.е. в год от рекламодателей. Планируемая чистая прибыль от оплаты за кабельное телевидение одной семьей в год равна 120 у.е.
 
@@ -205,34 +199,26 @@ var.hp <- 1/16000
 \[ \E(T^2)=\int_0^3\int_0^s \frac{t^2}{3s}\,dt\,ds=1 \]
 \item
 \begin{enumerate}
-\item $\P(X>0.5)=\P(Z>\Sexpr{(0.5-mu.x)/s.x})\approx \Sexpr{1-pnorm((0.5-mu.x)/s.x)}$, $\sigma_X\approx \Sexpr{s.x}$
+\item $\P(X>0.5)=\P(Z>0.1317616)\approx 0.4475864$, $\sigma_X\approx 0.3794733$
 \item $\P(X+Y>0.5)=
-\P(Z>\Sexpr{(0.5-mu.x-mu.y)/s.xpy})\approx \Sexpr{1-pnorm((0.5-mu.x-mu.y)/s.xpy)}$,
-$\sigma_{X+Y}=\Sexpr{s.xpy}$, $\E(X+Y)=\Sexpr{mu.x+mu.y}$
-<<echo=FALSE>>=
-tx <- (0.25 - mu.x) / s.x
-mu.y.cond <- mu.y + s.y * corr.xy * tx
-var.y.cond <- s.y^2 * (1 - corr.xy^2)
-@
-\item $X=0.25$ при нормировке даёт $\tilde{X}=\Sexpr{tx}$. Получаем: $\E(\tilde{Y}\mid \tilde{X}=\Sexpr{tx})=\Sexpr{corr.xy*tx}$,  $\Var(\tilde{Y}\mid \tilde{X}=\Sexpr{tx})=\Sexpr{1-corr.xy^2}$.
+\P(Z>-0.6481812)\approx 0.7415661$,
+$\sigma_{X+Y}=0.1697056$, $\E(X+Y)=0.61$
 
-Значит $\E(Y \mid \tilde{X}=\Sexpr{tx})=\Sexpr{mu.y.cond}$,  $\Var(Y\mid \tilde{X}=\Sexpr{tx})=\Sexpr{var.y.cond}$.
-<<echo=FALSE>>=
-z.val <- (1/3 - mu.y.cond) / sqrt(var.y.cond)
-@
-\item $\P(Y>1/3\mid \tilde{X}=\Sexpr{tx})=\P(Z>\Sexpr{z.val})=\Sexpr{1-pnorm(z.val)}$
+\item $X=0.25$ при нормировке даёт $\tilde{X}=-0.5270463$. Получаем: $\E(\tilde{Y}\mid \tilde{X}=-0.5270463)=0.4743416$,  $\Var(\tilde{Y}\mid \tilde{X}=-0.5270463)=0.19$.
+
+Значит $\E(Y \mid \tilde{X}=-0.5270463)=0.34$,  $\Var(Y\mid \tilde{X}=-0.5270463)=0.02736$.
+
+\item $\P(Y>1/3\mid \tilde{X}=-0.5270463)=\P(Z>-0.0403042)=0.5160747$
 \item Ноль
 \end{enumerate}
 \item $\E(\hat{p})=0.5$, $\Var(\hat{p})=0.25/n=1/16000$. По Чебышёву:
 \[
-\P(|\hat{p}-0.5|\leq 0.01)\geq 1-\frac{\Var(\hat{p})}{0.01^2}=\ldots=\Sexpr{1-var.hp/0.01/0.01}
+\P(|\hat{p}-0.5|\leq 0.01)\geq 1-\frac{\Var(\hat{p})}{0.01^2}=\ldots=0.375
 \]
 Используя нормальную аппроксимацию:
-<<echo=FALSE>>=
-a <- 0.01 / sqrt(var.hp)
-@
+
 \[
-\P(|\hat{p}-0.5|\leq 0.01)=\P(|Z|\leq \Sexpr{a})\approx \Sexpr{pnorm(a)-pnorm(-a)}
+\P(|\hat{p}-0.5|\leq 0.01)=\P(|Z|\leq 1.2649111)\approx 0.7940968
 \]
 \item Обозначим $N$ — количество подключенных абонентов, тогда $N\sim Bin(n,0.3)$. При больших $n$ биномиальное распределение можно заменить на нормальное, $N\sim \cN(0.3n,0.21n)$.
 
@@ -240,26 +226,19 @@ a <- 0.01 / sqrt(var.hp)
 
 Из таблицы находим, что
 
-\[ \frac{9000-0.3n}{\sqrt{0.21n}}=\Sexpr{-qnorm(0.99)}\]
+\[ \frac{9000-0.3n}{\sqrt{0.21n}}=-2.3263479\]
 
-<<echo=FALSE>>=
-f <- function(n) {
-  return((9000 - 0.3 * n)/sqrt(0.21 * n) + qnorm(0.99))
-}
-n.star <- round(uniroot(f, lower = 0, upper = 10^7)$root)
-@
 
-Решаем квадратное уравнение, находим корни, один — отрицательный, другой, $n\approx \Sexpr{n.star}$.
+
+Решаем квадратное уравнение, находим корни, один — отрицательный, другой, $n\approx 30622$.
 \item
 
-<<include=FALSE, echo=FALSE>>=
-v <- c(3, 5, 6, 7, 8, 9)
-n <- length(v)
-@
 
-Вариационный ряд: 3, 5, 6, 7, 8, 9. $\bar{X}\approx \Sexpr{mean(v)}$,
-$\frac{\sum (X_i-\bar{X})^2}{n-1}\approx \Sexpr{var(v)}$,
-$\frac{\sum (X_i-\bar{X})^2}{n}\approx \Sexpr{var(v) * (n-1) / n}$
+
+Вариационный ряд: 3, 5, 6, 7, 8, 9. $\bar{X}\approx 6.3333333$,
+$\frac{\sum (X_i-\bar{X})^2}{n-1}\approx 4.6666667$,
+$\frac{\sum (X_i-\bar{X})^2}{n}\approx 3.8888889$
+
 
 \begin{minipage}{0.6\textwidth}
 \begin{center}
@@ -382,10 +361,15 @@ f(x,y)=\frac{1}{x}e^{-x},\: \text{при}\: 0<y<x
 \end{enumerate}
 
 \item Загрузите данные по стоимости квартир в Москве, \href{http://goo.gl/zL5JQ}{goo.gl/zL5JQ}, в табличку с именем \verb|h|. Обозначим буквой \verb|a| ответ на первый вопрос первой задачи. Отберите индивидуальную выборку лично для себя, выполнив команды:
-<<eval=FALSE, echo=TRUE>>=
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               frame=lines,
+               framesep=2mm]{r}
 set.seed(round(100 * a)) # здесь "a" — это ответ на первый пункт первой задачи
 h <- h[sample(1:nrow(h), 1000), ]
-@
+\end{minted}
 
 Постройте 90\%-ый доверительный интервал для:
 \begin{enumerate}
