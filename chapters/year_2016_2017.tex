@@ -1669,7 +1669,11 @@ x^{\alpha-1}(1-x)^{\beta-1}, \text{ если } x\in[0;1] \\
 \newpage
 \item Рассмотрим следующий код в \verb|stan|.
 
-\begin{verbatim}
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               frame=lines,
+               framesep=2mm]{stan}
 data {
   int<lower=1> N_x;
   int<lower=1> N_y;
@@ -1698,7 +1702,7 @@ generated quantities {
   delta = mu_x - mu_y;
   ratio = sigma_x / sigma_y;
 }
-\end{verbatim}
+\end{minted}
 
 \begin{enumerate}
 \item Выпишите предполагаемую модель для данных.
