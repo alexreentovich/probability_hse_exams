@@ -874,12 +874,12 @@ $B:=\{(x, y) \in \mathbb{R} : y < x-2 \}$ и $C := \{ (x,y) \in \mathbb{R} : y <
 \begin{enumerate}
 \item Указанная в задании функция $f_X$ является плотностью распределения, так как она удовлетворяет двум условиям:  $f_X$ является неотрицательной и интеграл от функции $f_X$ в пределах от  $-\infty$ до $+\infty$ равен единице:
 \[
-\int_{-\infty}^{+\infty} f_X (x) dx = \frac{1}{2} \cdot \int_{-\infty}^{+\infty}  \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2\sigma^2}} dx  + \frac{1}{2} \int_{-\infty}^{+\infty} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1
+\int_{-\infty}^{+\infty} f_X (x) dx = \frac{1}{2} \cdot \int_{-\infty}^{+\infty}  \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2}} dx  + \frac{1}{2} \cdot \int_{-\infty}^{+\infty}  \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1
 \]
-\item $\E(X) =\int_{-\infty}^{+\infty} xf_X (x) dx =  \frac{1}{2} \cdot \int_{-\infty}^{+\infty} x \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2\sigma^2}} dx  + \frac{1}{2}\int_{-\infty}^{+\infty} \cdot x \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1- 1=  0$
+\item $\E(X) =\int_{-\infty}^{+\infty} xf_X (x) dx =  \frac{1}{2} \cdot \int_{-\infty}^{+\infty} x \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2}} dx  + \frac{1}{2} \cdot \int_{-\infty}^{+\infty}  x \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = 1- 1=  0$
 \item  \begin{multline*}
-\E(X^2) = \int_{-\infty}^{+\infty} x^2 f_X (x) dx  =  \frac{1}{2} \cdot \int_{-\infty}^{+\infty} x^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2\sigma^2}} dx  + \frac{1}{2} \int_{-\infty}^{+\infty}\cdot x^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = \\
-= 1^2 + 1^2 + (-1)^2 + 1^2 =  2
+\E(X^2) = \int_{-\infty}^{+\infty} x^2 f_X (x) dx  =  \frac{1}{2} \cdot \int_{-\infty}^{+\infty} x^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-1)^2}{2}} dx  + \frac{1}{2}  \cdot \int_{-\infty}^{+\infty} x^2 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x+1)^2}{2}} dx = \\
+= \frac{1}{2}(1^2 + 1^2 + (-1)^2 + 1^2) =  2
 \end{multline*}
 \item $\Var(X) = \E(X^2) - (\E(X))^2 = 2 - 0^2 = 2$
 \end{enumerate}
