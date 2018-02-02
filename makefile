@@ -8,17 +8,36 @@ file_name = probability_hse_exams
 auto_tikz_folder = auto_figures_tikz
 r_plots_folder = R_plots
 
+# get the list of all .R files 
 r_full_plots_files = $(wildcard $(r_plots_folder)/*.R)
+
 # remove R_plots before
 r_plots_files = $(r_full_plots_files:R_plots/%=%)
+
+# replace .R by .Rdone for evey file
 r_done_files = $(r_full_plots_files:.R=.Rdone)
 
+# replace .R by .tex for every file
 tikz_from_R_files = $(r_plots_files:.R=.tex)
-# just replace .R by .tex for every file
+
+# replace .R by .pdf for every file
 pdf_from_R_files = $(r_plots_files:.R=.pdf)
+
+# add folder before each file
 pdf_full_from_R_files = $(addprefix $(auto_tikz_folder)/, $(pdf_from_R_files))
 
 all: $(r_done_files) $(file_name).pdf
+
+# to build "all" target we need updated .Rdone files for each R script and main pdf file
+# to build main pdf file we need: main tex file, chapters tex files, pdf files of plots
+# to build pdf files of plots we need tex files of plots
+# to build .Rdone file we just execute script and touch file
+# each sript creates png and tex (tikz) file of plot
+# so :)
+# 1. all R sripts will be run and png and tex plot files will be produced and .Rdone will be touched
+# 2. all tex plots will be transformed to small pdfs
+# 3. main tex file will be proceeded
+
 
 $(file_name).pdf: $(file_name).tex chapters/*.tex $(pdf_full_from_R_files)
 	# protection against biber error

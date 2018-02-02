@@ -1,7 +1,5 @@
 probability_hse_exams.amc
-
 probability_hse_exams.xdv
-.DS_Store
 .DS_Store
 *.aux
 *.fdb_latexmk
@@ -10,10 +8,5 @@ probability_hse_exams.xdv
 chapters/.DS_Store
 auto_figures_tikz/2012_2013_fig_02_empirical_dist.xdv
 auto_figures_tikz/2014_2015_fig_01_dlogis.xdv
-chapters/.DS_Store
 materials/min_kr2/main.xdv
-_minted-probability_hse_exams/52EB2D6DB09FAD77238F5A6495E48364EE8C6204697943267CDD2A939C425209.pygtex
-_minted-probability_hse_exams/default-pyg-prefix.pygstyle
-_minted-probability_hse_exams/default.pygstyle
-_minted-probability_hse_exams/1C49F447ACF7404D0FF7E267763519A5EE8C6204697943267CDD2A939C425209.pygtex
-_minted-probability_hse_exams/0844E693C6943A9F24E1CB3C49D2B74F5A480AF26C9D0B645FA468772A427905.pygtex
+_minted-probability_hse_exams/
