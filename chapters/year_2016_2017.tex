@@ -1624,6 +1624,153 @@ $
 
 \end{enumerate}
 
+\subsection{Кр 3. 2017-04-01, решения}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item $-2, 1, 4, 7, 10$
+\item $4$
+\item $S^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \overline{X})^2 = 18$
+\item $\hat\sigma^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2 = 4.5$
+\item $\frac{1}{n} \sum_{i=1}^n X_i^2 = 34$
+\item $F_n(x) = \begin{cases}
+0, & x < -2 \\
+\frac{1}{5}, & -2 \leq x < 1 \\
+\frac{2}{5}, & 1 \leq x < 4 \\
+\frac{3}{5}, & 4 \leq x < 7 \\
+\frac{4}{5}, & 7 \leq x < 10 \\
+1, & x \geq 1
+\end{cases}$
+\end{enumerate}
+\item $E(X_1 + X_2) = 2 \cdot 11000 = 22000$
+
+$\Var(X_1+X_2) = \Var(X_1) + \Var(X_2) + 2\Cov(X_1, X_2) = \Var(X_1) + \Var(X_2) - \frac{\Var(2X_1)}{N-1} = 2 \cdot 3000 - \frac{2\cdot3000}{3-1} = 3000$
+\item
+\begin{enumerate}
+\item Необходимо решить следующую задачу:
+\[
+\begin{cases}
+\frac{0.4^2 \cdot 10^2}{n_1} + \frac{0.5^2 \cdot 30^2}{n_2} + \frac{0.1^2 \cdot 60^2}{n_3} \to \min_{n_1, n_2, n_3} \\
+150 n_1 + 300 n_2 + 600 n_3 \leq 30000
+\end{cases}
+\]
+Выпишем функцию Лагранжа и найдём её частные производные по $n_1$, $n_2$ и $n_3$:
+\begin{align*}
+L(n_1, n_2, n_3, \lambda) &= \frac{0.4^2 \cdot 10^2}{n_1} + \frac{0.5^2 \cdot 30^2}{n_2} + \frac{0.1^2 \cdot 60^2}{n_3} + \lambda (150 n_1 + 300 n_2 + 600 n_3 - 30000) \\
+\frac{\partial L}{\partial n_1} &= -\frac{0.4^2 \cdot 10^2}{n_1^2} + 150 \lambda \quad \Rightarrow \quad 150 \lambda = \frac{0.4^2 \cdot 10^2}{n_1^2} \\
+\frac{\partial L}{\partial n_2} &= -\frac{0.5^2 \cdot 30^2}{n_2^2} + 300 \lambda \quad \Rightarrow \quad 150 \lambda = \frac{0.5^2 \cdot 30^2}{2n_2^2} \\
+\frac{\partial L}{\partial n_2} &= -\frac{0.1^2 \cdot 60^2}{n_3^2} + 600 \lambda \quad \Rightarrow \quad 150 \lambda = \frac{0.1^2 \cdot 60^2}{4n_3^2}
+\end{align*}
+Выразим $n_2$ и $n_3$ через $n_1$:
+\begin{align*}
+\frac{0.4 \cdot 10}{n_1} = \frac{0.5 \cdot 30}{\sqrt{2}n_2} \Rightarrow n_2 = \frac{15n_1}{4\sqrt{2}} \\
+\frac{0.4 \cdot 10}{n_1} = \frac{0.1 \cdot 60}{2n_3} \Rightarrow n_3 = \frac{6n_1}{8}
+\end{align*}
+Подставим вcё в бюджетное ограничение:
+\[
+150 n_1 + 300 \cdot \frac{15n_1}{4\sqrt{2}} + 600 \cdot \frac{6n_1}{8} = 30000
+\]
+Откуда получаем: $n_1 = 21.5 \approx 22$, $n_2 \approx 57$, $n_3 \approx 16$.
+\item $
+\Var(\overline{X}_S) = \sum_{l=1}^L \frac{w_l^2 \cdot \sigma_l^2}{n_l}
+= \frac{0.4^2 \cdot 10^2}{22} + \frac{0.5^2 \cdot 30^2}{57} + \frac{0.1^2 \cdot 60^2}{16}
+\approx 6.92$
+\end{enumerate}
+\item $\hat{p} = \frac{8000}{12300000} = \frac{2}{3075}$, $\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \approx 7.27 \cdot 10^{-6}$, $z_{\frac{\alpha}{2}} = 1.96$
+
+$\frac{2}{3075} - 1.96 \cdot 7.27 \cdot 10^{-6} < p < \frac{2}{3075} + 1.96 \cdot 7.27 \cdot 10^{-6}$
+
+$0.00064 < p < 0.00066$
+
+Поскольку $0$ не входит в доверительный интервал, утверждать, что доля статистически
+не отличается от нуля нельзя.
+
+\item
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item $\overline{Y} = 43$, $\hat{\sigma}_Y^2 = 32.5$, $t_{0.005, 4} = 4.6$
+
+    $43 - 4.6 \cdot \sqrt{\frac{32.5}{5}} < \mu < 43 + 4.6 \cdot \sqrt{\frac{32.5}{5}}$
+
+    $31.27 < \mu < 54.72$
+
+    \item $\chi^2_{0.95, 4} = 9.49$, $\chi^2_{0.05, 4} = 0.71$
+
+    $\frac{32.5 \cdot 4}{9.49} < \sigma^2 < \frac{32.5 \cdot 4}{0.71}$
+
+    $13.7 < \sigma^2 < 183$
+  \end{enumerate}
+  \item
+  \begin{enumerate}
+  \item
+  $X_1, \ldots, X_{n_X} \sim \cN(\mu_x, \sigma^2_X)$, $Y_1, \ldots, Y_{n_Y} \sim \cN(\mu_Y, \sigma^2_Y)$,
+  $\sigma^2_x = \sigma^2_Y = \sigma^2_0$, выборки независимы
+
+  \item $\overline{Y} - \overline{X} = 43 - 37 = 6$
+
+  $\hat{\sigma}^2_0 = \frac{\sum_{i=1}^{n_X} (X_i - \overline X)^2 + \sum_{i=1}^{n_Y} (Y_i - \overline Y)^2}{n_X + n_Y - 2} = \frac{680+130}{5+5-2} = 101.25$
+
+  $t_{0.95, 8} = 1.86$
+
+  $6 - 1.86 \sqrt{101.25} \sqrt{\frac{1}{5} + \frac{1}{5}} < \mu_Y - \mu_X <  6 + 1.86 \sqrt{101.25} \sqrt{\frac{1}{5} + \frac{1}{5}} $
+
+  $-5.83 < \mu_Y - \mu_X < 17.83$
+  \item Да, так как ноль входит в доверительный интервал.
+  \end{enumerate}
+\end{enumerate}
+\item
+\begin{enumerate}
+  \item Выборочный второй начальный момент: $\frac{1}{n} \sum_{i=1}^n X_i^2$.
+
+  Теоретический второй начальный момент: $\E(X^2) = \Var(X) + (\E X)^2 = \theta$
+
+  $\hat{\theta}_{MM} = \frac{1}{n} \sum_{i=1}^n X_i^2$
+  \item $\E(\hat{\theta}_{MM}) = \frac{1}{n} \sum_{i=1}^n \E(X_i^2) = \theta$ —
+  оценка несмещённая.
+  \item $\Var(\hat{\theta}_{MM}) = \Var\left(\frac{1}{n} \sum_{i=1}^n X_i^2 \right) = \frac{1}{n^2} \sum_{i=1}^n \Var(X_i^2) = \frac{3\theta^2 - \theta^2}{n} \to_{n \to \infty} 0$
+  — оценка состоятельная ($\E(X^4) = 3\theta^2$).
+  \item
+  \begin{align*}
+    L(x,\theta) &= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\theta}} \exp\left(-\frac{1}{2}\frac{x_i^2}{\theta} \right) = \frac{1}{(\sqrt{2\pi\theta})^n} \exp \left(-\frac{1}{2\theta} \sum_{i=1}^n x_i^2  \right) \\
+    l(x, \theta) &= -\frac{n}{2}\ln(2\pi) - \frac{n}{2}\ln\theta -\frac{1}{2\theta} \sum_{i=1}^n x_i^2 \\
+    \frac{\partial l}{\partial \theta} &= -\frac{n}{2\theta} + \frac{1}{2\theta^2} \sum_{i=1}^n x_i^2 \\
+    \hat{\theta}_{ML} &= \frac{\sum_{i=1}^n x_i^2}{n}
+  \end{align*}
+  \item \begin{align*}
+    \frac{\partial^2 l}{\partial \theta^2} &= \frac{n}{2\theta^2} - \frac{1}{\theta^3} \sum_{i=1}^n x_i^2 \\
+    -\E\left( \frac{\partial^2 l}{\partial \theta^2} \right) &= -\frac{n}{2\theta^2} + \frac{1}{\theta^3} \cdot n \theta = \frac{n}{2\theta^2} \\
+    I(\theta) &= \frac{n}{2\theta^2}
+  \end{align*}
+  \item $\Var(\hat{\theta}) \geq \frac{1}{I(\theta)}$
+  \item $\Var(\hat{\theta}_{ML}) = \Var(\frac{\sum_{i=1}^n x_i^2}{n}) = \frac{1}{n^2}\cdot n \Var(X_1^2) = \frac{1}{n} (\E(X_1^4) - \E(X_1^2)^2) = \frac{2\theta^2}{n}$
+
+  Так как $\Var(\hat{\theta}) = \frac{1}{I(\theta)}$, $\hat{\theta}_{ML}$ — эффективная оценка.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Вспомним, что для распределения Пуассона $\E(X) = \Var(X) = \lambda$
+\begin{align*}
+  L(x, \lambda) &= \prod_{i=1}^n e^{-\lambda} \frac{\lambda^{x_i}}{x_i!} = e^{-n\lambda} \lambda^{\sum_{i=1}^n x_i} \prod_{i=1}^n \frac{1}{x_i!} \\
+  l(x, \lambda) &= -n\lambda + \ln\lambda \sum_{i=1}^n x_i - \sum_{i=1}^n \ln x_i! \\
+  \frac{\partial l}{\partial \lambda} &= -n + \frac{1}{\lambda} \sum_{i=1}^n x_i \\
+  \hat{\lambda}_{ML} &= \overline{X}
+\end{align*}
+Значение по выборке: $\overline{X} = 14.5$
+\item см. предыдущий пункт
+\item $\hat \sigma^2 = \sqrt{\lambda_{ML}} = \sqrt{14.5}$
+\item $\P(X=0) = \frac{\lambda^0 e^{-\lambda}}{0!} = e^{-\lambda} \Rightarrow \widehat{\P(X=0)} = e^{-\hat\lambda} = e^{-\overline{X}}$
+\item $[14.5 - 1.96 \sqrt{\frac{14.5}{180}}; 14.5 + 1.96 \sqrt{\frac{14.5}{180}}]$
+\item В данном случае: $g(\hat{\lambda}) = e^{-\hat\lambda}$, $g'(\hat\lambda) = -e^{-\hat\lambda}$.
+И доверительный интервал имеет вид:
+\begin{align*}
+  \left[e^{-\overline{X}} - 1.96 \sqrt{\frac{e^{-2\overline{X}}\overline{X}}{n}}; e^{-\overline{X}} + 1.96 \sqrt{\frac{e^{-2\overline{X}}\overline{X}}{n}} \right] \\
+  \left[e^{-14.5} - 1.96 \sqrt{\frac{e^{-29}14.5}{180}}; e^{-14.5} + 1.96 \sqrt{\frac{e^{-29}14.5}{180}} \right]
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
 
 \subsection{Кр 3. ИП. 2017-04-01}
 
@@ -1638,7 +1785,7 @@ $
 
 Определите вероятность того, что среди этих лягушек есть хотя бы одна целебная, в каждой из ситуаций:
 \begin{enumerate}
-  \item Самцы квакают, самки — нет, со стороны лягушек слашно кваканье, но не разобрать, одной лягушки или двух.
+  \item Самцы квакают, самки — нет, со стороны лягушек слышно кваканье, но не разобрать, одной лягушки или двух.
   \item Самцы и самки квакают по разному, но одинаково часто. Только что послышался отдельный квак одной из лягушек и это квак самца.
 \end{enumerate}
 
@@ -1666,7 +1813,6 @@ x^{\alpha-1}(1-x)^{\beta-1}, \text{ если } x\in[0;1] \\
 \item Найдите условное распределение $y_{21}$ с учётом имеющихся данных.
 \end{enumerate}
 
-\newpage
 \item Рассмотрим следующий код в \verb|stan|.
 
 \begin{minted}[mathescape,
