@@ -1316,51 +1316,99 @@ $\frac{\partial \ln L}{\partial \theta} = \frac{n}{1+\theta} + \sum_{i=1}^{n} \l
 \subsection{Контрольная 4, решения}
 
 \begin{enumerate}
+\item[2.]
+\begin{enumerate}
+\item
+\begin{align*}
+  L(x, \lambda) &= \prod_{i=1}^{250} e^{-\lambda} \frac{\lambda^{x_i}}{x_i!} = e^{-250\lambda} \lambda^{\sum_{i=1}^{250} x_i} \prod_{i=1}^{250} \frac{1}{x_i!} \\
+  l(x, \lambda) &= -250\lambda + \ln\lambda \sum_{i=1}^{250} x_i - \sum_{i=1}^{250} \ln x_i! \\
+  \frac{\partial l}{\partial \lambda} &= -250 + \frac{1}{\lambda} \sum_{i=1}^{250} x_i \\
+  \hat{\lambda}_{ML} &= \overline{X}
+\end{align*}
+\item $\E(\hat{\lambda}_{ML}) = \E(\overline{X}) = \lambda \Rightarrow$ оценка несмещённая.
 
-	\item[4.] $H_0: p_{\text{c}} = \frac{1}{7}, p_{\text{л}} = \frac{2}{7}, p_{\text{к}} = \frac{4}{7}$
+$\Var(\hat{\lambda}_{ML}) = \Var(\overline{X}) = \frac{1}{n^2}\cdot n\Var(X_1) = \frac{\lambda}{n} \to_{n \to \infty} 0 \Rightarrow$ оценка состоятельная.
 
-	$Q = \sum_{i=1}^{s=3} \frac{(\nu_i - np_i)^2}{np_i} \sim \chi^2_{s-k-1} = \chi^2_2$
+$\frac{\partial^2 l}{\partial \lambda^2} = -\frac{1}{\lambda^2} \sum_{i=1}^{n} x_i$, $I(\lambda) = - \E\left(-\frac{1}{\lambda^2} \sum_{i=1}^{n} x_i\right) = \frac{n}{\lambda}$.
+Так как $\Var(\hat{\lambda}_{ML}) = \frac{1}{I(\lambda)}$, оценка является эффективной.
+\item $\P(X=0) = \frac{\lambda^0 e^{-\lambda}}{0!} = e^{-\lambda} \Rightarrow \widehat{\P(X=0)} = e^{-\hat\lambda} = e^{-\overline{X}}$
+\item В данном случае: $g(\hat{\lambda}) = e^{-\hat\lambda}$, $g'(\hat\lambda) = -e^{-\hat\lambda}$.
+И доверительный интервал имеет вид:
+\[
+  \left[e^{-\overline{X}} - 1.96 \sqrt{\frac{e^{-2\overline{X}}\overline{X}}{n}}; e^{-\overline{X}} + 1.96 \sqrt{\frac{e^{-2\overline{X}}\overline{X}}{n}} \right]
+\]
+\end{enumerate}
 
-	$Q_{obs} = \frac{\left(10-70\frac{1}{7}\right)^2}{70\frac{1}{7}} + \frac{\left(1-70\frac{2}{7}\right)^2}{70\frac{2}{7}} + \frac{\left(39-70\frac{4}{7}\right)^2}{70\frac{4}{7}} = 18.075$
 
-	$Q_{crit} = 5.99$, $Q_{crit} < Q_{obs} \Rightarrow$ гипотеза отвергается
+\item[3.]
+\begin{enumerate}
+\item $\hat p \stackrel{as.}{\sim}\cN\left(p, \frac{p(1-p)}{n}\right)$
 
-	\item[5.] $LR \sim \chi^2_1$, так как основная гипотеза содержит одно уравнение
+О1Р: лекарство помогает в $80\%$ случаев, но в данной выборке оно помогло менее чем 12 людям.
 
-	$L(x, \lambda) = \prod_{i=1}^{n=50} \lambda e^{-\lambda x} = \lambda^{50} e^{-\lambda \sum_{i=1}^{n=50} x_i}$
+$\alpha = \P(\text{О1Р}) = \P\left(\hat p < \frac{12}{20} \vert p=0.8 \right) = \P \left(\frac{\hat p - 0.8}{\sqrt{\frac{0.8\cdot0.2}{20}}} < \frac{\frac{12}{20} - 0.8}{\sqrt{\frac{0.8\cdot0.2}{20}}} \right) = 0.0125$
+\item О2Р: лекарство помогает в $60\%$ случаев, но $Y \geq 12$.
 
-	$\ln L (x, \lambda) = 50\ln\lambda - \lambda \sum_{i=1}^{n=50} x_i \to \max_\lambda$
+$\hat p \sim \cN\left(0.6, \frac{0.6\cdot0.4}{20} \right)$
 
-	$\frac{\partial \ln L}{\partial \lambda} = \frac{50}{\lambda} - \sum_{i=1}^{n=50} x_i \mid_{\lambda=\hat{\lambda}} = 0 \Rightarrow \hat{\lambda}_{ML} = \frac{1}{\overline{X}} = \frac{10}{11}$
+$\beta = \P\left( \hat p \geq \frac{12}{20} \right) = \frac{1}{2}$
+\item $\P(Z < a) =0.1$, из таблицы находим, что $a=-1.28$.
+\[
+a = \frac{\frac{c}{20} - 0.8}{\sqrt{\frac{0.8\cdot0.2}{20}}} = -1.28 \Rightarrow c \approx 13.7
+\]
+\item $\P(\vert \hat p - p \vert \leq 0.01) \geq 0.95$, будем считать, что $p=0.6$.
+\[
+\P(\vert \hat p - p \vert \leq 0.01) = \P(-0.01 \leq \hat p - p \leq 0.01) = \P\left(-\frac{0.01}{\sqrt{\frac{0.6\cdot0.4}{n}}} \leq Z \leq \frac{0.01}{\sqrt{\frac{0.6\cdot0.4}{n}}} \right) =0.95
+\]
+Из таблицы находим
+\[
+\frac{0.01}{\sqrt{\frac{0.6\cdot0.4}{n}}} = 1.96 \Rightarrow n = \frac{0.6\cdot0.4\cdot1.96^2}{0.01^2}
+\]
+\end{enumerate}
 
-	При верной $H_0:  \lambda=1$, тогда $\ln L (\lambda=1) = 50 \ln 1 - 1 \cdot 1.1 \cdot 50 = -55$
+\item[4.] $H_0: p_{\text{c}} = \frac{1}{7}, p_{\text{л}} = \frac{2}{7}, p_{\text{к}} = \frac{4}{7}$
 
-	При верной $H_1: \lambda=\lambda_{ML}$, тогда $\ln L \left(\lambda=\frac{10}{11}\right) = 50 \ln \frac{10}{11} - \frac{10}{11} \cdot 50 \cdot 1.1 = -54.77$
+$Q = \sum_{i=1}^{s=3} \frac{(\nu_i - np_i)^2}{np_i} \sim \chi^2_{s-k-1} = \chi^2_2$
 
-	$LR_{obs} = 2(\ln L (H_1) - \ln(H_0)) = 2(-54.77- (-55)) = 0.46$
+$Q_{obs} = \frac{\left(10-70\frac{1}{7}\right)^2}{70\frac{1}{7}} + \frac{\left(1-70\frac{2}{7}\right)^2}{70\frac{2}{7}} + \frac{\left(39-70\frac{4}{7}\right)^2}{70\frac{4}{7}} = 18.075$
 
-	$LR_{crit} = 2.71$, $LR_{crit} > LR_{obs} \Rightarrow$ оснований отвергать $H_0$ нет
+$Q_{crit} = 5.99$, $Q_{crit} < Q_{obs} \Rightarrow$ гипотеза отвергается
 
-	\item[6.]  Будем проверять гипотезы на уровне значимости $0.05$
-		\begin{enumerate}
-			\item $\hat{\sigma}^2_{\text{в}} = 484$, $\hat{\sigma}^2_{\text{р}} = 400$
+\item[5.] $LR \sim \chi^2_1$, так как основная гипотеза содержит одно уравнение
 
-				$\frac{\hat{\sigma}^2_{\text{в}} }{\hat{\sigma}^2_{\text{р}}} \sim F_{21-1 , 19-1}$
+$L(x, \lambda) = \prod_{i=1}^{n=50} \lambda e^{-\lambda x} = \lambda^{50} e^{-\lambda \sum_{i=1}^{n=50} x_i}$
 
-				$F_{obs} = \frac{484}{400} = 1.21$, $F_{crit, left} = 0.4$, $F_{crit, right} = 2.6  \Rightarrow$ оснований отвергать $H_0$ нет
+$\ln L (x, \lambda) = 50\ln\lambda - \lambda \sum_{i=1}^{n=50} x_i \to \max_\lambda$
 
-			\item $\hat{\sigma}_0^2 = \frac{22\cdot (21-1) + 20 \cdot (19-1)}{21 + 19 - 2} \approx 21$
+$\frac{\partial \ln L}{\partial \lambda} = \frac{50}{\lambda} - \sum_{i=1}^{n=50} x_i \mid_{\lambda=\hat{\lambda}} = 0 \Rightarrow \hat{\lambda}_{ML} = \frac{1}{\overline{X}} = \frac{10}{11}$
 
-			$t_{obs} = \frac{78-67}{\sqrt{21} \sqrt{\frac{1}{21}+ \frac{1}{21}}} \approx 7.8 $
+При верной $H_0:  \lambda=1$, тогда $\ln L (\lambda=1) = 50 \ln 1 - 1 \cdot 1.1 \cdot 50 = -55$
 
-			$t_{crit}  \sim t_{21+19-2} = t_{38}$, $t_{crit} = \pm 2.02 \Rightarrow$ гипотеза отвергается
-		\end{enumerate}
+При верной $H_1: \lambda=\lambda_{ML}$, тогда $\ln L \left(\lambda=\frac{10}{11}\right) = 50 \ln \frac{10}{11} - \frac{10}{11} \cdot 50 \cdot 1.1 = -54.77$
 
-	\item[7.] $\gamma = \sum_{i=1}^s \sum_{j=1}^m \frac{\left(n_{ij} - \frac{n_{i\cdot}n_{\cdot j}}{n}\right)^2}{\frac{n_{i\cdot}n_{\cdot j}}{n}} \sim \chi^2_{(s-1)(m-1)}$
+$LR_{obs} = 2(\ln L (H_1) - \ln(H_0)) = 2(-54.77- (-55)) = 0.46$
 
-	$\gamma_{obs} = \frac{\left(12-\frac{44\cdot48}{100}\right)^2}{\frac{44\cdot48}{100}} + \frac{\left(36-\frac{56\cdot48}{100}\right)^2}{\frac{56\cdot48}{100}} + \frac{\left(32-\frac{44\cdot52}{100}\right)^2}{\frac{44\cdot52}{100}} + \frac{\left(20-\frac{50\cdot52}{100}\right)^2}{\frac{50\cdot52}{100}} \approx 12$
+$LR_{crit} = 2.71$, $LR_{crit} > LR_{obs} \Rightarrow$ оснований отвергать $H_0$ нет
 
-	$\gamma_{criit} = 3.84 \Rightarrow$  гипотеза отвергается
+\item[6.]  Будем проверять гипотезы на уровне значимости $0.05$
+\begin{enumerate}
+\item $\hat{\sigma}^2_{\text{в}} = 484$, $\hat{\sigma}^2_{\text{р}} = 400$
+
+$\frac{\hat{\sigma}^2_{\text{в}} }{\hat{\sigma}^2_{\text{р}}} \sim F_{21-1 , 19-1}$
+
+$F_{obs} = \frac{484}{400} = 1.21$, $F_{crit, left} = 0.4$, $F_{crit, right} = 2.6  \Rightarrow$ оснований отвергать $H_0$ нет
+
+\item $\hat{\sigma}_0^2 = \frac{22\cdot (21-1) + 20 \cdot (19-1)}{21 + 19 - 2} \approx 21$
+
+$t_{obs} = \frac{78-67}{\sqrt{21} \sqrt{\frac{1}{21}+ \frac{1}{21}}} \approx 7.8 $
+
+$t_{crit}  \sim t_{21+19-2} = t_{38}$, $t_{crit} = \pm 2.02 \Rightarrow$ гипотеза отвергается
+\end{enumerate}
+\item[7.] $\gamma = \sum_{i=1}^s \sum_{j=1}^m \frac{\left(n_{ij} - \frac{n_{i\cdot}n_{\cdot j}}{n}\right)^2}{\frac{n_{i\cdot}n_{\cdot j}}{n}} \sim \chi^2_{(s-1)(m-1)}$
+
+$\gamma_{obs} = \frac{\left(12-\frac{44\cdot48}{100}\right)^2}{\frac{44\cdot48}{100}} + \frac{\left(36-\frac{56\cdot48}{100}\right)^2}{\frac{56\cdot48}{100}} + \frac{\left(32-\frac{44\cdot52}{100}\right)^2}{\frac{44\cdot52}{100}} + \frac{\left(20-\frac{50\cdot52}{100}\right)^2}{\frac{50\cdot52}{100}} \approx 12$
+
+$\gamma_{crit} = 3.84 \Rightarrow$  гипотеза отвергается
 
 \end{enumerate}
 
