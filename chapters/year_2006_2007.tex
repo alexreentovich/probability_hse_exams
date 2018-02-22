@@ -435,7 +435,7 @@ $\Var(T)=\frac{n(n+1)(2n+1)}{24}$. \\ \\
 $T$ — сумма каких-то рангов. \\
 Если $H_{0}$ верна, то $\E(T)=\frac{n_{1}(n_{1}+n_{2}+1)}{2}$,
 $\Var(T)=\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12}$. \\ \\
-$\cos^{2}(x)+\sin^{2}(x)=1$ \\ 
+$\cos^{2}(x)+\sin^{2}(x)=1$ \\
 
 \textbf{УДАЧИ!}
 
@@ -522,8 +522,6 @@ F_{X}(t)=
 \right).$
 \begin{enumerate}
 \item Найдите $\Corr(X,Y)$
-
-Ответ: $\Corr=-\frac{1}{3}$
 \item В какой пропорции нужно приобрести акции этих двух
 компаний, чтобы дисперсия доходности получившегося портфеля была наименьшей?
 \item Можно ли утверждать, что величины $X+Y$ и $7X-2Y$ независимы?
@@ -532,8 +530,6 @@ F_{X}(t)=
 \end{enumerate}
 Подсказка: Если $R$ - доходность портфеля, то $R=\alpha
 X+(1-\alpha)Y$
-
-Ответ: $\alpha=\frac{11}{17}$
 
 % числа выверены
 \item Проверка 40 случайно выбранных лекций показала, что студент
@@ -656,4 +652,115 @@ $H_{a}$:
 «б» и
 обычное выборочное среднее
 \end{enumerate}
+\end{enumerate}
+
+\subsection{Контрольная работа №3, 21.02.2007, решения}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item $\P(X=-1) = \frac{5}{12}\cdot\frac{4}{11} = \frac{5}{33}$
+
+$\E(X) = -1 \cdot \frac{5}{33} + 0 \cdot 2 \cdot \frac{5}{12}\cdot\frac{7}{11} + 1 \cdot \frac{7}{12}\cdot\frac{6}{11} = \frac{1}{6}$
+
+$\E(X^2) = (-1)^2 \cdot \frac{5}{33} + 1^2 \cdot \frac{7}{12}\cdot\frac{6}{11} = \frac{31}{66}$
+
+$\Var(X) = \frac{175}{396}$
+\item $F(x) = \begin{cases}
+0, & x < -1 \\
+\frac{5}{33}, & -1 \leq x < 0 \\
+\frac{15}{22}, & 0 \leq x < 1 \\
+1, & x \geq 1
+\end{cases}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item $c=1$, $\P(0.5<X<2) = 0.75$, $0.5$
+\item $\E(X) = \frac{2}{3}$, $\Var(X) = \frac{1}{18}$, $\Cov(X,-X) = - \frac{1}{18}$,
+$\Corr(2X,3X) = 1$
+\item $f(x) = \begin{cases}
+0, & t < 0, t \geq 1 \\
+2t, & 0 \leq t < 1
+\end{cases}$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item $\Corr(X,Y)=-\frac{1}{3}$
+\item $\alpha=\frac{11}{17}$
+\item Нет
+\item Да
+\end{enumerate}
+\item
+\begin{enumerate}
+\item $\hat{p} = \frac{1}{20}$
+
+$\left[\frac{1}{20} - 1.65 \cdot \sqrt{\frac{\frac{1}{20}\cdot\frac{19}{20}}{40}}; \frac{1}{20} + 1.65 \cdot \sqrt{\frac{\frac{1}{20}\cdot\frac{19}{20}}{40}}  \right]$
+\item $\P(\vert \hat{p} - p \vert \leq 0.1) = 0.9 \Rightarrow \P\left(\frac{\vert \hat{p} - p \vert}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \leq \frac{0.1}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \right) = 0.9 \Rightarrow \frac{0.1}{\sqrt{\frac{\frac{1\cdot19}{20^2}}{n}}} = 1.65 \Rightarrow n \approx 13$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item $\gamma_{obs} = \frac{\hat{\sigma}^2_Y}{\hat{\sigma}^2_X} \approx 1.32$, $\gamma_{crit, 0.95} \approx 1.64$,
+оснований отвергать $H_0$ нет
+\item $X_1, \ldots, X_n \sim \cN(\mu_X, \sigma^2_X)$, $Y_1, \ldots, Y_n \sim \cN(\mu_Y, \sigma^2_Y)$ — независимые выборки
+\item $\left[17.51 - 1.66 \cdot 59.4 \sqrt{\frac{1}{40}+ \frac{1}{60}}; 17.51 + 1.66 \cdot 59.4 \sqrt{\frac{1}{40}+ \frac{1}{60}} \right]$
+
+$[-2.61; 37.64]$
+
+$\hat{\sigma}_0^2 = \frac{\hat{\sigma}^2_X(n_X-1) + \hat{\sigma}^2_Y(n_Y-1)}{n_X+n_Y-2} \approx 59.4$
+\item Оснований считать новую методику более эффективной нет, так как $0$ входит в доверительный интервал.
+\end{enumerate}
+\item $\hat{p}_1 = \frac{57}{159}$, $\hat{p}_2 = \frac{48}{159}$, $\hat{p}_3 = \frac{54}{159}$
+
+$Q_{obs} = \sum_{i=1}^n \frac{(n_i - n \cdot p_i)^2}{n \cdot p_i} = \frac{42}{53}$. $Q_{crit} = 3.84$.
+Оснований отвергать нулевую гипотезу нет.
+\item $\gamma_{obs} = \sum_{i=1}^s \sum_{j=1}^m \frac{\left(n_{ij} - \frac{n_{i\cdot}n_{\cdot j}}{n}\right)^2}{\frac{n_{i\cdot}n_{\cdot j}}{n}} \approx 1.15$,
+$\gamma_{crit} = 3.84$, оснований отвергать $H_0$ нет.
+\item
+\begin{enumerate}
+\item \begin{align*}
+L(x_1, \ldots, x_n, \theta) &= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\theta}}e^{-\frac{1}{2}\cdot\frac{x_i^2}{\theta}} = \frac{1}{(\sqrt{2\pi\theta})^n} e^{-\frac{1}{2\theta} \sum_{i=1}^n x_i^2} \\
+l(x_1, \ldots, x_n, \theta) &= -\frac{n}{2} \ln (2\pi) - \frac{n}{2} \ln \theta -\frac{1}{2\theta} \sum_{i=1}^n x_i^2 \to \max_{\theta} \\
+\frac{\partial l}{\partial \theta} &= - \frac{n}{2 \theta} + \frac{1}{2\theta^2} \sum_{i=1}^n x_i^2 \\
+\hat{\theta}_{ML} &= \frac{\sum_{i=1}^n x_i^2}{n}
+\end{align*}
+\item $\E(\hat{\theta}_{ML}) = \E\left(\frac{\sum_{i=1}^n x_i^2}{n}\right) = \frac{1}{n}\cdot n \E(x_1^2) = \theta$,
+оценка несмещённая.
+
+$\Var(\hat{\theta}_{ML}) = \Var\left(\frac{\sum_{i=1}^n x_i^2}{n}\right) = \frac{1}{n^2}\cdot n \Var(x_1^2) = \frac{3\theta^2 - \theta^2}{n}\to_{n\to\infty} 0$,
+оценка состоятельная.
+
+$\frac{\partial^2 l}{\partial \theta^2} = \frac{n}{2 \theta^2} - \frac{1}{\theta^3}\sum_{i=1}^n x_i^2$
+
+$-\E\left(\frac{\partial^2 l}{\partial \theta^2}\right) = -\frac{n}{2 \theta^2} + \frac{1}{\theta^3} \cdot n \theta = \frac{n}{2 \theta^2}$
+
+$\Var(\hat{\theta}_{ML}) = \frac{2\theta^2}{n} = \frac{1}{\frac{n}{2 \theta^2}} = I(\theta)$,
+оценка эффективная.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item O1Р: выбрали $H_a$, но верна $H_0$, то есть $X \sim [0, 100]$, но при этом $X \geq c$.
+
+О2Р: выбрали $H_0$, но верна $H_a$, то есть $X \sim [50, 150]$, но при этом $X > c$.
+\item $\alpha = \begin{cases}
+1, & c < 0 \\
+\frac{100-c}{100}, & 0 \leq c \leq 100 \\
+0, & c > 100
+\end{cases}$
+
+$\beta = \begin{cases}
+0, & c < 50 \\
+\frac{c-50}{100}, & 50 \leq c \leq 150 \\
+1, & c > 150
+\end{cases}$
+\end{enumerate}
+\item $T = 2 + 4 + 6 + 8 + 10 = 30$
+
+$\E(T) = \frac{1}{2}(n_x(n_x+n_y+1)) = 37.5$
+
+$\Var(T) = \frac{1}{12}(n_x n_y(n_x + n_y)) = \frac{75}{6}$
+
+$\gamma_{obs} = \frac{30-37.5}{\sqrt{\frac{75}{6}}} \approx -2.12$,
+$\gamma_{crit, 0.05} = -1.65$, основная гипотеза отвергается.
+
+
 \end{enumerate}
