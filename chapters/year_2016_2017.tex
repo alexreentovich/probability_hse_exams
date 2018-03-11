@@ -1194,9 +1194,9 @@ $\hat{\sigma}^2 \cdot \frac{N-n}{N-1} = \frac{1}{n-1} \sum_{i=1}^{n} \left(X_i -
 
 \item
 \begin{enumerate}
-\item $5 - 1.65 \frac{2}{\sqrt{10}} < \mu < 5 + 1.65 \frac{2}{\sqrt{10}}$
+\item $5 - 1.83 \frac{2}{\sqrt{10}} < \mu < 5 + 1.83 \frac{2}{\sqrt{10}}$
 
-$ 3.96 < \mu < 6.04$
+$ 3.84 < \mu < 6.16$
 \item $\frac{4\cdot(10-1)}{\chi^2_{0.95; 9}} < \sigma^2 < \frac{4\cdot(10-1)}{\chi^2_{0.05; 9}}  $
 
 $\frac{4\cdot(10-1)}{16.919} < \sigma^2 < \frac{4\cdot(10-1)}{3.325}  $
@@ -1285,9 +1285,9 @@ $
 
 			$\Var(\mu_A) = \Var\left(\frac{2X_1 + X_2 + \ldots + X_n}{n+1}\right) = \frac{1}{(n+1)^2}\left(4\sigma^2 + \sigma^2 + \ldots + \sigma^2\right) = \frac{n+3}{(n+1)^2} \sigma^2 \to_{n \to \infty} 0 \Rightarrow$ состоятельная
 
-			$\E(\mu_B) = \E\left(\frac{2X_1 - X_2 + X_3 + X_4 + \ldots + X_n}{n+1}\right) = \frac{1}{n} \left(2\mu - \mu + \underbrace{\mu + \mu + \ldots _+ \mu}_{n-2 \text{ раз}}\right) = \frac{n-1}{n}\mu \Rightarrow$ смещённая
+			$\E(\mu_B) = \E\left(\frac{2X_1 - X_2 + X_3 + X_4 + \ldots + X_n}{n}\right) = \frac{1}{n} \left(2\mu - \mu + \underbrace{\mu + \mu + \ldots _+ \mu}_{n-2 \text{ раза}}\right) = \frac{n-1}{n}\mu \Rightarrow$ смещённая, но асимптотически несмещённая
 
-			$\Var(\mu_B) = \Var\left(\frac{2X_1 - X_2 + X_3 + X_4 + \ldots + X_n}{n}\right) = \frac{1}{n^2}\left(4\sigma^2 + \sigma^2 + \ldots + \sigma^2\right) = \frac{n+3}{(n+1)^2} \sigma^2 \to_{n \to \infty} 0 \Rightarrow$ состоятельная
+			$\Var(\mu_B) = \Var\left(\frac{2X_1 - X_2 + X_3 + X_4 + \ldots + X_n}{n}\right) = \frac{1}{n^2}\left(4\sigma^2 + \sigma^2 + \ldots + \sigma^2\right) = \frac{n+3}{n^2} \sigma^2 \to_{n \to \infty} 0 \Rightarrow$ состоятельная
 
 			$\E(\mu_C) = \E\left(\frac{X_1 + 2X_2 + 3X_3 + 4X_4 + \ldots +n X_n}{n(n+1)}\right) = \frac{\frac{1}{2} n(n+1)\mu}{n(n+1)} = \frac{1}{2} \mu \Rightarrow $ смещённая
 
@@ -1295,7 +1295,7 @@ $
 \Var(\mu_C) = \Var\left(\frac{X_1 + 2X_2 + 3X_3 + 4X_4 + \ldots + nX_n}{n(n+1)}\right) = \\
 = \frac{1}{n^2(n+1)^2}(\sigma^2 + 4\sigma^2 + 9\sigma^2 \ldots + n^2\sigma^2) = \frac{\frac{1}{6}n(n+1)(2n+1)\sigma^2}{n^2(n+1)^2}   \to_{n \to \infty} 0
 \end{multline*}
-$\Rightarrow$ состоятельная
+$\Rightarrow \plim \mu_C = \frac{1}{2} \mu \not= \mu \Rightarrow$ оцнека не является состоятельной.
 \end{enumerate}
 \end{enumerate}
 
