@@ -1249,7 +1249,7 @@ $0.0083 < p_1 - p_2 < 0.07$
 \begin{enumerate}
 \item $\E(X_i) = np$, $n\hat{p} = \overline{X}$, $\hat{p}_{MM} = \frac{\overline{X}}{n} = \frac{\sum_{i=1}^m X_i}{nm}$
 \item $\Var(\hat{p}_{MM}) = \Var\left(\frac{\sum_{i=1}^m X_i}{nm}\right) = \frac{1}{n^2m^2} \Var(X_1 + \ldots + X_m) = \frac{m \Var(X_i)}{n^2m^2} = \frac{nmp(1-p)}{n^2m^2} = \frac{p(1-p)}{nm}$
-\item $\E(\hat{p}_{MM}) = \E\left(\frac{\sum_{i=1}^m X_i}{nm}\right) = \frac{1}{nm}n\E(X_i) = \frac{nmp}{nm} = p \Rightarrow$ оценка является несмещённой
+\item $\E(\hat{p}_{MM}) = \E\left(\frac{\sum_{i=1}^m X_i}{nm}\right) = \frac{1}{nm}m\E(X_i) = \frac{mnp}{nm} = p \Rightarrow$ оценка является несмещённой
 Проверим состоятельность несмещённой оценки с помощью неравенства Чебышёва:
 $\Var(\hat{p}_{MM}) = \frac{p(1-p)}{nm} \to_{m\to\infty} 0 \Rightarrow$ оценка является состоятельной
 \item $P(X=x) = C^x_n p^x (1-p)^{n-x}$
@@ -1266,7 +1266,7 @@ $i(p) = -\E\left(\frac{\partial^2 \ln P}{\partial p^2}\right) = \E\left(\frac{x}
 
 \item Да
 
-\item $\frac{\sum_{i=1}^m X_i}{20m} - 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}  < p < \frac{\sum_{i=1}^m X_i}{20m} + 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} $
+\item $\frac{\sum_{i=1}^m X_i}{20m} - 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{mn}}  < p < \frac{\sum_{i=1}^m X_i}{20m} + 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{nm}} $
 \end{enumerate}
 
 \item $Y \sim \chi^2_3$, $\P(Y>7.815)=0.05$, $Z \sim F_{2,2}$, $\P(Z>19)=0.05$, $\sqrt{2}W \sim t_{2}$, $\P(W > 2.91/\sqrt{2})=0.05$
@@ -1705,8 +1705,8 @@ $0.00064 < p < 0.00066$
   \item
   \begin{enumerate}
   \item
-  $X_1, \ldots, X_{n_X} \sim \cN(\mu_x, \sigma^2_X)$, $Y_1, \ldots, Y_{n_Y} \sim \cN(\mu_Y, \sigma^2_Y)$,
-  $\sigma^2_x = \sigma^2_Y = \sigma^2_0$, выборки независимы
+  $X_1, \ldots, X_{n_X} \sim \cN(\mu_X, \sigma^2_X)$, $Y_1, \ldots, Y_{n_Y} \sim \cN(\mu_Y, \sigma^2_Y)$,
+  $\sigma^2_X = \sigma^2_Y = \sigma^2_0$, выборки независимы
 
   \item $\overline{Y} - \overline{X} = 43 - 37 = 6$
 
@@ -1729,7 +1729,7 @@ $0.00064 < p < 0.00066$
   $\hat{\theta}_{MM} = \frac{1}{n} \sum_{i=1}^n X_i^2$
   \item $\E(\hat{\theta}_{MM}) = \frac{1}{n} \sum_{i=1}^n \E(X_i^2) = \theta$ —
   оценка несмещённая.
-  \item $\Var(\hat{\theta}_{MM}) = \Var\left(\frac{1}{n} \sum_{i=1}^n X_i^2 \right) = \frac{1}{n^2} \sum_{i=1}^n \Var(X_i^2) = \frac{3\theta^2 - \theta^2}{n} \to_{n \to \infty} 0$
+  \item $\Var(\hat{\theta}_{MM}) = \Var\left(\frac{1}{n} \sum_{i=1}^n X_i^2 \right) = \frac{1}{n^2} \sum_{i=1}^n \Var(X_i^2) = \frac{3\theta^2 - \theta^2}{n} \underset{n \to \infty}{\to} 0$
   — оценка состоятельная ($\E(X^4) = 3\theta^2$).
   \item
   \begin{align*}
@@ -1744,9 +1744,9 @@ $0.00064 < p < 0.00066$
     I(\theta) &= \frac{n}{2\theta^2}
   \end{align*}
   \item $\Var(\hat{\theta}) \geq \frac{1}{I(\theta)}$
-  \item $\Var(\hat{\theta}_{ML}) = \Var(\frac{\sum_{i=1}^n x_i^2}{n}) = \frac{1}{n^2}\cdot n \Var(X_1^2) = \frac{1}{n} (\E(X_1^4) - \E(X_1^2)^2) = \frac{2\theta^2}{n}$
+  \item $\Var(\hat{\theta}_{ML}) = \Var\left(\frac{\sum_{i=1}^n x_i^2}{n}\right) = \frac{1}{n^2}\cdot n \Var(X_1^2) = \frac{1}{n} (\E(X_1^4) - \E(X_1^2)^2) = \frac{2\theta^2}{n}$
 
-  Так как $\Var(\hat{\theta}) = \frac{1}{I(\theta)}$, $\hat{\theta}_{ML}$ — эффективная оценка.
+  Так как $\Var(\hat{\theta}_{ML}) = \frac{1}{I(\theta)}$, $\hat{\theta}_{ML}$ — эффективная оценка.
 \end{enumerate}
 \item
 \begin{enumerate}
