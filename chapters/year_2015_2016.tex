@@ -1074,18 +1074,18 @@ $\P(Y<42 \mid X=185) = \P\left(\frac{Y-42.8}{0.6} < \frac{42-42.8}{0.6}\mid X=18
 \item
 \begin{enumerate}
 \item $\E(X) = \frac{0+2\theta}{2}\mid_{\hat{\theta}} = \overline{X}$, $\hat{\theta}_{MM} = \overline{X}$
-\item $\forall \theta \in \Theta: \E(\hat{\theta})=\theta \Leftrightarrow \hat{\theta}$ – несмещённая.
+\item $\forall \theta \in \Theta: \E(\hat{\theta})=\theta \Rightarrow \hat{\theta}$ – несмещённая.
 
-$\forall \theta \in \Theta, \forall \epsilon > 0 : \P(\vert \widehat{\theta}_n - \theta \vert > \epsilon) \to 0 \Leftrightarrow  \widehat{\theta}_n$ – состоятельная.
+$\forall \theta \in \Theta, \forall \epsilon > 0 : \P(\vert \widehat{\theta}_n - \theta \vert > \epsilon) \to 0 \Rightarrow  \widehat{\theta}_n$ – состоятельная.
 
-$\forall \theta \in \Theta: I_n (\theta) = \Var(\hat{\theta}) \Leftrightarrow \hat{\theta} $ – эффективная.
+$\forall \theta \in \Theta: I_n (\theta) = \Var(\hat{\theta}) \Rightarrow \hat{\theta} $ – эффективная.
 \item $\E(\theta) = \E(\overline{X}) = \E(X_1) = \theta \Rightarrow \hat{\theta}$ – несмещённая оценка
 
-$\Var(\hat{\theta_n}) = \Var(\overline{X}) = \frac{\Var(X_1)}{n} = \frac{4\theta^2}{12\cdot n} \to 0$; из условий $\E(\widehat{\theta}_n) = \theta$ и $\Var(\widehat{\theta}_n)  \to_{n \to \infty} 0$ следует, что $\widehat{\theta}_n \stackrel{\P}{\to}  \theta$ при $n \to \infty$, т.е. $\widehat{\theta}_n$ является состоятельной.
+$\Var(\hat{\theta_n}) = \Var(\overline{X}) = \frac{\Var(X_1)}{n} = \frac{4\theta^2}{12\cdot n} \underset{n \to \infty}{\to} 0$; из условий $\E(\widehat{\theta}_n) = \theta$ и $\Var(\widehat{\theta}_n) \underset{n \to \infty}{\to} 0$ следует, что $\widehat{\theta}_n \stackrel{\P}{\to}  \theta$ при $n \to \infty$, т.е. $\widehat{\theta}_n$ является состоятельной.
 
 \item
 \begin{multline*}
-F_{X_{(n)}} = \P(max(X_1, \ldots, X_n) \leq x) = \P(X_1 \leq x) \cdot \ldots \cdot \P(X_n \leq x) = (\P(X_1 \leq x))^n = \\
+F_{X_{(n)}} = \P(\max(X_1, \ldots, X_n) \leq x) = \P(X_1 \leq x) \cdot \ldots \cdot \P(X_n \leq x) = (\P(X_1 \leq x))^n = \\
 = \begin{cases}
 0 & \text{при } x<0 \\
 \left(\frac{x}{2\theta}\right)^n & \text{при }  x \in [0, 2\theta] \\
@@ -1102,7 +1102,7 @@ f_{X_{(n)}} (x)  = \begin{cases}
 \]
 
 \begin{multline*}
-\E(X_{(n)}) = \int_{-\infty}^{+\infty} x \cdot f_{X_{(n)}} (x) dx = \int_{0}^{2\theta}	x \cdot \frac{nx^{n-1}}{2^n \theta^n} dx = \frac{n}{2^n \theta^n}  \cdot \frac{x^{n+1}}{n+1} \mid_{x=0}^{x=2\theta} \\
+\E(X_{(n)}) = \int_{-\infty}^{+\infty} x \cdot f_{X_{(n)}} (x) dx =  \int_{0}^{2\theta}	x \cdot \frac{nx^{n-1}}{2^n \theta^n} dx = \left. \frac{n}{2^n \theta^n} \cdot \frac{x^{n+1}}{n+1} \right|_{x=0}^{x=2\theta} \\
 = \frac{n}{2^n \theta^n}  \cdot \frac{2^{n+1}\cdot \theta^{n+1}}{n+1} = \frac{n2\theta}{n+1}
 \end{multline*}
 Следовательно, $\E \left(\frac{n+1}{2n} \cdot X_{(n)}\right) = \theta$, а значит, $\tilde{\theta} = \frac{n+1}{2n} \cdot X_{(n)}$ – несмещённая оценка вида $c \cdot  X_{(n)}$
@@ -1110,7 +1110,7 @@ f_{X_{(n)}} (x)  = \begin{cases}
 
 \begin{multline*}
 \E(X_{(n)}^2) = \int_{-\infty}^{+\infty} x^2 f_{X_{(n)}} (x) dx = \int_{0}^{2\theta} x^2 \frac{nx^{n-1}}{2^n \theta^n}  dx = \frac{n}{2^n \theta^n}  \int_{0}^{2\theta} x^{n+1} dx = \\
-= \frac{n}{2^n \theta^n} \cdot \frac{x^{n+2}}{n+2} \mid_{x=0}^{x=2\theta} = \frac{n}{2^n \theta^n} \cdot  \frac{2^{n+2}\cdot \theta^{n+2}}{n+2} = \frac{n\cdot4\cdot\theta^2}{n+2}
+= \left. \frac{n}{2^n \theta^n} \cdot \frac{x^{n+2}}{n+2} \right|_{x=0}^{x=2\theta} = \frac{n}{2^n \theta^n} \cdot  \frac{2^{n+2}\cdot \theta^{n+2}}{n+2} = \frac{n\cdot4\cdot\theta^2}{n+2}
 \end{multline*}
 
 \[
@@ -1120,7 +1120,7 @@ f_{X_{(n)}} (x)  = \begin{cases}
 \[
 \Var(\tilde{\theta}) = \frac{(n+1)^2}{4n^2} \Var(X_{(n)}) = \frac{(n+1)^2}{4n^2}  \cdot 4n\theta^2 \left(\frac{n^2+2n+1 - n^2-2n}{(n+2)(n+1)^2} \right) = \frac{\theta^2}{n(n+2)}
 \]
-Оценка $\tilde{\theta}_n$ является состоятельной, так как $\E(\tilde{\theta}_n) = \theta$ и $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)} \to_{n\to\infty} 0$
+Оценка $\tilde{\theta}_n$ является состоятельной, так как $\E(\tilde{\theta}_n) = \theta$ и $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)} \underset{n \to \infty}{\to} 0$
 \item  Поскольку $\Var(\widehat{\theta}_n) = \frac{\theta^2}{3n}$, $\Var(\tilde{\theta}_n) = \frac{\theta^2}{n(n+2)}$ при достаточно большом $n$ $\Var(\tilde{\theta}_n) < \Var(\widehat{\theta}_n) $. Значит, при таких $n$ оценка $\tilde{\theta}_n$ будет более эффективной по сравнению с оценкой $\widehat{\theta}_n$.
 \end{enumerate}
 
