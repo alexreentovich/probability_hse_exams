@@ -1761,13 +1761,14 @@ $0.00064 < p < 0.00066$
 \item см. предыдущий пункт
 \item $\hat \sigma^2 = \sqrt{\lambda_{ML}} = \sqrt{14.5}$
 \item $\P(X=0) = \frac{\lambda^0 e^{-\lambda}}{0!} = e^{-\lambda} \Rightarrow \widehat{\P(X=0)} = e^{-\hat\lambda} = e^{-\overline{X}}$
-\item $\left[14.5 - 2.57 \sqrt{\frac{14.5}{6}}; 14.5 + 2.57 \sqrt{\frac{14.5}{6}}\right]$, где $2.57$ — критическое значение $t_{5, 0.975}$.
+\item $\left[14.5 - 1.96 \sqrt{\frac{14.5}{6}}; 14.5 + 1.96 \sqrt{\frac{14.5}{6}}\right]$, где $1.96$ — критическое значение $\cN(0;1)$. Конечно, этот результат верен только при больших $n$. Мы усиленно делаем вид, что $n=6$ велико. Полученный нами интервал может быть довольно далёк от 95\%-го.
 \item В данном случае: $g(\hat{\lambda}) = e^{-\hat\lambda}$, $g'(\hat\lambda) = -e^{-\hat\lambda}$.
 И доверительный интервал имеет вид:
 \begin{align*}
   \left[e^{-\overline{X}} - 1.96 \sqrt{\frac{e^{-2\overline{X}}\overline{X}}{n}}; e^{-\overline{X}} + 1.96 \sqrt{\frac{e^{-2\overline{X}}\overline{X}}{n}} \right] \\
   \left[e^{-14.5} - 1.96 \sqrt{\frac{e^{-29}14.5}{6}}; e^{-14.5} + 1.96 \sqrt{\frac{e^{-29}14.5}{6}} \right]
 \end{align*}
+Снова отметим, что наш интервал может на самом деле быть далеко не 95\%-ым, так наше $n=6$ мало для серьёзного применения метода максимального правдоподобия.
 \end{enumerate}
 \end{enumerate}
 
