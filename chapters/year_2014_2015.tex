@@ -1872,13 +1872,13 @@ $C=\begin{pmatrix}
 
 \item Дана случайная выборка $X_1$, \ldots, $X_n$ из равномерного распределения $U[0, \theta]$.
 \begin{enumerate}
-\item  С помощью статистики $X_{(n)}=\max\{X_1, \ldots, X_n \}$ постройте несмещенную оценку параметра $\theta$  вида $cX_{(n)}$ (укажите значение $c$).
+\item С помощью статистики $X_{(n)}=\max\{X_1, \ldots, X_n \}$ постройте несмещенную оценку параметра $\theta$  вида $cX_{(n)}$ (укажите значение $c$).
 \item Будет ли данная оценка состоятельной?
 \item Найдите оценку параметра $\theta$ методом моментов
 \item Какая из двух оценок является более эффективной?
 \end{enumerate}
 
-\item Каждый из $N$ биатлонистов одинакового уровня подготовки стреляет по мишеням до первого промаха.  Пусть $X_i$ — число выстрелов $i$-го биатлониста, $\P(X_i = x_i)=p^{x_i-1}(1-p)$, где $p$ — вероятность попадания при одном выстреле.
+\item Каждый из $n$ биатлонистов одинакового уровня подготовки стреляет по мишеням до первого промаха.  Пусть $X_i$ — число выстрелов $i$-го биатлониста, $\P(X_i = x_i)=p^{x_i-1}(1-p)$, где $p$ — вероятность попадания при одном выстреле.
 \begin{enumerate}
 \item Методом максимального правдоподобия найдите оценку $p$.
 \item Методом максимального правдоподобия найдите оценку математического ожидания числа выстрелов.
@@ -1947,19 +1947,56 @@ $\E(2X+Y \mid X=2) = 2\E (X\mid X=2) + \E(Y\mid X=2) = 4 + 1.5 = 5.5$
 \end{enumerate}
 \item
 \begin{enumerate}
-\item $\E(cX_{(n)}) = c \E(X_{(n)}) = c \cdot \frac{\theta}{2} = \theta \Rightarrow c=2$
-\item $\Var(2X_{(n)}) = 4 \cdot \frac{\theta^2}{12} \not\to_{n\to\infty} 0 \Rightarrow$ нет
-\item $\E(X_1) = \left. \frac{\theta}{2} \right|_{\theta = \hat{\theta}} = \overline{X} \Rightarrow \hat{\theta} = 2\overline{X}$
-\item $\Var(2\overline{X}) = \frac{4}{n^2}n\Var(X_1) = \frac{4\theta}{12n} \to_{n\to\infty} 0$
+\item \begin{multline*}
+F_{X_{(n)}} = \P(\max(X_1, \ldots, X_n) \leq x) = \P(X_1 \leq x) \cdot \ldots \cdot \P(X_n \leq x) = (\P(X_1 \leq x))^n = \\
+= \begin{cases}
+0 & \text{при } x<0 \\
+\left(\frac{x}{\theta}\right)^n & \text{при }  x \in [0, \theta] \\
+1 & \text{при }  x > \theta
+\end{cases}
+\end{multline*}
+
+\[
+f_{X_{(n)}} (x)  = \begin{cases}
+0 & \text{при } x<0 \\
+\frac{nx^{n-1}}{ \theta^n} & \text{при }  x \in [0, \theta] \\
+0 & \text{при }  x > \theta
+\end{cases}
+\]
+
+\begin{multline*}
+\E(X_{(n)}) = \int_{-\infty}^{+\infty} x \cdot f_{X_{(n)}} (x) dx =  \int_{0}^{\theta}	x \cdot \frac{nx^{n-1}}{\theta^n} dx = \left. \frac{n}{\theta^n} \cdot \frac{x^{n+1}}{n+1} \right|_{x=0}^{x=\theta} \\
+= \frac{n}{\theta^n}  \cdot \frac{\cdot \theta^{n+1}}{n+1} = \frac{n\theta}{n+1}
+\end{multline*}
+Следовательно, $\E \left(\frac{n+1}{n} \cdot X_{(n)}\right) = \theta$, а значит, $\hat{\theta} = \frac{n+1}{n} \cdot X_{(n)}$ – несмещённая оценка вида $c \cdot  X_{(n)}$
+
+\item $\Var(\hat{\theta}) = \frac{(n+1)^2}{n^2} \Var(X_{(n)})$
+
+\begin{multline*}
+\E(X_{(n)}^2) = \int_{-\infty}^{+\infty} x^2 f_{X_{(n)}} (x) dx = \int_{0}^{\theta} x^2 \frac{nx^{n-1}}{\theta^n}  dx = \frac{n}{\theta^n}  \int_{0}^{\theta} x^{n+1} dx = \\
+= \left. \frac{n}{\theta^n} \cdot \frac{x^{n+2}}{n+2} \right|_{x=0}^{x=\theta} = \frac{n}{\theta^n} \cdot  \frac{\theta^{n+2}}{n+2} = \frac{n\cdot\theta^2}{n+2}
+\end{multline*}
+
+\[
+\Var(X_{(n)}) = \E(X_{(n)}^2)  - (\E(X_{(n)}))^2 = \frac{n\theta^2}{n+2} - \frac{n^2 \cdot \theta^2}{(n+1)^2} = n\theta^2 \left(\frac{1}{n+2} - \frac{n}{(n+1)^2}\right)
+\]
+
+\[
+\Var(\tilde{\theta}) = \frac{(n+1)^2}{n^2} \Var(X_{(n)}) = \frac{(n+1)^2}{n^2}  \cdot n\theta^2 \left(\frac{n^2+2n+1 - n^2-2n}{(n+2)(n+1)^2} \right) = \frac{\theta^2}{n(n+2)}
+\]
+Оценка $\hat{\theta}_n$ является состоятельной, так как $\E(\hat{\theta}_n) = \theta$ и $\Var(\hat{\theta}_n) = \frac{\theta^2}{n(n+2)} \underset{n \to \infty}{\to} 0$
+
+\item $\E(X_1) = \left. \frac{\theta}{2} \right|_{\theta = \hat{\theta}_{MM}} = \overline{X} \Rightarrow \hat{\theta}_{MM} = 2\overline{X}$
+\item $\Var(2\overline{X}) = \frac{4}{n^2}n\Var(X_1) = \frac{4\theta}{12n} = \frac{\theta}{3n} > \Var(\hat{\theta}_n)$
 \end{enumerate}
 \item
 \begin{enumerate}
-\item $L(x, p) = \prod_{i=1}^n p^{x_i-1} (1-p) = p^{\sum_{i=1}^n(x_i-1)} (1-p)$
+\item $L(x, p) = \prod_{i=1}^n \P(X_i = x_i) = p^{\sum_{i=1}^n(x_i-1)} (1-p)^n$
 
-$\ln L (x, p) = \sum_{i=1}^n(x_i-1) \ln p  + \ln(1-p)$
+$\ln L (x, p) = \sum_{i=1}^n(x_i-1) \ln p  + n\ln(1-p)$
 
-$\frac{\partial \ln L}{\partial p} = \frac{\sum_{i=1}^n(x_i-1)}{p} - \frac{1}{1-p} = 0 \Rightarrow \hat{p} = \frac{\sum_{i=1}^n(x_i-1)}{1+\sum_{i=1}^n(x_i-1)}$
-\item $\E(X) = \frac{n}{p} \Rightarrow \hat{\E}(X) = \frac{n(1 + \sum_{i=1}^n(x_i-1))}{\sum_{i=1}^n(x_i-1)}$
+$\frac{\partial \ln L}{\partial p} = \frac{\sum_{i=1}^n(x_i-1)}{p} - \frac{n}{1-p} = 0 \Rightarrow \hat{p} = \frac{\sum_{i=1}^n x_i - n}{\sum_{i=1}^n x_i}$
+\item $\E(X) = \frac{n}{p} \Rightarrow \hat{\E}(X) = \frac{n\sum_{i=1}^n x_i}{\sum_{i=1}^n x_i - n}$
 \end{enumerate}
 \end{enumerate}
 
