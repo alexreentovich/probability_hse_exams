@@ -1956,11 +1956,11 @@ generated quantities {
 \end{enumerate}
 \item $\hat{p} = \frac{16}{40} = 0.4$, проверять будем двустороннюю гипотезу.
 
-$z_{obs} = \frac{\hat{p} - p}{\sqrt{\hat{p}(1-\hat{p})/n}} = \frac{0.4-0.5}{0.4\cdot0.6/40} = -16.(6)$
+$z_{obs} = \frac{\hat{p} - p}{\sqrt{\hat{p}(1-\hat{p})/n}} = \frac{0.4-0.5}{\sqrt{0.4\cdot0.6/40}} \approx -1.3$
 
 В таблице нормального распределения находим значение $z_{0.975}$, $z_{crit} = 1.96$.
 
-Так как $\vert t_{obs} \vert > t_{crit}$, основная гипотеза отвергается.
+Так как $\vert z_{obs} \vert < z_{crit}$, нет оснований отвергать $H_0$.
 \item
 \begin{enumerate}
 \item $\hat{\sigma}_0^2 = \frac{\hat{\sigma}_\alpha^2(n_\alpha -1) + \hat{\sigma}_\beta^2(n_\beta-1)}{n_\alpha+n_\beta-2} = \frac{0.25\cdot19 + 0.36\cdot24}{20+25-2}=0.31$
