@@ -1949,11 +1949,12 @@ generated quantities {
 Поскольку $t_{obs} < -t_{crit}$, основная гипотеза отвергается.
 \item $p-value \approx 0$
 \item $X_1, \ldots, X_{100} \sim \cN(\mu, \sigma^2)$
-\item $\gamma_{obs} = \frac{\hat{\sigma^2}}{\sigma^2_0}(n-1) = \frac{0.5}{0.3}(100-1) = 165$
+\item $\gamma_{obs} = \frac{\hat{\sigma}^2}{\sigma^2_0}(n-1) = \frac{0.5^2}{0.3}(100-1) = 82.5$
 
-В таблице находим нужное значение $\chi^2_{0.975;100-1}$, $\gamma_{crit} = 128$.
+В таблице находим нужные значения $\chi^2_{0.975;100-1}$, $\gamma_{crit, r} = 128$
+и $\chi^2_{0.025;100-1}$, $\gamma_{crit, l} = 73$.
 
-Так $\gamma_{obs} > \gamma_{crit}$, основная гипотеза отвергается.
+Так $\gamma_{crit, l} < \gamma_{obs} < \gamma_{crit, r}$, нет оснований отвергать  $H_0$.
 \end{enumerate}
 \item $\hat{p} = \frac{16}{40} = 0.4$, проверять будем двустороннюю гипотезу.
 
