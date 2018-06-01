@@ -1999,13 +1999,13 @@ $z_{crit} = 1.96$
 L &= \prod_{i=1}^{100} \frac{1}{\sqrt{2\pi\nu}} \exp\left(-\frac{1}{2} \frac{(x_i-\mu)^2}{\nu} \right) = \frac{1}{(\sqrt{2\pi\nu})^{100}} \exp \left(-\frac{1}{2\nu}\sum_{i=1}^{100} (x_i - \mu)^2 \right) \\
 \ell &= -\frac{100}{2}\ln (2\pi) - \frac{100}{2} \ln \nu - \frac{1}{2\nu}\sum_{i=1}^{100} (x_i - \mu)^2 \\
 \frac{\partial \ell}{\partial \mu} &= \frac{1}{\nu} \sum_{i=1}^{100} (x_i - \mu) \Rightarrow \hat{\mu}_{ML} = \frac{\sum_{i=1}^{100} x_i}{100} = 0.3 \\
-\frac{\partial \ell}{\partial \nu} &= -\frac{100}{2\nu} + \frac{1}{2\nu^2}\sum_{i=1}^{100} (x_i - \mu)^2 \Rightarrow \hat{\nu}_{ML} = 1.2809
+\frac{\partial \ell}{\partial \nu} &= -\frac{100}{2\nu} + \frac{1}{2\nu^2}\sum_{i=1}^{100} (x_i - \mu)^2 \Rightarrow \hat{\nu}_{ML} = 1.37
 \end{align*}
 Тогда $LR=2(\ell(\hat{\mu}_{ML}, \hat{\nu}_{ML}) - \ell(\hat{\mu}_{ML}, \nu = 1))$ имеет вид:
 \[
-Q_{obs}= 2 \left(-50 \ln(2\pi) - 50 \ln 1.2809 - \frac{1}{2\cdot1.2809}\cdot 128.09 + 50 \ln(2\pi) + 0 + \frac{1}{2} \cdot 128.09 \right) \approx 3.33
+Q_{obs}= 2 \left(-50 \ln(2\pi) - 50 \ln 1.37 - \frac{1}{2\cdot1.37}\cdot 137 + 50 \ln(2\pi) + 0 + \frac{1}{2} \cdot 137 \right) \approx 5.5
 \]
-Из таблицы: $Q_{crit} = 3.84$. Поскольку $Q_{obs} < Q_{crit}$, нет оснований отвергать $H_0$.
+Из таблицы: $Q_{crit} = 3.84$. Поскольку $Q_{obs} > Q_{crit}$, основная гипотеза отвергается.
 \end{enumerate}
 
 
